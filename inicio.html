@@ -22,24 +22,37 @@
     
     <body>
         <!-- PRINCIPAL -->
-        <main class="main col">
+        <main>
+            <!-- AGREGANDO NAVBAR IZQUIERDA -->
             <div class="container-fluid">
-                 <br>
-                 <div class="row">
-                     <div class="col-12">
-                         <div id="index">
-                             <!-- CONTENIDO -->
-                         </div>
-                     </div>
-                 </div>
-             </div>
-         </main>
+                <div class="row">
+                    <div id="navbar">
+                        <!-- CONTENIDO NAVBAR -->
+                    </div>
+                    
+                    <!-- CONTENIDO PRINCIPAL -->
+                    <main class="main col">
+                       <div class="container-fluid">
+                            <br>
+                            <div class="row">
+                                <div class="col-12">
+                                    <div id="inicio">
+                                        <!-- CONTENIDO -->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </main>
     </body>
 </html>
 
 <!-- CODIGO JAVASCRIPT PARA CONTENIDO DE PHP -->
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#index').load('assets/components/php/index.php');
+        $('#navbar').load('assets/components/html/navbar.html');
+        $('#inicio').load('assets/components/php/inicio.php');
     });
 </script>
