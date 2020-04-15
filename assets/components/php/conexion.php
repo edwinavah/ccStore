@@ -2,7 +2,7 @@
     function conexion(){
         $servidor = "localhost";
         $usuario = "root";
-        $bd = "";
+        $bd = "ccStoreInventarios";
         $password = "";
         $conexion = mysqli_connect($servidor, $usuario, $password, $bd);
 
