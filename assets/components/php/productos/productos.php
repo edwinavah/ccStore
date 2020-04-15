@@ -21,6 +21,7 @@
             <table class="table table-sm table-hover table-condensed table-bordered table-striped mt-3">
                 <thead>
                     <tr>
+                        <td scope="col" class="text-center align-middle background-table">ID</td>
                         <td scope="col" class="text-center align-middle background-table">Código</td>
                         <td scope="col" class="text-center align-middle background-table">Marca</td>
                         <td scope="col" class="text-center align-middle background-table">Modelo</td>
@@ -47,6 +48,7 @@
 
                 <tbody>
                     <tr>
+                        <td class="align-middle"><?php echo $buscar[0]?></td>
                         <td class="align-middle"><?php echo $buscar[1]?></td>
                         <td class="align-middle"><?php echo $buscar[2]?></td>
                         <td class="align-middle"><?php echo $buscar[3]?></td>
@@ -63,7 +65,6 @@
                 <?php
                     }
                 ?>
-
             </table>
         </div>
     </div>
@@ -71,6 +72,5 @@
 
 
 <?php
-    include('modalEliminar.php');
-    include('modalModif.php');
+    include('modal.php');
 ?>
