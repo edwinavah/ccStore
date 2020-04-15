@@ -1,20 +1,25 @@
-<body>
-    <div class="container">
-        <div class="row">
-            <div class="col-12 col-sm-6 offset-sm-3">
-                <h1 style="text-align: center">Iniciar Sesion</h1>
-                <form action="" method="post">
-                    <div class="form-group">
-                        <label for="nombre">Usuario</label>
-                        <input type="text" class="form-control" id="nombre" name="nombre">
-                    </div>
-                    <div class="form-group">
-                        <label for="numControl">Contraseña</label>
-                        <input type="password" class="form-control" id="numControl" name="numControl">
-                    </div>
-                    <button type="submit" name="submit" class="btn btn-primary offset-5">Entrar</button>
-                </form>
+<!-- MODAL CONTENIDO -->
+<div class="modal-dialog text-center">
+    <div class="col-md-10 main-section">
+        <div class="modal-content">
+            <!-- IMAGEN DE USUARIO -->
+            <div class="col-12 user-img">
+                <img src="assets/images/logo.svg"/>
             </div>
+            <!-- FORMULARIO -->
+            <form class="col-12" action="" method="post">
+                <div class="user-icono">
+                    <input type="text" placeholder="Nombre de Usuario" id="usuario" name="usuario"/>
+                </div>
+                <div class="password-icono">
+                    <input type="password" placeholder="Contraseña" id="password" name="password"/>
+                </div>
+                <div class="row mb-4">
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary" id="buttonlg"><i class="fas fa-sign-in-alt"></i>  Entrar</button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
-</body>
+</div>
