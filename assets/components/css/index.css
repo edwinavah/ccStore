@@ -1,0 +1,82 @@
+body{
+    background: url(../../images/background_index.jpg) no-repeat center center fixed;
+    background-size: cover;
+}
+
+.main-section{
+    margin: 0 auto;
+    margin-top:25%;
+    padding: 0;
+}
+
+.modal-content{
+    background-color: #3b4652;
+    opacity: .85;
+    padding: 0 10px;
+    box-shadow: 0px 0px 3px #848484;
+}
+.user-img{
+    margin-top: -50px;
+    margin-bottom: 35px;
+}
+
+.user-img img{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+}
+
+.user-icono {
+    margin-bottom: 20px;
+    background-image: url('../../images/icons/user-solid.svg');
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-size: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 45px;
+    height: 42px;
+    letter-spacing: 0.5px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    }
+
+    .user-icono > input {
+        width: 100%;
+        border: transparent;
+        font-size: 18px;
+    }
+
+    .user-icono input:focus {
+        outline: none;
+    }
+
+.password-icono {
+    margin-bottom: 20px;
+    background-image: url('../../images/icons/key-solid.svg');
+    background-repeat: no-repeat;
+    background-position: 15px center;
+    background-size: 20px;
+    display: flex;
+    align-items: center;
+    padding-left: 45px;
+    height: 42px;
+    letter-spacing: 0.5px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    }
+
+    .password-icono > input {
+        width: 100%;
+        border: transparent;
+        font-size: 18px;
+    }
+
+    .password-icono input:focus {
+        outline: none;
+    }
+
+button{
+    width: 100%;
+    margin: 0 0 10px;
+}
