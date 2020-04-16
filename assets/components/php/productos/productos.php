@@ -23,7 +23,7 @@
             <table class="table table-sm table-hover table-condensed table-bordered table-striped">
                 <thead>
                     <tr>
-                        <td scope="col" class="text-center align-middle background-table">ID</td>
+                        <td scope="col" class="text-center align-middle background-table d-none">ID</td>
                         <td scope="col" class="text-center align-middle background-table">Código</td>
                         <td scope="col" class="text-center align-middle background-table">Marca</td>
                         <td scope="col" class="text-center align-middle background-table">Modelo</td>
@@ -49,7 +49,7 @@
                 ?>
 
                 <tr>
-                    <td class="align-middle"><?php echo $buscar[0]?></td>
+                    <td class="align-middle d-none"><?php echo $buscar[0]?></td>
                     <td class="align-middle"><?php echo $buscar[1]?></td>
                     <td class="align-middle"><?php echo $buscar[2]?></td>
                     <td class="align-middle"><?php echo $buscar[3]?></td>
