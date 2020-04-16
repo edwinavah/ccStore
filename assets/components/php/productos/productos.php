@@ -13,7 +13,7 @@
 
                     if (isset($_POST['consulta'])) {
                         $q = $conexion->real_escape_string($_POST['consulta']);
-                        $sql = "SELECT * FROM productos WHERE marca LIKE '%$q%' OR modelo LIKE '%$q%'";
+                        $sql = "SELECT * FROM productos WHERE marca LIKE '%$q%' OR modelo LIKE '%$q%' OR codigo_barras LIKE '%$q%' OR precio LIKE '%$q%'";
                     }
 
                     $resultado = $conexion->query($sql);
