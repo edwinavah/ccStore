@@ -9,7 +9,8 @@
             <input type="text" class="form-control" placeholder="Buscar producto">
             <div class="input-group-append">
                 <button class="btn btn-outline-success" data-toggle="modal" data-target="#buscar_cliente">Buscar <i class="fas fa-search"></i></button>
-                <button type="button" class="btn btn-outline-primary ml-4" data-target="#crear">Agregar producto   <i class="fas fa-plus"></i></button>
+                
+                <button type="button" class="btn btn-outline-primary insertarbtn ml-4" data-toggle="modal" data-target="#insertar">Agregar producto<i class="fas fa-plus"></i></button>
             </div>
         </div>
     </div>
