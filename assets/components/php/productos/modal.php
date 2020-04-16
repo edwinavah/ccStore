@@ -80,8 +80,14 @@
                                     <label for="" class="mt-2">Cantidad en stock</label>
                                     <input type="text" name="stock" class="form-control" id="stock">
                                 </div>
+                                
                                 <div class="col">
-                                    <label for="" class="mt-2">Precio</label>
+                                    <label for="" class="mt-2">Precio $USD</label>
+                                    <input type="number" placeholder="0.00" step="0.01"  class="form-control">
+                                </div>
+
+                                <div class="col">
+                                    <label for="" class="mt-2">Precio $MXN</label>
                                     <input type="number" placeholder="0.00" step="0.01" name="precio" class="form-control" id="precio">
                                 </div>
                             </div>
@@ -163,8 +169,14 @@
                                     <label for="" class="mt-2">Cantidad en stock</label>
                                     <input type="text" name="stock" class="form-control" id="stock">
                                 </div>
+
                                 <div class="col">
-                                    <label for="" class="mt-2">Precio</label>
+                                    <label for="" class="mt-2">Precio $USD</label>
+                                    <input type="number" placeholder="0.00" step="0.01"  class="form-control">
+                                </div>
+
+                                <div class="col">
+                                    <label for="" class="mt-2">Precio $MXN</label>
                                     <input type="number" placeholder="0.00" step="0.01" name="precio" class="form-control" id="precio">
                                 </div>
                             </div>
