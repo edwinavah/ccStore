@@ -48,20 +48,28 @@
                                                 <td class="align-middle">'.$buscar[4].'</td>
                                                 <td class="align-middle">'.$buscar[5].'</td>
                                                 <td class="align-middle">'.$buscar[6].'</td>
-                                                <td class="text-center align-middle" style="min-width: 150px; width: 150px">
-                                                    <button type="button" class="btn btn-warning editarbtn" data-toggle="modal" data-target="#modificar"><i class="far fa-edit"></i> Editar</button>
-                                                    <button type="button" class="btn btn-danger eliminarbtn" data-toggle="modal" data-target="#eliminar"><i class="fas fa-trash"></i></button>
+                                                <td class="text-center align-middle" style="min-width: 125px; width: 125px">
+                                                    <button type="button" class="btn btn-sm btn-warning editarbtn" data-toggle="modal" data-target="#modificar"><i class="far fa-edit"></i> Editar</button>
+                                                    <button type="button" class="btn btn-sm btn-danger eliminarbtn" data-toggle="modal" data-target="#eliminar"><i class="fas fa-trash"></i></button>
                                                 </td>
                                             </tr>';
                                 }
                                     $salida.="</table>";
                                 }else{
-                                    $salida.="";
+                                    $salida.='<div class="row mt-3">
+                                                <div class="col-12 text-center">
+                                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                                        <strong>¡No se encontró ningún elemento!</strong><br>
+                                                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>';
                                 }
-                                    
-                                echo $salida;
-                    
-                                $conexion->close();
+                                
+                        echo $salida;
+                        $conexion->close();
                 ?>
         </div>
     </div>
