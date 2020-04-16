@@ -20,8 +20,8 @@ body {
 
 /* --- LOGO EN MENU --- */
 .barra-lateral .logo {
-	background: #ff7800;
-	padding: 30px;
+	background: #00a2ff;
+	padding: 20px;
 }
 
 .barra-lateral .logo img {
@@ -39,7 +39,7 @@ body {
 }
 
 .barra-lateral .menu a:hover {
-	background: #ff7800;
+	background: #00a2ff;
 	text-decoration: none;
 }
 
