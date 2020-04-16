@@ -1,5 +1,4 @@
 <body>
-    
     <!-- Modal eliminar-->
     <div class="modal fade" id="eliminar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-family: Candara;">
         <div class="modal-dialog" role="document">
@@ -64,7 +63,7 @@
                         <input type="hidden" name="id_productos" id="update_id">
                         <div class="form-group">
                             <label for="" class="mt-2">Código de barras</label>
-                            <input type="text" name="codigo_barras" class="form-control" id="codigo_barras">
+                            <input type="number" name="codigo_barras" class="form-control" id="codigo_barras">
 
                             <div class="form-row">
                                 <div class="col">
@@ -78,7 +77,7 @@
                             </div>
                             <div class="form-row">
                                 <div class="col">
-                                    <label for="" class="mt-2">Cantidad</label>
+                                    <label for="" class="mt-2">Cantidad en stock</label>
                                     <input type="text" name="stock" class="form-control" id="stock">
                                 </div>
                                 <div class="col">
@@ -147,7 +146,7 @@
                         <input type="hidden" name="id_productos" id="new_id">
                         <div class="form-group">
                             <label for="" class="mt-2">Código de barras</label>
-                            <input type="text" name="codigo_barras" class="form-control" id="codigo_barras">
+                            <input type="number" name="codigo_barras" class="form-control" id="codigo_barras">
 
                             <div class="form-row">
                                 <div class="col">
@@ -161,7 +160,7 @@
                             </div>
                             <div class="form-row">
                                 <div class="col">
-                                    <label for="" class="mt-2">Cantidad</label>
+                                    <label for="" class="mt-2">Cantidad en stock</label>
                                     <input type="text" name="stock" class="form-control" id="stock">
                                 </div>
                                 <div class="col">
