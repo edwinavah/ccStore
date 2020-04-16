@@ -7,7 +7,7 @@
     $count_elementos = $conexion->query("SELECT * FROM productos");
 ?>
 
-<div class="row">
+<div class="row mt-4">
     <div class="col-12 col-lg-4">
         <div class="m-3">
             <div class="row bg-info rounded-top card-top text-white">

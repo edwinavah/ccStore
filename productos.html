@@ -14,6 +14,7 @@
         <script src="assets/libraries/js/jquery-3.4.1.min.js"></script>
         <script src="assets/libraries/js/bootstrap.min.js"></script>
         <script src="assets/libraries/js/alertify.js"></script>
+        <script src="assets/components/js/productos.js"></script>
 
         <!-- FAVICON Y TITULO EN EL NAVEGADOR  -->
         <link rel="shortcut icon" href="assets/images/favicon.svg">
@@ -33,10 +34,24 @@
                     <!-- CONTENIDO PRODUCTOS -->
                     <main class="main col">
                        <div class="container-fluid">
-                            <br>
+                           <!-- COMPONENTES AGREGAR Y BUSCAR -->
+                            <div class="row mt-4">
+                                <div class="col-12 col-lg-7 mb-3">
+                                    <button type="button" class="btn btn-outline-primary insertarbtn" data-toggle="modal" data-target="#insertar">Agregar producto  <i class="fas fa-plus"></i></button>
+                                </div>
+
+                                <div class="col-12 col-lg-5 mb-3">
+                                    <div class="input-group">
+                                        <input type="text" name="caja_busqueda" id="caja_busqueda" class="form-control" placeholder="Buscar producto">
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="row">
                                 <div class="col-12">
-                                    <div id="productos"></div>
+                                    <div id="productos">
+                                        <!-- TABLA -->
+                                    </div>
                                 </div>
                             </div>
                         </div>

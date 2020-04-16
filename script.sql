@@ -14,9 +14,10 @@ CREATE TABLE productos (
     PRIMARY KEY (id_productos)
 );
 
-INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Apple", "iPhone 11 Pro Max", "Color Gold - 512GB", "29999.99", 3);
-INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Apple", "iPad Pro 12.9", "Color Gold - 256GB", "24999.99", 1);
-INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Samsung", "Galaxy S10 Plus", "Color Plata - 1TB", "22000.00", 3);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Crayola", "Super Tips 100", "Marcadores Lavables", "599.99", 100);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Crayola", "Super Tips 50", "Marcadores Lavables", "259.99", 30);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Samsung", "4K 55'", "Pantalla Samsung", "15999.99", 2);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Samsung", "SoundBar", "Bocina SoundBar", "1299.99", 4);
 
 CREATE TABLE usuarios (
     id_usuarios INT NOT NULL AUTO_INCREMENT,
