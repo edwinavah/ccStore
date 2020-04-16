@@ -194,6 +194,9 @@
             success: function(res){
                 $('#respuesta2').html(res);
             }
+        }).done(function(data){
+            //limpia los campos despues de hacer la peticion 
+            $('#insert').trigger("reset");
         });
     });
     </script>
