@@ -1,7 +1,7 @@
 <?php 
             require_once "../conexion.php";
             $conexion = conexion();
-            
+
             $id_productos = $_POST['id_productos'];
             $codigo_barras = $_POST['codigo_barras'];
             $marca = $_POST['marca'];
@@ -12,12 +12,11 @@
 
         if($codigo_barras=="" || $marca=="" || $modelo=="" || $especificaciones=="" || $precio=="" || $stock==""){
             ?>
-            <script>alert("Campos Vacios")
-            </script>
+                
             <?php
+            echo"Campos vacios";
         }else{
-            echo"<script>alert('Se agrego correctamente')</script>";
             $conexion->query("INSERT INTO productos (codigo_barras,marca,modelo,especificaciones,precio,stock) values ('$codigo_barras','$marca','$modelo','$especificaciones','$precio','$stock')");
-            //header('Location: .php');
+            echo"Se guardo exitosamente";
             }  
 ?>
