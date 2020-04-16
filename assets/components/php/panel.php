@@ -1,3 +1,12 @@
+<!-- CONTADOR DE ELEMENTOS -->
+<?php
+    require_once "conexion.php";
+    $conexion = conexion();
+
+    ini_set('date.timezone', 'America/Mexico_City');
+    $count_elementos = $conexion->query("SELECT * FROM productos");
+?>
+
 <div class="row">
     <div class="col-12 col-lg-4">
         <div class="m-3">
@@ -6,7 +15,7 @@
                     <i class="fas fa-server icon"></i>
                 </div>
                 <div class="col-10 text-right p-4">
-                    <h1>6</h1>
+                    <h1><?php echo $count_elementos->num_rows; ?></h1>
                     <small>Todos los elementos</small>
                 </div>
             </div>
@@ -29,7 +38,7 @@
                     <i class="fas fa-exclamation-triangle icon"></i>
                 </div>
                 <div class="col-10 text-right p-4">
-                    <h1>6</h1>
+                    <h1>0</h1>
                     <small>Elementos a punto de agotar</small>
                 </div>
             </div>
@@ -52,7 +61,7 @@
                     <i class="fas fa-exclamation-circle icon"></i>
                 </div>
                 <div class="col-10 text-right p-4">
-                    <h1>6</h1>
+                    <h1>0</h1>
                     <small>Elementos eliminados recientemente</small>
                 </div>
             </div>
@@ -75,7 +84,7 @@
                     <i class="fas fa-users icon"></i>
                 </div>
                 <div class="col-10 text-right p-4">
-                    <h1>6</h1>
+                    <h1>0</h1>
                     <small>Usuarios registrados</small>
                 </div>
             </div>
@@ -98,10 +107,7 @@
                 <i class="far fa-edit icon"></i>
                 </div>
                 <div class="col-10 text-right p-4">
-                    <h1>6</h1>
-                    <?php
-                        ini_set('date.timezone', 'America/Mexico_City');
-                    ?>
+                    <h1>0</h1>
                     <small>Modificaciones hoy, <?php echo date("d-m-Y"); ?></small>
                 </div>
             </div>

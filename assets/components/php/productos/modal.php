@@ -185,6 +185,7 @@
             </div>
         </div>
     </div>
+    
     <script>
     $('#guardarNew').on('click',function(){
         $.ajax({

@@ -8,9 +8,9 @@
         <div class="input-group">
             <input type="text" class="form-control" placeholder="Buscar producto">
             <div class="input-group-append">
-                <button class="btn btn-outline-success" data-toggle="modal" data-target="#buscar_cliente">Buscar <i class="fas fa-search"></i></button>
+                <button class="btn btn-success" data-toggle="modal" data-target="#buscar_cliente">Buscar <i class="fas fa-search"></i></button>
                 
-                <button type="button" class="btn btn-outline-primary insertarbtn ml-4" data-toggle="modal" data-target="#insertar">Agregar producto<i class="fas fa-plus"></i></button>
+                <button type="button" class="btn btn-outline-primary insertarbtn ml-4" data-toggle="modal" data-target="#insertar">Agregar producto  <i class="fas fa-plus"></i></button>
             </div>
         </div>
     </div>
@@ -47,21 +47,19 @@
                             $buscar[6];
                 ?>
 
-                <tbody>
-                    <tr>
-                        <td class="align-middle"><?php echo $buscar[0]?></td>
-                        <td class="align-middle"><?php echo $buscar[1]?></td>
-                        <td class="align-middle"><?php echo $buscar[2]?></td>
-                        <td class="align-middle"><?php echo $buscar[3]?></td>
-                        <td class="align-middle"><?php echo $buscar[4]?></td>
-                        <td class="align-middle"><?php echo $buscar[5]?></td>
-                        <td class="align-middle"><?php echo $buscar[6]?></td>
-                        <td class="text-center align-middle" style="min-width: 150px;">
-                            <button type="button" class="btn btn-outline-warning editarbtn" data-toggle="modal" data-target="#modificar">Editar</button>
-                            <button type="button" class="btn btn-outline-danger eliminarbtn" data-toggle="modal" data-target="#eliminar">Eliminar</button>
-                        </td>
-                    </tr>
-                </tbody>
+                <tr>
+                    <td class="align-middle"><?php echo $buscar[0]?></td>
+                    <td class="align-middle"><?php echo $buscar[1]?></td>
+                    <td class="align-middle"><?php echo $buscar[2]?></td>
+                    <td class="align-middle"><?php echo $buscar[3]?></td>
+                    <td class="align-middle"><?php echo $buscar[4]?></td>
+                    <td class="align-middle"><?php echo $buscar[5]?></td>
+                    <td class="align-middle"><?php echo $buscar[6]?></td>
+                    <td class="text-center align-middle" style="min-width: 150px;">
+                        <button type="button" class="btn btn-warning editarbtn" data-toggle="modal" data-target="#modificar"><i class="far fa-edit"></i> Editar</button>
+                        <button type="button" class="btn btn-danger eliminarbtn" data-toggle="modal" data-target="#eliminar"><i class="fas fa-trash"></i></button>
+                    </td>
+                </tr>
                 
                 <?php
                     }
