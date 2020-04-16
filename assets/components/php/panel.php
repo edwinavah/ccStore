@@ -4,7 +4,8 @@
     $conexion = conexion();
 
     ini_set('date.timezone', 'America/Mexico_City');
-    $count_elementos = $conexion->query("SELECT * FROM productos");
+    $count_todos_elemetos = $conexion->query("SELECT * FROM productos");
+    $count_todos_elemetos_agotar = $conexion->query("SELECT * FROM productos WHERE stock < 3");
 ?>
 
 <div class="row mt-4">
@@ -15,19 +16,20 @@
                     <i class="fas fa-server icon"></i>
                 </div>
                 <div class="col-10 text-right p-4">
-                    <h1><?php echo $count_elementos->num_rows; ?></h1>
+                    <h1><?php echo $count_todos_elemetos->num_rows; ?></h1>
                     <small>Todos los elementos</small>
                 </div>
             </div>
-
-            <div class="row rounded-bottom card-bottom border border-info text-info">
-                <div class="col-10 mt-3 pl-4">
-                    <p>Ver detalles</p>
+            <a href="productos.html">
+                <div class="row rounded-bottom card-bottom border border-info text-info">
+                    <div class="col-10 mt-3 pl-4">
+                        <p>Ver detalles</p>
+                    </div>
+                    <div class="col-2 mt-3 text-right pr-4">
+                        <i class="far fa-arrow-alt-circle-right"></i>
+                    </div>
                 </div>
-                <div class="col-2 mt-3 text-right pr-4">
-                    <i class="far fa-arrow-alt-circle-right"></i>
-                </div>
-            </div>
+            </a>
         </div>
     </div>
 
@@ -38,19 +40,21 @@
                     <i class="fas fa-exclamation-triangle icon"></i>
                 </div>
                 <div class="col-10 text-right p-4">
-                    <h1>0</h1>
+                    <h1><?php echo $count_todos_elemetos_agotar->num_rows; ?></h1>
                     <small>Elementos a punto de agotar</small>
                 </div>
             </div>
 
-            <div class="row rounded-bottom card-bottom border border-warning text-warning">
-                <div class="col-10 mt-3 pl-4">
-                    <p>Ver detalles</p>
+            <a href="productosAgotar.html">
+                <div class="row rounded-bottom card-bottom border border-warning text-warning">
+                    <div class="col-10 mt-3 pl-4">
+                        <p>Ver detalles</p>
+                    </div>
+                    <div class="col-2 mt-3 text-right pr-4">
+                        <i class="far fa-arrow-alt-circle-right"></i>
+                    </div>
                 </div>
-                <div class="col-2 mt-3 text-right pr-4">
-                    <i class="far fa-arrow-alt-circle-right"></i>
-                </div>
-            </div>
+            </a>
         </div>
     </div>
 
