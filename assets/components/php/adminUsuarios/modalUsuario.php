@@ -63,7 +63,7 @@
                         <input type="hidden" name="id_usuarios" id="update_id">
                         <div class="form-group">
                             <label for="" class="mt-2">Nombre de Usuario</label>
-                            <input type="text" name="nombre" class="form-control" id="nombre">
+                            <input type="text" name="nombre" class="form-control" id="nombre"><?php echo $registros['usuario'] ?>
 
                             <div class="form-row">
                                 <div class="col">
@@ -78,13 +78,10 @@
                             <div class="form-row">
                                 <div class="col">
                                     <label for="" class="mt-2">Tipo de Usuario</label>
-                                    <select name="transporte" id="tipo_usuario" name="tipo_usuario">
-                                        <option id="admin">Administrador</option>
-                                        <option id="normal">Usuario normal</option>
-                                    </select>
+                                    <input type="text" name="tipo_usuario" class="form-control" id="tipo_usuario">
                                 </div>
                             </div>
-                            
+
                             <br>
                             <div id="respuesta1" style="background:sandybrown; text-align:center; color:whitesmoke"></div>
 

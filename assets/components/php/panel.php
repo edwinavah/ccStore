@@ -1,11 +1,12 @@
 <!-- CONTADOR DE ELEMENTOS -->
 <?php
-    require_once "conexion.php";
-    $conexion = conexion();
+require_once "conexion.php";
+$conexion = conexion();
 
-    ini_set('date.timezone', 'America/Mexico_City');
-    $count_todos_elemetos = $conexion->query("SELECT * FROM productos");
-    $count_todos_elemetos_agotar = $conexion->query("SELECT * FROM productos WHERE stock < 3");
+ini_set('date.timezone', 'America/Mexico_City');
+$count_todos_elemetos = $conexion->query("SELECT * FROM productos");
+$count_todos_elemetos_agotar = $conexion->query("SELECT * FROM productos WHERE stock < 5");
+$count_todos_usuarios = $conexion->query("SELECT * FROM usuarios");
 ?>
 
 <div class="row mt-4">
@@ -88,19 +89,21 @@
                     <i class="fas fa-users icon"></i>
                 </div>
                 <div class="col-10 text-right p-4">
-                    <h1>0</h1>
+                    <h1><?php echo $count_todos_usuarios->num_rows; ?></h1>
                     <small>Usuarios registrados</small>
                 </div>
             </div>
 
-            <div class="row rounded-bottom card-bottom border border-success text-success">
-                <div class="col-10 mt-3 pl-4">
-                    <p>Ver detalles</p>
+            <a href="adminUsuarios.html">
+                <div class="row rounded-bottom card-bottom border border-success text-success">
+                    <div class="col-10 mt-3 pl-4">
+                        <p>Ver detalles</p>
+                    </div>
+                    <div class="col-2 mt-3 text-right pr-4">
+                        <i class="far fa-arrow-alt-circle-right"></i>
+                    </div>
                 </div>
-                <div class="col-2 mt-3 text-right pr-4">
-                    <i class="far fa-arrow-alt-circle-right"></i>
-                </div>
-            </div>
+            </a>
         </div>
     </div>
 
@@ -108,7 +111,7 @@
         <div class="m-3">
             <div class="row bg-dark rounded-top card-top text-white">
                 <div class="col-2 p-4">
-                <i class="far fa-edit icon"></i>
+                    <i class="far fa-edit icon"></i>
                 </div>
                 <div class="col-10 text-right p-4">
                     <h1>0</h1>
