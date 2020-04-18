@@ -28,6 +28,8 @@ CREATE TABLE usuarios (
     PRIMARY KEY (id_usuarios)
 );
 
+INSERT INTO usuarios (nombre, usuario, contrasena, tipoUsuario) VALUES ("Edwin Nava Hernandez", "iProxy", "1234", "Administrador");
+
 CREATE TABLE adminRegistros (
     id_adminRegistros INT NOT NULL AUTO_INCREMENT,
     usuario VARCHAR(100) NOT NULL,
