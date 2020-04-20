@@ -21,7 +21,7 @@ body {
 
 /* --- LOGO EN MENU --- */
 .barra-lateral .logo {
-	background: #00a2ff;
+	background: #007bff;
 	padding: 20px;
 }
 
@@ -40,7 +40,7 @@ body {
 }
 
 .barra-lateral .menu a:hover {
-	background: #00a2ff;
+	background: #007bff;
 	text-decoration: none;
 }
 

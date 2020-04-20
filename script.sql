@@ -25,10 +25,9 @@ CREATE TABLE usuarios (
     usuario VARCHAR(20) NOT NULL,
     contrasena VARCHAR(100) NOT NULL,
     tipoUsuario VARCHAR(15) NOT NULL,
+    archivo VARCHAR(500),
     PRIMARY KEY (id_usuarios)
 );
-
-INSERT INTO usuarios (nombre, usuario, contrasena, tipoUsuario) VALUES ("Edwin Nava Hernandez", "iProxy", "1234", "Administrador");
 
 CREATE TABLE adminRegistros (
     id_adminRegistros INT NOT NULL AUTO_INCREMENT,
