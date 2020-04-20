@@ -78,7 +78,7 @@
                             <div class="form-row">
                                 <div class="col">
                                     <label for="" class="mt-2">Cantidad en stock</label>
-                                    <input type="number" name="stock" class="form-control" id="stock">
+                                    <input type="number" name="stock" class="form-control" id="stock" disabled>
                                 </div>
                                 
                                 <div class="col">

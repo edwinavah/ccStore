@@ -5,7 +5,7 @@ $conexion = conexion();
 
 ini_set('date.timezone', 'America/Mexico_City');
 $count_todos_elemetos = $conexion->query("SELECT * FROM productos");
-$count_todos_elemetos_agotar = $conexion->query("SELECT * FROM productos WHERE stock < 5");
+$count_todos_elemetos_agotar = $conexion->query("SELECT * FROM productos WHERE stock < 3");
 $count_todos_usuarios = $conexion->query("SELECT * FROM usuarios");
 ?>
 
