@@ -1,6 +1,6 @@
 <body>
-    <!-- Modal eliminar-->
-    <div class="modal fade" id="eliminar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-family: Candara;">
+    <!-- MODAL ELIMINAR -->
+    <div class="modal fade" id="eliminar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -14,10 +14,10 @@
                     <form id="delete" method="POST">
                         <input type="hidden" name="id_productos" id="delete_id">
                         <br>
-                            <div id="respuesta" style="background:sandybrown; text-align:center; color:whitesmoke"></div>
+                            <div id="respuesta" style="background: #17a2b8; text-align: center; color: whitesmoke; font-weight: 700;"></div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancelar</button>
-                            <button type="button" id="eliminar" class="btn btn-outline-danger" data-dismiss="modal" onclick="location.reload();">Eliminar</button>
+                            <button type="button" id="eliminar" class="btn btn-danger" data-dismiss="modal" onclick="location.reload();">Eliminar</button>
                         </div>
                     </form>
                 </div>
@@ -48,8 +48,8 @@
         });
     </script>
 
-    <!-- Modal modificar-->
-    <div class="modal fade" id="modificar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-family: Candara;">
+    <!-- MODAL MODIFICAR PRODUCTO -->
+    <div class="modal fade" id="modificar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -78,7 +78,7 @@
                             <div class="form-row">
                                 <div class="col">
                                     <label for="" class="mt-2">Cantidad en stock</label>
-                                    <input type="text" name="stock" class="form-control" id="stock">
+                                    <input type="number" name="stock" class="form-control" id="stock">
                                 </div>
                                 
                                 <div class="col">
@@ -95,13 +95,13 @@
                             <textarea class="form-alpha form-control" id="especificaciones" name="especificaciones" rows="4" placeholder="Escribe algúna especificación del producto"></textarea>
                                 
                                 <br>
-                                <div id="respuesta1" style="background:sandybrown; text-align:center; color:whitesmoke"></div>
+                                <div id="respuesta1" style="background: #17a2b8; text-align: center; color: whitesmoke; font-weight: 700;"></div>
 
 
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-dark" data-dismiss="modal" onclick="location.reload();">Cerrar</button>
-                            <button type="button" id="guardar" class="btn btn-outline-warning">Guardar cambios</button>
+                            <button type="button" id="guardar" class="btn btn-warning">Guardar cambios</button>
                         </div>
                     </form>
                 </div>
@@ -137,8 +137,8 @@
     });
 </script>
 
-<!-- Modal insertar-->
-<div class="modal fade" id="insertar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-family: Candara;">
+<!-- MODAL AGREGAR PRODUCTO -->
+<div class="modal fade" id="insertar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -167,7 +167,7 @@
                             <div class="form-row">
                                 <div class="col">
                                     <label for="" class="mt-2">Cantidad en stock</label>
-                                    <input type="text" name="stock" class="form-control" id="stock">
+                                    <input type="number" name="stock" class="form-control" id="stock">
                                 </div>
 
                                 <div class="col">
@@ -184,12 +184,12 @@
                             <textarea class="form-alpha form-control" id="especificaciones" name="especificaciones" rows="4" placeholder="Escribe algúna especificación del producto"></textarea>
                             
                             <br>
-                            <div id="respuesta2" style="background:sandybrown; text-align:center; color:whitesmoke"></div>
+                            <div id="respuesta2" style="background: #17a2b8; text-align: center; color: whitesmoke; font-weight: 700;"></div>
 
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-dark" data-dismiss="modal" onclick="location.reload();">Cerrar</button>
-                            <button type="button" id="guardarNew" class="btn btn-outline-warning">Guardar</button>
+                            <button type="button" id="guardarNew" class="btn btn-success">Guardar</button>
                         </div>
                     </form>
                 </div>

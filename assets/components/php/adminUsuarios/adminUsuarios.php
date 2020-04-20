@@ -5,7 +5,7 @@
 
 <body>
     <?php
-        $sentencia = "SELECT * FROM usuarios";
+        $sentencia = "SELECT * FROM usuarios ORDER BY tipoUsuario ASC";
         $query = mysqli_query($conexion, $sentencia);
         while ($buscar = mysqli_fetch_row($query)) {
             $datos = $buscar[0]."||".

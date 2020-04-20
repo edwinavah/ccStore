@@ -1,6 +1,6 @@
 <body>
     <!-- MODAL ELIMINAR USUARIO -->
-    <div class="modal fade" id="eliminarUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-family: Candara;">
+    <div class="modal fade" id="eliminarUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -15,10 +15,10 @@
                     <form id="delete" method="POST">
                         <input type="hidden" name="id_usuarios" id="delete_id">
                         <br>
-                        <div id="respuesta" style="background:sandybrown; text-align:center; color:whitesmoke"></div>
+                        <div id="respuesta" style="background: #17a2b8; text-align: center; color: whitesmoke; font-weight: 700;"></div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancelar</button>
-                            <button type="button" id="eliminar" class="btn btn-outline-danger" data-dismiss="modal" onclick="location.reload();">Eliminar</button>
+                            <button type="button" id="eliminar" class="btn btn-danger" data-dismiss="modal" onclick="location.reload();">Eliminar</button>
                         </div>
                     </form>
                 </div>
@@ -50,7 +50,7 @@
     </script>
 
     <!-- MODAL MODIFICAR USUARIO -->
-    <div class="modal fade" id="modificarUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" style="font-family: Candara;">
+    <div class="modal fade" id="modificarUsuario" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -84,12 +84,12 @@
                             </div>
 
                             <br>
-                            <div id="respuesta1" style="background:sandybrown; text-align:center; color:whitesmoke"></div>
+                            <div id="respuesta1" style="background: #17a2b8; text-align: center; color: whitesmoke; font-weight: 700;"></div>
 
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-dark" data-dismiss="modal" onclick="location.reload();">Cerrar</button>
-                            <button type="button" id="guardar" class="btn btn-outline-warning">Guardar cambios</button>
+                            <button type="button" id="guardar" class="btn btn-warning">Guardar cambios</button>
                         </div>
                     </form>
                 </div>
@@ -128,7 +128,7 @@
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" style="font-size: 1.5rem;" id="exampleModalLabel">Crear nuevo usuario</h5>
+                    <h5 class="modal-title" style="font-size: 1.5rem;" id="exampleModalLabel">Crear Usuario</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -149,11 +149,6 @@
                                         <label>Contraseña:</label>
                                         <input type="password" name="contrasena" id="contrasena" class="form-control" required>
                                     </div>
-                
-                                    <!-- <div class="col">
-                                        <label>Tipo de usuario:</label>
-                                        <input type="text" name="tipoUsuario" class="form-control">
-                                    </div> -->
                 
                                     <div class="col">
                                         <label>Tipo de usuario:</label>
