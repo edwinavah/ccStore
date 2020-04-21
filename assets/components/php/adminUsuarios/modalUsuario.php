@@ -162,7 +162,7 @@
                                 
                                 <div class="form-group mt-3">
                                     <label for="">Imagen de usuario:</label>
-                                    <input type="file" name="file" id="archivo" required>
+                                    <input type="file" name="file" id="archivo" required accept="image/*">
                                 </div>
                             </div>
                         </div>

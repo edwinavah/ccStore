@@ -1,6 +1,6 @@
 <?php
-require_once "../conexion.php";
-$conexion = conexion();
+    require_once "../conexion.php";
+    $conexion = conexion();
 ?>
 
 <div class="row mt-4">
@@ -42,7 +42,7 @@ $conexion = conexion();
                     </tr>
 
                 <?php
-                }
+                    }
                 ?>
             </table>
         </div>
