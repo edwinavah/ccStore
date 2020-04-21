@@ -9,7 +9,8 @@ CREATE TABLE productos (
     marca VARCHAR(100) NOT NULL,
     modelo VARCHAR(100) NOT NULL,
     especificaciones VARCHAR(100) NOT NULL,
-    precio DECIMAL(10,2) NOT NULL,
+    precioUSD DECIMAL(10,2) NOT NULL,
+    precioMXN DECIMAL(10,2) NOT NULL,
     stock INT NOT NULL,
     PRIMARY KEY (id_productos)
 );
