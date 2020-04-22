@@ -42,6 +42,7 @@
                     $nombre = $_POST['nombre'];
                     $usuario = $_POST['usuario'];
                     $contrasena = $_POST['contrasena'];
+                    $fechaRegistro = $_POST['fechaRegistro'];
                     $tipoUsuario = $_POST['tipoUsuario'];
 
                     $directorio = "imgUsuarios/";
@@ -72,7 +73,7 @@
                         }
                         
                         $passHash = password_hash($contrasena, PASSWORD_DEFAULT);
-                        $sql = "INSERT INTO usuarios (nombre, usuario, contrasena, tipoUsuario, archivo) VALUES ('$nombre', '$usuario', '$passHash', '$tipoUsuario', '$archivo')";
+                        $sql = "INSERT INTO usuarios (nombre, usuario, contrasena, fechaRegistro, tipoUsuario, archivo) VALUES ('$nombre', '$usuario', '$passHash', '$fechaRegistro', '$tipoUsuario', '$archivo')";
 
                         if (mysqli_query($conexion, $sql)) {
                             echo 

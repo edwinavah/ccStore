@@ -25,6 +25,7 @@ CREATE TABLE usuarios (
     nombre VARCHAR(100) NOT NULL,
     usuario VARCHAR(20) NOT NULL,
     contrasena VARCHAR(100) NOT NULL,
+    fechaRegistro VARCHAR(10) NOT NULL,
     tipoUsuario VARCHAR(15) NOT NULL,
     archivo VARCHAR(500),
     PRIMARY KEY (id_usuarios)

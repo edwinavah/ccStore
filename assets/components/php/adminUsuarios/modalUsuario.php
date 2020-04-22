@@ -149,6 +149,16 @@
                                         <label>Contraseña:</label>
                                         <input type="password" name="contrasena" id="contrasena" class="form-control" required>
                                     </div>
+
+                                    <?php
+                                        ini_set('date.timezone', 'America/Mexico_City');
+                                        $fechaActual = date("d-m-Y");
+                                    ?>
+
+                                    <div class="col d-none">
+                                        <label>Fecha de registro:</label>
+                                        <input type="text" name="fechaRegistro" id="fechaRegistro" class="form-control" value="<?php echo $fechaActual ?>" readonly>
+                                    </div>
                 
                                     <div class="col">
                                         <label>Tipo de usuario:</label>
