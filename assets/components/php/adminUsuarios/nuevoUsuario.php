@@ -94,7 +94,7 @@
                     }
                 }
             }
-            mysqli_close($conexion);    
+            mysqli_close($conexion);
         ?>
     </body>
 </html>

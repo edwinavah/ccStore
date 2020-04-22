@@ -4,41 +4,55 @@
 ?>
 
 <body>
-    <?php
-        $sentencia = "SELECT * FROM usuarios ORDER BY tipoUsuario ASC";
-        $query = mysqli_query($conexion, $sentencia);
-        while ($buscar = mysqli_fetch_row($query)) {
-            $datos = $buscar[0]."||".
-                $buscar[1]."||".
-                $buscar[2]."||".
-                $buscar[3]."||".
-                $buscar[4]."||".
-                $buscar[5];
-    ?>
-    
-    <div class="row mb-2">
-        <div class="col-12 col-lg-4">
-            <div class="card" style="width: 18rem;">
-                <img src="assets/components/php/adminUsuarios/<?php echo $buscar[5] ?>" class="card-img-top" alt="Error en cargar imagen de usuario">
-                <div class="card-body">
-                    <h5 class="card-title"><?php echo $buscar[1] ?></h5>
-                </div>
-                <ul class="list-group list-group-flush">
-                    <li class="list-group-item"><?php echo $buscar[0] ?></li>
-                    <li class="list-group-item"><?php echo $buscar[2] ?></li>
-                    <li class="list-group-item"><?php echo $buscar[4] ?></li>
-                </ul>
-                <div class="card-body">
-                    <button type="button" class="btn btn-dark editarbtn" data-toggle="modal" data-target="#modificarUsuario"><i class="far fa-edit"></i> Modificar</button>
-                    <button type="button" class="btn btn-dark eliminarbtn" data-toggle="modal" data-target="#eliminarUsuario"><i class="fas fa-trash"></i> Eliminar </button>
-                </div>
+    <div class="row mt-4">
+        <div class="col-sm-12">
+            <div class="table-responsive-xl">
+                <table class="table table-sm table-hover table-condensed table-bordered table-striped mt-3">
+                    <thead>
+                        <tr>
+                            <td scope="col" class="text-center align-middle background-table">ID</td>
+                            <td scope="col" class="text-center align-middle background-table">Foto usuario</td>
+                            <td scope="col" class="text-center align-middle background-table">Nombre</td>
+                            <td scope="col" class="text-center align-middle background-table">Usuario</td>
+                            <td scope="col" class="text-center align-middle background-table">Tipo de usuario</td>
+                            <td scope="col" class="text-center align-middle background-table">Acciones</td>
+                        </tr>
+                    </thead>
+
+                    <?php
+                    $sql = "SELECT * FROM usuarios ORDER BY tipoUsuario ASC";
+                    $resultado = mysqli_query($conexion, $sql);
+
+                    while ($buscar = mysqli_fetch_row($resultado)) {
+                        $datos = $buscar[0]."||".
+                            $buscar[1]."||".
+                            $buscar[2]."||".
+                            $buscar[3]."||".
+                            $buscar[4]."||".
+                            $buscar[5];
+                    ?>
+
+                        <tr>
+                            <td class="align-middle"><?php echo $buscar[0] ?></td>
+                            <td class="text-center align-middle" style="min-width: 110px; width: 110px">
+                                <img src="assets/components/php/adminUsuarios/<?php echo $buscar[5] ?>" alt="" style="width: 100px; height: 100px;">
+                            </td>
+                            <td class="align-middle"><?php echo $buscar[1] ?></td>
+                            <td class="align-middle"><?php echo $buscar[2] ?></td>
+                            <td class="align-middle"><?php echo $buscar[4] ?></td>
+                            <td class="text-center align-middle" style="min-width: 125px; width: 125px">
+                                <button type="button" class="btn btn-sm btn-warning editarbtn" data-toggle="modal" data-target="#modificar"><i class="far fa-edit"></i> Editar</button>
+                                <button type="button" class="btn btn-sm btn-danger eliminarbtn" data-toggle="modal" data-target="#eliminar"><i class="fas fa-trash"></i></button>
+                            </td>
+                        </tr>
+
+                    <?php
+                        }
+                    ?>
+                </table>
             </div>
         </div>
     </div>
-
-    <?php
-        }
-    ?>
 </body>
 
 <?php
