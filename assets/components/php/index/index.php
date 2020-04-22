@@ -7,7 +7,7 @@
                 <img src="assets/images/logo.svg" />
             </div>
             <!-- FORMULARIO -->
-            <form class="col-12" action="assets/components/php/iniciarSesion.php" method="POST">
+            <form class="col-12" action="assets/components/php/index/iniciarSesion.php" method="POST">
                 <div class="user-icono">
                     <input type="text" placeholder="Nombre de Usuario" id="usuario" name="usuario" required/>
                 </div>

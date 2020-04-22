@@ -8,14 +8,14 @@
                 $modelo = $_POST['modelo'];
                 $especificaciones = $_POST['especificaciones'];
                 $precio = $_POST['precio'];
-                $stock = $_POST['stock'];
-            if($codigo_barras=="" || $marca=="" || $modelo=="" || $especificaciones=="" || $precio=="" || $stock==""){
+                // $stock = $_POST['stock'];
+                if($codigo_barras=="" || $marca=="" || $modelo=="" || $especificaciones=="" || $precio==""){
                 ?>
                 
                 <?php
                 echo"Campos Vacios";
             }else{
-                $conexion->query("UPDATE productos SET codigo_barras='".$codigo_barras."', marca='".$marca."', modelo='".$modelo."', especificaciones='".$especificaciones."', precio='".$precio."',stock='".$stock."' WHERE id_productos='".$id_productos."' ");
+                $conexion->query("UPDATE productos SET codigo_barras='".$codigo_barras."', marca='".$marca."', modelo='".$modelo."', especificaciones='".$especificaciones."', precio='".$precio."' WHERE id_productos='".$id_productos."' ");
                 echo"Se guardo exitosamente";
             }
             

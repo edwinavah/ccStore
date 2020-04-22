@@ -1,12 +1,12 @@
 <!-- CONTADOR DE ELEMENTOS -->
 <?php
-require_once "conexion.php";
-$conexion = conexion();
+    require_once "conexion.php";
+    $conexion = conexion();
 
-ini_set('date.timezone', 'America/Mexico_City');
-$count_todos_elemetos = $conexion->query("SELECT * FROM productos");
-$count_todos_elemetos_agotar = $conexion->query("SELECT * FROM productos WHERE stock < 3");
-$count_todos_usuarios = $conexion->query("SELECT * FROM usuarios");
+    ini_set('date.timezone', 'America/Mexico_City');
+    $count_todos_elemetos = $conexion->query("SELECT * FROM productos");
+    $count_todos_elemetos_agotar = $conexion->query("SELECT * FROM productos WHERE stock < 3");
+    $count_todos_usuarios = $conexion->query("SELECT * FROM usuarios");
 ?>
 
 <div class="row mt-4">
