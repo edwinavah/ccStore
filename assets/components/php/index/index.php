@@ -9,14 +9,11 @@
             <!-- FORMULARIO -->
             <form class="col-12" action="assets/components/php/iniciarSesion.php" method="POST">
                 <div class="user-icono">
-                    <input type="text" placeholder="Nombre de Usuario" id="usuario" name="usuario" />
+                    <input type="text" placeholder="Nombre de Usuario" id="usuario" name="usuario" required/>
                 </div>
                 <div class="password-icono">
-                    <input type="password" placeholder="Contraseña" id="contrasena" name="contrasena" />
+                    <input type="password" placeholder="Contraseña" id="contrasena" name="contrasena" required/>
                 </div>
-
-                <br>
-                <div id="respuesta2" style="background:sandybrown; text-align:center; color:whitesmoke"></div>
 
                 <div class="row mb-4">
                     <div class="col-12">
@@ -27,12 +24,3 @@
         </div>
     </div>
 </div>
-<script>
-    $('#buttonlg').on('click',function(){
-        $.ajax({
-            success: function(res){
-                $('#respuesta2').html(res);
-            }
-        });
-    });
-    </script>
