@@ -9,16 +9,14 @@ CREATE TABLE productos (
     marca VARCHAR(100) NOT NULL,
     modelo VARCHAR(100) NOT NULL,
     especificaciones VARCHAR(100) NOT NULL,
-    precioUSD DECIMAL(10,2) NOT NULL,
-    precioMXN DECIMAL(10,2) NOT NULL,
     stock INT NOT NULL,
     PRIMARY KEY (id_productos)
 );
 
-INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Crayola", "Super Tips 100", "Marcadores Lavables", "599.99", 100);
-INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Crayola", "Super Tips 50", "Marcadores Lavables", "259.99", 30);
-INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Samsung", "4K 55'", "Pantalla Samsung", "15999.99", 2);
-INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Samsung", "SoundBar", "Bocina SoundBar", "1299.99", 4);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Crayola", "Super Tips 100", "Marcadores Lavables", 100);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Crayola", "Super Tips 50", "Marcadores Lavables", 30);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Samsung", "4K 55'", "Pantalla Samsung", 2);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Samsung", "SoundBar", "Bocina SoundBar", 4);
 
 CREATE TABLE usuarios (
     id_usuarios INT NOT NULL AUTO_INCREMENT,
