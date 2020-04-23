@@ -1,6 +1,6 @@
 <!-- CONTADOR DE ELEMENTOS -->
 <?php
-    require_once "conexion.php";
+    require_once "../conexion.php";
     $conexion = conexion();
 
     ini_set('date.timezone', 'America/Mexico_City');
@@ -21,7 +21,7 @@
                     <small>Todos los elementos</small>
                 </div>
             </div>
-            <a href="productos.html">
+            <a href="productos.php">
                 <div class="row rounded-bottom card-bottom border border-info text-info">
                     <div class="col-10 mt-3 pl-4">
                         <p>Ver detalles</p>
@@ -46,7 +46,7 @@
                 </div>
             </div>
 
-            <a href="productosAgotar.html">
+            <a href="productosAgotar.php">
                 <div class="row rounded-bottom card-bottom border border-warning text-warning">
                     <div class="col-10 mt-3 pl-4">
                         <p>Ver detalles</p>
@@ -94,7 +94,7 @@
                 </div>
             </div>
 
-            <a href="adminUsuarios.html">
+            <a href="adminUsuarios.php">
                 <div class="row rounded-bottom card-bottom border border-success text-success">
                     <div class="col-10 mt-3 pl-4">
                         <p>Ver detalles</p>

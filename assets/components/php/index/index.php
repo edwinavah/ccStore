@@ -9,10 +9,10 @@
             <!-- FORMULARIO -->
             <form class="col-12" action="assets/components/php/index/iniciarSesion.php" method="POST">
                 <div class="user-icono">
-                    <input type="text" placeholder="Nombre de Usuario" id="usuario" name="usuario" required/>
+                    <input type="text" placeholder="Nombre de Usuario" name="usuario" required/>
                 </div>
                 <div class="password-icono">
-                    <input type="password" placeholder="Contraseña" id="contrasena" name="contrasena" required/>
+                    <input type="password" placeholder="Contraseña" name="contrasena" required/>
                 </div>
 
                 <div class="row mb-4">

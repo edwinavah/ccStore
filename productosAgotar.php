@@ -21,6 +21,38 @@
     </head>
     
     <body>
+        <?php
+            require_once "assets/components/php/conexion.php";
+            $conexion = conexion();
+
+            // INICION INICIADA
+            session_start(); 
+            if (isset($_SESSION['loggedin'])) {  
+                //INICIO SESION 
+            }
+            else {
+                //NO INICIO SESION
+                echo 
+                '<div class="text-center mt-5">
+                    <img src="assets/images/ccStore_Azul.svg" alt="" style="width: 400px; height: auto;">
+                    <h1 class="mt-2"><strong>Upps!</strong></h1>
+                    <p>Necesitas iniciar sesión para acceder a esta pagina. <a href="index.php">Haga clic aquí para iniciar sesión</a></p>
+                </div>';
+                exit;
+            }
+            // SESION FINALIZADA POR INACTIVIDAD
+            $now = time();          
+                if ($now > $_SESSION['expire']) {
+                    session_destroy();
+                    echo 
+                    '<div class="text-center mt-5">
+                        <img src="assets/images/ccStore_Azul.svg" alt="" style="width: 400px; height: auto;">
+                        <h1 class="mt-2"><strong>Upps!</strong></h1>
+                        <p>Por inactividad y seguridad de los datos tu sesión a finalizado. <a href="index.php">Haga clic aquí para iniciar sesión</a></p>
+                    </div>';
+                    exit;
+            }
+        ?>
         <!-- PRODUCTOS -->
         <main>
             <!-- AGREGANDO NAVBAR IZQUIERDA -->

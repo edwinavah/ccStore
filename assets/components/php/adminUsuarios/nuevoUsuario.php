@@ -34,7 +34,7 @@
                 '<div class="text-center mt-5">
                     <img src="../../../../assets/images/ccStore_Azul.svg" alt="" style="width: 400px; height: auto;">
                     <h1 class="mt-2"><strong>Upps!</strong></h1>
-                    <p>El nombre de usuario ya se encuentra en nuestra base de datos. <a href="../../../../adminUsuarios.html">Haga clic aquí para regresar</a></p>
+                    <p>El nombre de usuario ya se encuentra en nuestra base de datos. <a href="../../../../adminUsuarios.php">Haga clic aquí para regresar</a></p>
                 </div>';
             
             } else {
@@ -79,7 +79,7 @@
                             echo 
                             "<div class='alert alert-success text-center mt-4' role='alert'>
                                 <h3>El usuario se creo con éxito</h3>
-                                <a class='btn btn-success' href='../../../../adminUsuarios.html' role='button'>Regresar</a>
+                                <a class='btn btn-success' href='../../../../adminUsuarios.php' role='button'>Regresar</a>
                             </div>";		
                         } else {
                             echo "Error: " . $sql . "<br>" . mysqli_error($conexion);
@@ -90,7 +90,7 @@
                         '<div class="text-center mt-5">
                             <img src="../../../../assets/images/ccStore_Azul.svg" alt="" style="width: 400px; height: auto;">
                             <h1 class="mt-2"><strong>Upps!</strong></h1>
-                            <p>El archivo no es una imagen, solo se permiten archivos (JPG, JPEG, PNG). <a href="../../../../adminUsuarios.html">Haga clic aquí para regresar</a></p>
+                            <p>El archivo no es una imagen, solo se permiten archivos (JPG, JPEG, PNG). <a href="../../../../adminUsuarios.php">Haga clic aquí para regresar</a></p>
                         </div>';
                     }
                 }

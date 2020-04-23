@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="assets/libraries/css/bootstrap.css">
         <link rel="stylesheet" href="assets/libraries/css/alertify.css">
         <link rel="stylesheet" href="assets/libraries/css/themes/default.css">
-        <link rel="stylesheet" href="assets/components/css/estilos.css">
+        <link rel="stylesheet" href="assets/components/css/index.css">
 
         <script defer src="assets/libraries/js/all.js"></script>
         <script src="assets/libraries/js/jquery-3.4.1.min.js"></script>
@@ -19,37 +19,38 @@
         <link rel="shortcut icon" href="assets/images/favicon.svg">
         <title>ccStore | Inicio</title>
     </head>
-    
+     
     <body>
+        <?php
+            require_once "assets/components/php/conexion.php";
+            $conexion = conexion();
+
+            // INICION INICIADA
+            session_start(); 
+            if (isset($_SESSION['loggedin'])) {  
+                header("Location: panel.php");
+            }
+        ?>
         <!-- PRINCIPAL -->
-        <main>
-            <!-- AGREGANDO NAVBAR IZQUIERDA -->
+        <main class="main col">
             <div class="container-fluid">
-                <div class="row">
-                    <div id="navbar">
-                        <!-- CONTENIDO NAVBAR -->
-                    </div>
-                    
-                    <!-- CONTENIDO PRINCIPAL -->
-                    <main class="main col">
-                       <div class="container-fluid">
-                            <div class="row">
-                                <div class="col-12">
-                                    <div id="panel"></div>
-                                </div>
-                            </div>
-                        </div>
-                    </main>
-                </div>
-            </div>
-        </main>
+                 <br>
+                 <div class="row">
+                     <div class="col-12">
+                         <div id="index">
+                             <!-- CONTENIDO -->
+                         </div>
+                     </div>
+                 </div>
+                 
+             </div>
+         </main>
     </body>
 </html>
 
 <!-- CODIGO JAVASCRIPT PARA CONTENIDO DE PHP -->
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#navbar').load('assets/components/html/navbar.html');
-        $('#panel').load('assets/components/php/panel.php');
+        $('#index').load('assets/components/php/index/index.php');
     });
 </script>

@@ -1,18 +1,66 @@
-<?php 
-    require_once "../conexion.php";
-    $conexion = conexion();
+<!doctype html>
+<html lang="en">
+	<head>
+    <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <link rel="stylesheet" href="../../../../assets/libraries/css/all.css">
+        <link rel="stylesheet" href="../../../../assets/libraries/css/bootstrap.css">
+        <link rel="stylesheet" href="../../../../assets/libraries/css/alertify.css">
+        <link rel="stylesheet" href="../../../../assets/libraries/css/themes/default.css">
+        <link rel="stylesheet" href="../../../../assets/components/css/estilos.css">
 
-    session_start();
-    $usuario = $_POST['usuario'];
-    $contrasena = $_POST['contrasena'];
+        <script defer src="../../../../assets/libraries/js/all.js"></script>
+        <script src="../../../../assets/libraries/js/jquery-3.4.1.min.js"></script>
+        <script src="../../../../assets/libraries/js/bootstrap.min.js"></script>
+        <script src="../../../../assets/libraries/js/alertify.js"></script>
+        
 
-    $q = " SELECT COUNT(*) as contar FROM usuarios WHERE usuario = '$usuario' and contrasena = '$contrasena' ";
-    $consulta = mysqli_query($conexion, $q);
-    $array= mysqli_fetch_array($consulta);
+        <!-- FAVICON Y TITULO EN EL NAVEGADOR  -->
+        <link rel="shortcut icon" href="assets/images/favicon.svg">
+        <title>ccStore | Iniciar Sesion</title>
+    </head>
 
-    if($array['contar']){
-        header("Location: ../../../panel.html");
-    }else{
-        echo"error";
-    }
-?>
+	<body>
+        <div class="container">
+            <?php
+                // error_reporting(0);
+                session_start();
+
+                require_once "../conexion.php";
+                $conexion = conexion();
+
+                $usuario = $_POST['usuario']; 
+                $contrasena = $_POST['contrasena'];
+                
+                $sql = "SELECT nombre, usuario, contrasena FROM usuarios WHERE usuario = '$usuario'";
+                $resultado = mysqli_query($conexion, $sql);
+                
+                $row = mysqli_fetch_assoc($resultado);
+
+                $hash = $row['contrasena'];
+
+                if (password_verify($_POST['contrasena'], $hash)) {
+                            
+                    $_SESSION['loggedin'] = true;
+                    $_SESSION['name'] = $row['nombre'];
+                    $_SESSION['start'] = time();
+                    $_SESSION['expire'] = $_SESSION['start'] + (1 * 3600);						
+                    
+                    header("Location: ../../../../panel.php");
+                
+                } else {
+                    echo 
+                    "<div class='text-center mt-5'>
+                        <img src='../../../../assets/images/ccStore_Azul.svg' alt='' style='width: 400px; height: auto;'>
+                    </div>
+                    <div class='alert alert-danger mt-4 text-center' role='alert'>¡Nombre de usuario y/o contraseña incorrecto!
+                        <p class='mt-2'>
+                            <a href='../../../../index.php'><strong>¡Haga clic aquí para intentar de nuevo!</strong></a>
+                        </p>
+                    </div>";			
+                }
+            ?>
+        </div>
+	</body>
+</html>

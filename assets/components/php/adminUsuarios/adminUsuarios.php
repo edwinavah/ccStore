@@ -45,7 +45,7 @@
                             <td class="align-middle"><?php echo $buscar[2] ?></td>
                             <td class="align-middle"><?php echo $buscar[4] ?></td>
                             <td class="align-middle"><?php echo $buscar[5] ?></td>
-                            <td class="text-center align-middle" style="min-width: 105px; width: 105px">
+                            <td class="text-center align-middle" style="min-width: 120px; width: 120px">
                                 <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modificar"><i class="far fa-edit"></i> Editar</button>
                                 <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#eliminar"><i class="fas fa-trash"></i></button>
                             </td>
