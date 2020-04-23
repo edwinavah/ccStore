@@ -13,13 +13,12 @@
                         <td scope="col" class="text-center align-middle background-table">Marca</td>
                         <td scope="col" class="text-center align-middle background-table">Modelo</td>
                         <td scope="col" class="text-center align-middle background-table">Especificaciones</td>
-                        <td scope="col" class="text-center align-middle background-table">Precio</td>
                         <td scope="col" class="text-center align-middle background-table">Stock</td>
                     </tr>
                 </thead>
 
                 <?php
-                $sql = "SELECT id_productos, codigo_barras, marca, modelo, especificaciones, precio, stock FROM productos WHERE stock < 3";
+                $sql = "SELECT id_productos, codigo_barras, marca, modelo, especificaciones, stock FROM productos WHERE stock < 3";
                 $resultado = mysqli_query($conexion, $sql);
 
                 while ($buscar = mysqli_fetch_row($resultado)) {
@@ -28,8 +27,7 @@
                         $buscar[2] . "||" .
                         $buscar[3] . "||" .
                         $buscar[4] . "||" .
-                        $buscar[5] . "||" .
-                        $buscar[6];
+                        $buscar[5];
                 ?>
 
                     <tr>
@@ -38,7 +36,6 @@
                         <td class="align-middle"><?php echo $buscar[3] ?></td>
                         <td class="align-middle"><?php echo $buscar[4] ?></td>
                         <td class="align-middle"><?php echo $buscar[5] ?></td>
-                        <td class="align-middle"><?php echo $buscar[6] ?></td>
                     </tr>
 
                 <?php

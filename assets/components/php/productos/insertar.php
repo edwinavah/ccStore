@@ -7,13 +7,26 @@
     $marca = $_POST['marca'];
     $modelo = $_POST['modelo'];
     $especificaciones = $_POST['especificaciones'];
-    $precio = $_POST['precio'];
     $stock = $_POST['stock'];
 
-    if($codigo_barras=="" || $marca=="" || $modelo=="" || $especificaciones=="" || $precio=="" || $stock==""){
-        echo"Algunos campos están vacíos";
+    if($marca=="" || $modelo=="" || $especificaciones=="" || $stock==""){
+        echo'
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <strong>Error. </strong> No se permiten campos vacios.
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        ';
     } else {
-        $conexion->query("INSERT INTO productos (codigo_barras,marca,modelo,especificaciones,precio,stock) values ('$codigo_barras','$marca','$modelo','$especificaciones','$precio','$stock')");
-        echo"Se guardo el producto con éxito";
+        $conexion->query("INSERT INTO productos (codigo_barras,marca,modelo,especificaciones,stock) values ('$codigo_barras','$marca','$modelo','$especificaciones','$stock')");
+        echo'
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                    <strong>Guardado. </strong> El proceso fue exitoso.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                ';
     }  
 ?>

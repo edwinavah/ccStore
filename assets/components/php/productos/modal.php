@@ -62,9 +62,16 @@
                     <form id="update" method="POST">
                         <input type="hidden" name="id_productos" id="update_id">
                         <div class="form-group">
-                            <label for="" class="mt-2">Código de barras</label>
-                            <input type="number" name="codigo_barras" class="form-control" id="codigo_barras">
-
+                            <div class="form-row">
+                                <div class="col">
+                                    <label for="" class="mt-2">Código de barras</label>
+                                    <input type="number" name="codigo_barras" class="form-control" id="codigo_barras">
+                                </div>
+                                <div class="col">
+                                    <label for="" class="mt-2">Cantidad en stock</label>
+                                    <input type="number" name="stock" class="form-control" id="stock" >
+                                </div>
+                            </div>
                             <div class="form-row">
                                 <div class="col">
                                     <label for="" class="mt-2">Marca</label>
@@ -72,30 +79,14 @@
                                 </div>
                                 <div class="col">
                                     <label for="" class="mt-2">Modelo</label>
-                                    <input type="text" name="modelo" class="form-control" id="modelo">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col">
-                                    <label for="" class="mt-2">Cantidad en stock</label>
-                                    <input type="number" name="stock" class="form-control" id="stock" disabled>
-                                </div>
-                                
-                                <div class="col">
-                                    <label for="" class="mt-2">Precio $USD</label>
-                                    <input type="number" placeholder="0.00" step="0.01"  class="form-control">
-                                </div>
-
-                                <div class="col">
-                                    <label for="" class="mt-2">Precio $MXN</label>
-                                    <input type="number" placeholder="0.00" step="0.01" name="precio" class="form-control" id="precio">
+                                    <input type="text" name="modelo" class="form-control" id="modelo" >
                                 </div>
                             </div>
                             <label for="" class="mt-2">Especificaciones</label>
                             <textarea class="form-alpha form-control" id="especificaciones" name="especificaciones" rows="4" placeholder="Escribe algúna especificación del producto"></textarea>
                                 
                                 <br>
-                                <div id="respuesta1" style="background: #17a2b8; text-align: center; color: whitesmoke; font-weight: 700;"></div>
+                                <div id="respuesta1" style="text-align: center;"></div>
 
 
                         </div>
@@ -120,8 +111,7 @@
 		$('#codigo_barras').val(datos[1]);
 		$('#marca').val(datos[2]);
         $('#modelo').val(datos[3]);
-        $('#stock').val(datos[6]);
-        $('#precio').val(datos[5]);
+        $('#stock').val(datos[5]);
         $('#especificaciones').val(datos[4]);
 
         $('#guardar').on('click',function(){
@@ -151,9 +141,16 @@
                     <form id="insert" method="POST">
                         <input type="hidden" name="id_productos" id="new_id">
                         <div class="form-group">
-                            <label for="" class="mt-2">Código de barras</label>
-                            <input type="number" name="codigo_barras" class="form-control" id="codigo_barras">
-
+                            <div class="form-row">
+                                <div class="col">
+                                    <label for="" class="mt-2">Código de barras</label>
+                                    <input type="number" name="codigo_barras" class="form-control" id="codigo_barras">
+                                </div>
+                                <div class="col">
+                                    <label for="" class="mt-2">Cantidad en stock</label>
+                                    <input type="number" name="stock" class="form-control" id="stock" >
+                                </div>
+                            </div>
                             <div class="form-row">
                                 <div class="col">
                                     <label for="" class="mt-2">Marca</label>
@@ -161,30 +158,14 @@
                                 </div>
                                 <div class="col">
                                     <label for="" class="mt-2">Modelo</label>
-                                    <input type="text" name="modelo" class="form-control" id="modelo">
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="col">
-                                    <label for="" class="mt-2">Cantidad en stock</label>
-                                    <input type="number" name="stock" class="form-control" id="stock">
-                                </div>
-
-                                <div class="col">
-                                    <label for="" class="mt-2">Precio $USD</label>
-                                    <input type="number" placeholder="0.00" step="0.01"  class="form-control">
-                                </div>
-
-                                <div class="col">
-                                    <label for="" class="mt-2">Precio $MXN</label>
-                                    <input type="number" placeholder="0.00" step="0.01" name="precio" class="form-control" id="precio">
+                                    <input type="text" name="modelo" class="form-control" id="modelo" >
                                 </div>
                             </div>
                             <label for="" class="mt-2">Especificaciones</label>
                             <textarea class="form-alpha form-control" id="especificaciones" name="especificaciones" rows="4" placeholder="Escribe algúna especificación del producto"></textarea>
                             
                             <br>
-                            <div id="respuesta2" style="background: #17a2b8; text-align: center; color: whitesmoke; font-weight: 700;"></div>
+                            <div id="respuesta2" style="text-align: center;"></div>
 
                         </div>
                         <div class="modal-footer">

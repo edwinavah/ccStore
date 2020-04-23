@@ -13,7 +13,7 @@
 
                     if (isset($_POST['consulta'])) {
                         $q = $conexion->real_escape_string($_POST['consulta']);
-                        $sql = "SELECT * FROM productos WHERE marca LIKE '%$q%' OR modelo LIKE '%$q%' OR codigo_barras LIKE '%$q%' OR precio LIKE '%$q%'";
+                        $sql = "SELECT * FROM productos WHERE marca LIKE '%$q%' OR modelo LIKE '%$q%' OR codigo_barras LIKE '%$q%' OR especificaciones LIKE '%$q%'";
                     }
 
                     $resultado = $conexion->query($sql);
@@ -25,7 +25,6 @@
                                     <td scope="col" class="text-center align-middle background-table">Marca</td>
                                     <td scope="col" class="text-center align-middle background-table">Modelo</td>
                                     <td scope="col" class="text-center align-middle background-table">Especificaciones</td>
-                                    <td scope="col" class="text-center align-middle background-table">Precio</td>
                                     <td scope="col" class="text-center align-middle background-table">Stock</td>
                                     <td scope="col" class="text-center align-middle background-table">Acciones</td>
                                 </tr>';
@@ -37,8 +36,7 @@
                                         $buscar[2]."||".
                                         $buscar[3]."||".
                                         $buscar[4]."||".
-                                        $buscar[5]."||".
-                                        $buscar[6];
+                                        $buscar[5];
                                     
                                     $salida.='<tr>
                                                 <td class="align-middle d-none">'.$buscar[0].'</td>
@@ -47,7 +45,6 @@
                                                 <td class="align-middle">'.$buscar[3].'</td>
                                                 <td class="align-middle">'.$buscar[4].'</td>
                                                 <td class="align-middle">'.$buscar[5].'</td>
-                                                <td class="align-middle">'.$buscar[6].'</td>
                                                 <td class="text-center align-middle" style="min-width: 125px; width: 125px">
                                                     <button type="button" class="btn btn-sm btn-warning editarbtn" data-toggle="modal" data-target="#modificar"><i class="far fa-edit"></i> Editar</button>
                                                     <button type="button" class="btn btn-sm btn-danger eliminarbtn" data-toggle="modal" data-target="#eliminar"><i class="fas fa-trash"></i></button>

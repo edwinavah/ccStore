@@ -50,15 +50,11 @@
                     header("Location: ../../../../panel.php");
                 
                 } else {
-                    echo 
-                    "<div class='text-center mt-5'>
-                        <img src='../../../../assets/images/ccStore_Azul.svg' alt='' style='width: 400px; height: auto;'>
+                    echo'
+                    <div class="alert alert-danger" role="alert">
+                        <strong>Usuario y/o contraseña incorrectos.</strong>
                     </div>
-                    <div class='alert alert-danger mt-4 text-center' role='alert'>¡Nombre de usuario y/o contraseña incorrecto!
-                        <p class='mt-2'>
-                            <a href='../../../../index.php'><strong>¡Haga clic aquí para intentar de nuevo!</strong></a>
-                        </p>
-                    </div>";			
+                    ';			
                 }
             ?>
         </div>
