@@ -148,21 +148,21 @@
                                 </div>
                                 <div class="col">
                                     <label for="" class="mt-2">Cantidad en stock</label>
-                                    <input type="number" name="stock" class="form-control" id="stock" >
+                                    <input type="number" name="stock" class="form-control" id="stock" required>
                                 </div>
                             </div>
                             <div class="form-row">
                                 <div class="col">
                                     <label for="" class="mt-2">Marca</label>
-                                    <input type="text" name="marca" class="form-control" id="marca">
+                                    <input type="text" name="marca" class="form-control" id="marca" required>
                                 </div>
                                 <div class="col">
                                     <label for="" class="mt-2">Modelo</label>
-                                    <input type="text" name="modelo" class="form-control" id="modelo" >
+                                    <input type="text" name="modelo" class="form-control" id="modelo" required>
                                 </div>
                             </div>
                             <label for="" class="mt-2">Especificaciones</label>
-                            <textarea class="form-alpha form-control" id="especificaciones" name="especificaciones" rows="4" placeholder="Escribe algúna especificación del producto"></textarea>
+                            <textarea class="form-alpha form-control" id="especificaciones" name="especificaciones" rows="4" placeholder="Escribe algúna especificación del producto" required></textarea>
                             
                             <br>
                             <div id="respuesta2" style="text-align: center;"></div>
@@ -170,7 +170,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-dark" data-dismiss="modal" onclick="location.reload();">Cerrar</button>
-                            <button type="button" id="guardarNew" class="btn btn-success">Guardar</button>
+                            <button type="submit" id="guardarNew" class="btn btn-success">Guardar</button>
                         </div>
                     </form>
                 </div>
@@ -187,9 +187,6 @@
             success: function(res){
                 $('#respuesta2').html(res);
             }
-        }).done(function(data){
-            //limpia los campos despues de hacer la peticion 
-            $('#insert').trigger("reset");
         });
     });
     </script>

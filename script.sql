@@ -13,10 +13,10 @@ CREATE TABLE productos (
     PRIMARY KEY (id_productos)
 );
 
-INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Crayola", "Super Tips 100", "Marcadores Lavables", 100);
-INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Crayola", "Super Tips 50", "Marcadores Lavables", 30);
-INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Samsung", "4K 55'", "Pantalla Samsung", 2);
-INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, precio, stock) VALUES (null, "Samsung", "SoundBar", "Bocina SoundBar", 4);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES (null, "Crayola", "Super Tips 100", "Marcadores Lavables", 100);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES (null, "Crayola", "Super Tips 50", "Marcadores Lavables", 30);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES (null, "Samsung", "4K 55'", "Pantalla Samsung", 2);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES (null, "Samsung", "SoundBar", "Bocina SoundBar", 4);
 
 CREATE TABLE usuarios (
     id_usuarios INT NOT NULL AUTO_INCREMENT,

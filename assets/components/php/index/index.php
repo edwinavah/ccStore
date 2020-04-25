@@ -9,13 +9,11 @@
             <!-- FORMULARIO -->
             <form class="col-12" id="entrar" action="assets/components/php/index/iniciarSesion.php" method="POST">
                 <div class="user-icono">
-                    <input type="text" placeholder="Nombre de Usuario" id="usuario" name="usuario" required>
+                    <input type="text" placeholder="Nombre de Usuario" name="usuario" required>
                 </div>
                 <div class="password-icono">
-                    <input type="password" placeholder="Contraseña" id="contrasena" name="contrasena" required>
+                    <input type="password" placeholder="Contraseña" name="contrasena" required>
                 </div>
-
-                            <div id="respuesta3" style="text-align: center;"></div>
 
                 <div class="row mb-4">
                     <div class="col-12">
@@ -26,21 +24,3 @@
         </div>
     </div>
 </div>
-<script>
-    $(function() {
-        $("#entrar").validate({
-        rules: {
-            usuario: {
-                required: true 
-            },
-            contrasena: "required"
-            },
-        messages: {
-            usuario: {
-                required: "Please enter some data"
-                },
-                contrasena: "Please provide some data"
-                }
-        });
-    });
-    </script>
