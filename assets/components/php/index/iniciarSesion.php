@@ -50,11 +50,21 @@
                     header("Location: ../../../../panel.php");
                 
                 } else {
-                    echo'
-                    <div class="alert alert-danger" role="alert">
-                        <strong>Usuario y/o contraseña incorrectos.</strong>
-                    </div>
-                    ';			
+                    echo 
+                    '<div class="row">
+                        <div class="col-12 text-center mt-5">
+                            <img src="../../../images/ccStore_Azul.svg" alt="" style="width: 400px; height: auto;">
+                            <h1 class="mt-2"><strong>Upps!</strong></h1>
+                        </div>
+                        <div class="col-12 text-center">
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>¡Nombre de usuario y/o contraseña incorrecta!</strong> <a href="../../../../index.php">Haga clic aquí para intentar de nuevo.</a><br>
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>';			
                 }
             ?>
         </div>

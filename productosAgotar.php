@@ -32,12 +32,7 @@
             }
             else {
                 //NO INICIO SESION
-                echo 
-                '<div class="text-center mt-5">
-                    <img src="assets/images/ccStore_Azul.svg" alt="" style="width: 400px; height: auto;">
-                    <h1 class="mt-2"><strong>Upps!</strong></h1>
-                    <p>Necesitas iniciar sesión para acceder a esta pagina. <a href="index.php">Haga clic aquí para iniciar sesión</a></p>
-                </div>';
+                header("Location: index.php");
                 exit;
             }
             // SESION FINALIZADA POR INACTIVIDAD
