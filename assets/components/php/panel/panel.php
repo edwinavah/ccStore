@@ -71,6 +71,7 @@
                 </div>
             </div>
 
+            <a href="salidaProductos.php">
             <div class="row rounded-bottom card-bottom border border-danger text-danger">
                 <div class="col-10 mt-3 pl-4">
                     <p>Ver detalles</p>
@@ -79,6 +80,7 @@
                     <i class="far fa-arrow-alt-circle-right"></i>
                 </div>
             </div>
+            </a>
         </div>
     </div>
 

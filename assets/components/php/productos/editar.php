@@ -9,14 +9,14 @@
                 $especificaciones = $_POST['especificaciones'];
                 $stock = $_POST['stock'];
                 if($marca=="" || $modelo=="" || $especificaciones=="" || $stock==""){
-                    echo'
-                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                        <strong>Error. </strong> No se permiten campos vacios.
-                        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    ';
+                    //echo'
+                    //<div class="alert alert-danger alert-dismissible fade show" role="alert">
+                    //    <strong>Error. </strong> No se permiten campos vacios.
+                    //    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    //    <span aria-hidden="true">&times;</span>
+                    //    </button>
+                    //</div>
+                    //';
             }else{
                 $conexion->query("UPDATE productos SET codigo_barras='".$codigo_barras."', marca='".$marca."', modelo='".$modelo."', especificaciones='".$especificaciones."', stock='".$stock."' WHERE id_productos='".$id_productos."' ");
                 echo'
