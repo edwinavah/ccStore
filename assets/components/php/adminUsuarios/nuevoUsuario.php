@@ -76,11 +76,8 @@
                         $sql = "INSERT INTO usuarios (nombre, usuario, contrasena, fechaRegistro, tipoUsuario, archivo) VALUES ('$nombre', '$usuario', '$passHash', '$fechaRegistro', '$tipoUsuario', '$archivo')";
 
                         if (mysqli_query($conexion, $sql)) {
-                            echo 
-                            "<div class='alert alert-success text-center mt-4' role='alert'>
-                                <h3>El usuario se creo con éxito</h3>
-                                <a class='btn btn-success' href='../../../../adminUsuarios.php' role='button'>Regresar</a>
-                            </div>";		
+                            // EL USUARIO SE CREO CON EXITO
+                            header ("Location: ../../../../adminUsuarios.php");		
                         } else {
                             echo "Error: " . $sql . "<br>" . mysqli_error($conexion);
                         }

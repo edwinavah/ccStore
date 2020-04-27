@@ -47,7 +47,7 @@
                                                 <td class="align-middle">'.$buscar[5].'</td>
                                                 <td class="text-center align-middle" style="min-width: 125px; width: 125px">
                                                     <button type="button" class="btn btn-sm btn-warning editarbtn" data-toggle="modal" data-target="#modificar"><i class="far fa-edit"></i> Editar</button>
-                                                    <button type="button" class="btn btn-sm btn-danger eliminarbtn" data-toggle="modal" data-target="#eliminar"><i class="fas fa-trash"></i></button>
+                                                    <button type="button" class="btn btn-sm btn-danger eliminarbtn" data-toggle="modal" data-target="#eliminarProducto"><i class="fas fa-trash"></i></button>
                                                 </td>
                                             </tr>';
                                 }

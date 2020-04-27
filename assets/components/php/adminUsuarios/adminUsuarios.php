@@ -12,8 +12,10 @@
                         <tr>
                             <td scope="col" class="align-middle background-table d-none">ID</td>
                             <td scope="col" class="align-middle background-table"><span class="ml-3">Perfil</span></td>
+                            <td scope="col" class="align-middle background-table d-none">Archivo</td>
                             <td scope="col" class="align-middle background-table">Nombre</td>
                             <td scope="col" class="align-middle background-table">Usuario</td>
+                            <td scope="col" class="align-middle background-table d-none">Password</td>
                             <td scope="col" class="align-middle background-table">Registro</td>
                             <td scope="col" class="align-middle background-table">Tipo de usuario</td>
                             <td scope="col" class="align-middle background-table">Acciones</td>
@@ -21,7 +23,7 @@
                     </thead>
 
                     <?php
-                    $sql = "SELECT * FROM usuarios ORDER BY tipoUsuario ASC";
+                    $sql = "SELECT * FROM usuarios WHERE usuario NOT LIKE 'admin@admin' ORDER BY tipoUsuario ASC";
                     $resultado = mysqli_query($conexion, $sql);
 
                     while ($buscar = mysqli_fetch_row($resultado)) {
@@ -41,13 +43,16 @@
                                     <img src="assets/components/php/adminUsuarios/<?php echo $buscar[6] ?>" alt="" style="width: 70px; height: 70px; border-radius: 50%;">
                                 </span>
                             </td>
+                            <td class="align-middle d-none"><?php echo $buscar[6] ?></td>
                             <td class="align-middle"><?php echo $buscar[1] ?></td>
                             <td class="align-middle"><?php echo $buscar[2] ?></td>
+                            <td class="align-middle d-none"><?php echo $buscar[3] ?></td>
                             <td class="align-middle"><?php echo $buscar[4] ?></td>
                             <td class="align-middle"><?php echo $buscar[5] ?></td>
-                            <td class="text-center align-middle" style="min-width: 120px; width: 120px">
-                                <button type="button" class="btn btn-sm btn-warning" data-toggle="modal" data-target="#modificar"><i class="far fa-edit"></i> Editar</button>
-                                <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#eliminar"><i class="fas fa-trash"></i></button>
+                            <td class="text-center align-middle" style="min-width: 160px; width: 160px">
+                                <button type="button" class="btn btn-sm btn-warning editarbtn" data-toggle="modal" data-target="#modificarUsuario"><i class="far fa-edit"></i> Editar</button>
+                                <button type="button" class="btn btn-sm btn-info contrasenabtn" data-toggle="modal" data-target="#cambiarContrasena"><i class="fas fa-unlock-alt"></i></button>
+                                <button type="button" class="btn btn-sm btn-danger eliminarbtn" data-toggle="modal" data-target="#eliminarUsuario"><i class="fas fa-trash"></i></button>
                             </td>
                         </tr>
 

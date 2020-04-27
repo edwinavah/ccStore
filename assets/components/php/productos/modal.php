@@ -1,6 +1,6 @@
 <body>
     <!-- MODAL ELIMINAR -->
-    <div class="modal fade" id="eliminar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="eliminarProducto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -85,8 +85,8 @@
                             <label for="" class="mt-2">Especificaciones</label>
                             <textarea class="form-alpha form-control" id="especificaciones" name="especificaciones" rows="4" placeholder="Escribe algúna especificación del producto" required></textarea>
                                 
-                                <br>
-                                <div id="respuesta1" style="text-align: center;"></div>
+                            <br>
+                            <div id="respuesta1" style="text-align: center;"></div>
 
 
                         </div>
@@ -101,34 +101,35 @@
     </div>
 
     <script>
-	$('.editarbtn').on('click',function(){
-		//coinsida con los mismos datos de tr
-		$tr = $(this).closest('tr');
-		var datos= $tr.children("td").map(function(){
-			return $(this).text();
-		});
-		$('#update_id').val(datos[0]);
-		$('#codigo_barras').val(datos[1]);
-		$('#marca').val(datos[2]);
-        $('#modelo').val(datos[3]);
-        $('#stock').val(datos[5]);
-        $('#especificaciones').val(datos[4]);
+        $('.editarbtn').on('click',function(){
+            //coinsida con los mismos datos de tr
+            $tr = $(this).closest('tr');
+            var datos= $tr.children("td").map(function(){
+                return $(this).text();
+            });
 
-        $('#guardar').on('click',function(){
-        $.ajax({
-            url: 'assets/components/php/productos/editar.php',
-            type: 'POST',
-            data: $('#update').serialize(),
-            success: function(res){
-                $('#respuesta1').html(res);
-            }
+            $('#update_id').val(datos[0]);
+            $('#codigo_barras').val(datos[1]);
+            $('#marca').val(datos[2]);
+            $('#modelo').val(datos[3]);
+            $('#stock').val(datos[5]);
+            $('#especificaciones').val(datos[4]);
+
+            $('#guardar').on('click',function(){
+                $.ajax({
+                    url: 'assets/components/php/productos/editar.php',
+                    type: 'POST',
+                    data: $('#update').serialize(),
+                    success: function(res){
+                        $('#respuesta1').html(res);
+                    }
+                });
+            });
         });
-    });
-    });
-</script>
+    </script>
 
-<!-- MODAL AGREGAR PRODUCTO -->
-<div class="modal fade" id="insertar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <!-- MODAL AGREGAR PRODUCTO -->
+    <div class="modal fade" id="insertar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">

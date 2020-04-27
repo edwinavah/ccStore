@@ -1,11 +1,10 @@
 <?php 
-             require_once "../conexion.php";
-             $conexion = conexion();
+    require_once "../conexion.php";
+    $conexion = conexion();
 
-                $id_usuarios = $_POST['id_usuarios'];
-            
-                $conexion->query("DELETE FROM usuarios WHERE id_usuarios='".$id_usuarios."' ");
-                //echo("Se produjo un error, intentelo de nuevo");
-            
-            
+    $id_usuarios = $_POST['id_usuarios'];
+    $archivo = $_POST['archivo'];
+
+    $conexion->query("DELETE FROM usuarios WHERE id_usuarios='".$id_usuarios."'");
+    unlink($archivo);
 ?>
