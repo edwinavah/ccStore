@@ -40,12 +40,22 @@
                     session_destroy();
                     echo 
                     '<div class="text-center mt-5">
-                        <img src="assets/images/ccStore_Azul.svg" alt="" style="width: 400px; height: auto;">
-                        <h1 class="mt-2"><strong>Upps!</strong></h1>
+                        <img src="assets/images/ccStore_Azul.svg" alt="" style="width: 300px; height: auto;">
+                        <h2 class="mt-2"><strong>Upps!</strong></h2>
                         <p>Por inactividad y seguridad de los datos tu sesión a finalizado. <a href="index.php">Haga clic aquí para iniciar sesión</a></p>
                     </div>';
                     exit;
             }
+            // if($_SESSION['tipo'] != "Administrador"){
+            //     echo
+            //     '<div class="row">
+            //         <div class="col-12 text-center mt-5">
+            //             <img src="assets/images/ccStore_Azul.svg" alt="" style="width: 300px; height: auto;">
+            //             <h2 class="mt-2"><strong>Upps!</strong></h2>
+            //             <p>No tienes permisos suficientes para acceder a esta página. <a href="index.php">Haga clic aquí para regresar.</a></p>
+            //         </div>
+            //     </div>';
+            // } else {
         ?>
         <!-- USUARIOS -->
         <main>
@@ -85,3 +95,7 @@
         $('#adminUsuarios').load('assets/components/php/adminUsuarios/adminUsuarios.php');
     });
 </script>
+
+<?php
+            // }
+?>

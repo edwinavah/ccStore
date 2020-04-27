@@ -40,8 +40,8 @@
                     session_destroy();
                     echo 
                     '<div class="text-center mt-5">
-                        <img src="assets/images/ccStore_Azul.svg" alt="" style="width: 400px; height: auto;">
-                        <h1 class="mt-2"><strong>Upps!</strong></h1>
+                        <img src="assets/images/ccStore_Azul.svg" alt="" style="width: 300px; height: auto;">
+                        <h2 class="mt-2"><strong>Upps!</strong></h2>
                         <p>Por inactividad y seguridad de los datos tu sesión a finalizado. <a href="index.php">Haga clic aquí para iniciar sesión</a></p>
                     </div>';
                     exit;

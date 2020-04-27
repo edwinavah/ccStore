@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html>
 	<head>
     <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,7 +24,7 @@
 	<body>
         <div class="container">
             <?php
-                // error_reporting(0);
+                error_reporting(0);
                 session_start();
 
                 require_once "../conexion.php";
@@ -33,7 +33,7 @@
                 $usuario = $_POST['usuario']; 
                 $contrasena = $_POST['contrasena'];
                 
-                $sql = "SELECT nombre, usuario, contrasena FROM usuarios WHERE usuario = '$usuario'";
+                $sql = "SELECT nombre, usuario, contrasena, tipoUsuario FROM usuarios WHERE usuario = '$usuario'";
                 $resultado = mysqli_query($conexion, $sql);
                 
                 $row = mysqli_fetch_assoc($resultado);
@@ -44,6 +44,7 @@
                             
                     $_SESSION['loggedin'] = true;
                     $_SESSION['name'] = $row['nombre'];
+                    $_SESSION['tipo'] = $row['tipoUsuario'];
                     $_SESSION['start'] = time();
                     $_SESSION['expire'] = $_SESSION['start'] + (1 * 3600);						
                     
@@ -53,8 +54,8 @@
                     echo 
                     '<div class="row">
                         <div class="col-12 text-center mt-5">
-                            <img src="../../../images/ccStore_Azul.svg" alt="" style="width: 400px; height: auto;">
-                            <h1 class="mt-2"><strong>Upps!</strong></h1>
+                            <img src="../../../images/ccStore_Azul.svg" alt="" style="width: 300px; height: auto;">
+                            <h2 class="mt-2"><strong>Upps!</strong></h2>
                         </div>
                         <div class="col-12 text-center">
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
