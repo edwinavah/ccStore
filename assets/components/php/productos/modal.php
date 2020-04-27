@@ -1,3 +1,7 @@
+<?php
+    require_once "../conexion.php";
+    $conexion = conexion();
+?>
 <body>
     <!-- MODAL ELIMINAR -->
     <div class="modal fade" id="eliminarProducto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -59,7 +63,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="update" method="POST">
+                    <form id="update" method="POST" autocomplete="off">
                         <input type="hidden" name="id_productos" id="update_id">
                         <div class="form-group">
                             <div class="form-row">
@@ -67,10 +71,25 @@
                                     <label for="" class="mt-2">Código de barras</label>
                                     <input type="number" name="codigo_barras" class="form-control" id="codigo_barras">
                                 </div>
-                                <div class="col">
-                                    <label for="" class="mt-2">Cantidad en stock</label>
-                                    <input type="number" name="stock" class="form-control" id="stock" required>
-                                </div>
+
+                                <?php
+                                    if($_SESSION['tipo'] != "Administrador"){
+                                        // CAMPOS NO EDITABLES PARA USUARIO
+                                        echo 
+                                        '<div class="col">
+                                            <label for="" class="mt-2">Cantidad en stock</label>
+                                            <input type="number" name="stock" class="form-control" id="stock" required readonly>
+                                        </div>';
+                                    } else {
+                                        // CAMPOS EDITABLES PARA ADMINISTRADOR
+                                        echo 
+                                        '<div class="col">
+                                            <label for="" class="mt-2">Cantidad en stock</label>
+                                            <input type="number" name="stock" class="form-control" id="stock" required>
+                                        </div>';
+                                    }
+                                ?>
+                                
                             </div>
                             <div class="form-row">
                                 <div class="col">
@@ -139,7 +158,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="insert" method="POST">
+                    <form id="insert" method="POST" autocomplete="off">
                         <input type="hidden" name="id_productos" id="new_id">
                         <div class="form-group">
                             <div class="form-row">

@@ -33,7 +33,7 @@
                 $usuario = $_POST['usuario']; 
                 $contrasena = $_POST['contrasena'];
                 
-                $sql = "SELECT nombre, usuario, contrasena, tipoUsuario FROM usuarios WHERE usuario = '$usuario'";
+                $sql = "SELECT nombre, usuario, contrasena, tipoUsuario, archivo FROM usuarios WHERE usuario = '$usuario'";
                 $resultado = mysqli_query($conexion, $sql);
                 
                 $row = mysqli_fetch_assoc($resultado);
@@ -44,6 +44,8 @@
                             
                     $_SESSION['loggedin'] = true;
                     $_SESSION['name'] = $row['nombre'];
+                    $_SESSION['user'] = $row['usuario'];
+                    $_SESSION['profile'] = $row['archivo'];
                     $_SESSION['tipo'] = $row['tipoUsuario'];
                     $_SESSION['start'] = time();
                     $_SESSION['expire'] = $_SESSION['start'] + (1 * 3600);						

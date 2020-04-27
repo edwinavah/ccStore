@@ -75,7 +75,7 @@
 <!-- CODIGO JAVASCRIPT PARA CONTENIDO DE PHP -->
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#navbar').load('assets/components/html/navbar.html');
+        $('#navbar').load('assets/components/php/navbar.php');
         $('#salidaProductos').load('assets/components/php/salidaProductos/salidaProductos.php');
     });
 </script>

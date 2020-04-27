@@ -46,16 +46,18 @@
                     </div>';
                     exit;
             }
-            // if($_SESSION['tipo'] != "Administrador"){
-            //     echo
-            //     '<div class="row">
-            //         <div class="col-12 text-center mt-5">
-            //             <img src="assets/images/ccStore_Azul.svg" alt="" style="width: 300px; height: auto;">
-            //             <h2 class="mt-2"><strong>Upps!</strong></h2>
-            //             <p>No tienes permisos suficientes para acceder a esta página. <a href="index.php">Haga clic aquí para regresar.</a></p>
-            //         </div>
-            //     </div>';
-            // } else {
+            if($_SESSION['tipo'] != "Administrador"){
+                // SESION INICIADA COMO USUARIO
+                echo
+                '<div class="row">
+                    <div class="col-12 text-center mt-5">
+                        <img src="assets/images/ccStore_Azul.svg" alt="" style="width: 300px; height: auto;">
+                        <h2 class="mt-2"><strong>Upps!</strong></h2>
+                        <p>No tienes permisos suficientes para acceder a esta página. <a href="index.php">Haga clic aquí para regresar.</a></p>
+                    </div>
+                </div>';
+            } else {
+                // SESION INICIADA COMO ADMINISTRADOR
         ?>
         <!-- USUARIOS -->
         <main>
@@ -91,11 +93,11 @@
 <!-- CODIGO JAVASCRIPT PARA CONTENIDO DE PHP -->
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#navbar').load('assets/components/html/navbar.html');
+        $('#navbar').load('assets/components/php/navbar.php');
         $('#adminUsuarios').load('assets/components/php/adminUsuarios/adminUsuarios.php');
     });
 </script>
 
 <?php
-            // }
+            }
 ?>

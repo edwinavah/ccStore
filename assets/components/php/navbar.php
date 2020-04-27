@@ -1,3 +1,11 @@
+<?php
+    require_once "conexion.php";
+    $conexion = conexion();
+    session_start();
+    $nombre = $_SESSION['user'];
+    $img = $_SESSION['profile'];
+?>
+
 <div class="barra-lateral col-12 col-md-auto">
     <div class="logo">
         <img src="assets/images/ccStore_Blanco.svg" alt="">
@@ -48,12 +56,30 @@
             </div>
         </a>
 
-        <a href="adminUsuarios.php">
+        <?php
+            if($_SESSION['tipo'] != "Administrador"){
+                
+            } else {
+                echo 
+                '<a href="adminUsuarios.php">
+                    <div class="row">
+                        <div class="col-3">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <span> Administrar usuarios</span>
+                    </div>
+                </a>';
+            }
+        ?>
+
+        
+
+        <a href="#">
             <div class="row">
                 <div class="col-3">
-                    <i class="fas fa-users"></i>
+                    <img src="assets/components/php/adminUsuarios/<?php echo $img ?>" alt="" style="width: 23px; height: 23px; border-radius: 50%;">
                 </div>
-                <span> Administrar usuarios</span>
+                <span>Hola, <?php echo $nombre ?></span>
             </div>
         </a>
 
@@ -62,7 +88,7 @@
                 <div class="col-3">
                     <i class="fas fa-sign-out-alt"></i>
                 </div>
-                <span> Cerrar Sesión</span>
+                <span> Salir</span>
             </div>
         </a>
     </nav>
