@@ -14,6 +14,7 @@
         <script src="assets/libraries/js/jquery-3.4.1.min.js"></script>
         <script src="assets/libraries/js/bootstrap.min.js"></script>
         <script src="assets/libraries/js/alertify.js"></script>
+        <script src="assets/components/js/productos.js"></script>
 
         <!-- FAVICON Y TITULO EN EL NAVEGADOR  -->
         <link rel="shortcut icon" href="assets/images/favicon.svg">
@@ -33,6 +34,7 @@
             else {
                 //NO INICIO SESION
                 header("Location: index.php");
+                exit;
             }
             // SESION FINALIZADA POR INACTIVIDAD
             $now = time();          
@@ -56,12 +58,27 @@
                         <!-- CONTENIDO NAVBAR -->
                     </div>
                     
-                    <!-- CONTENIDO PRODUCTOS -->
+                    <!-- CONTENIDO SALIDA PRODUCTOS -->
                     <main class="main col">
                        <div class="container-fluid">
+                           <!-- COMPONENTES AGREGAR Y BUSCAR -->
+                            <div class="row mt-4">
+                            
+                                <div class="col-12 col-lg-5 mb-3">
+                                    <div class="input-group">
+                                        <input type="text" name="caja_busqueda" id="caja_busqueda" class="form-control" placeholder="Buscar producto">
+                                        <div class="input-group-append">
+                                            <button class="btn btn-success"><i class="fas fa-search"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                             <div class="row">
                                 <div class="col-12">
-                                    <div id="salidaProductos"></div>
+                                    <div id="salidaProductos">
+                                        <!-- TABLA -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
