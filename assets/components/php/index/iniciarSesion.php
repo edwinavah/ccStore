@@ -33,7 +33,7 @@
                 $usuario = $_POST['usuario']; 
                 $contrasena = $_POST['contrasena'];
                 
-                $sql = "SELECT nombre, usuario, contrasena, tipoUsuario, archivo FROM usuarios WHERE usuario = '$usuario'";
+                $sql = "SELECT id_usuarios, nombre, usuario, contrasena, tipoUsuario, archivo FROM usuarios WHERE usuario = '$usuario'";
                 $resultado = mysqli_query($conexion, $sql);
                 
                 $row = mysqli_fetch_assoc($resultado);
@@ -43,6 +43,7 @@
                 if (password_verify($_POST['contrasena'], $hash)) {
                             
                     $_SESSION['loggedin'] = true;
+                    $_SESSION['id'] = $row['id_usuarios'];
                     $_SESSION['name'] = $row['nombre'];
                     $_SESSION['user'] = $row['usuario'];
                     $_SESSION['profile'] = $row['archivo'];

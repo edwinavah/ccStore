@@ -64,7 +64,7 @@
                 </div>
                 <div class="modal-body">
                     <form id="update" method="POST" autocomplete="off">
-                        <input type="hidden" name="id_productos" id="update_id">
+                        <input type="hidden" class="d-none" name="id_productos" id="update_id">
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col">
@@ -75,11 +75,7 @@
                                 <?php
                                     if($_SESSION['tipo'] != "Administrador"){
                                         // CAMPOS NO EDITABLES PARA USUARIO
-                                        echo 
-                                        '<div class="col">
-                                            <label for="" class="mt-2">Cantidad en stock</label>
-                                            <input type="number" name="stock" class="form-control" id="stock" required readonly>
-                                        </div>';
+                                        
                                     } else {
                                         // CAMPOS EDITABLES PARA ADMINISTRADOR
                                         echo 
