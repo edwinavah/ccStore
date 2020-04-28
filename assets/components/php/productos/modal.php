@@ -75,7 +75,11 @@
                                 <?php
                                     if($_SESSION['tipo'] != "Administrador"){
                                         // CAMPOS NO EDITABLES PARA USUARIO
-                                        
+                                        echo 
+                                        '<div class="col d-none">
+                                            <label for="" class="mt-2">Cantidad en stock</label>
+                                            <input type="number" name="stock" class="form-control" id="stock" required readonly>
+                                        </div>';
                                     } else {
                                         // CAMPOS EDITABLES PARA ADMINISTRADOR
                                         echo 
