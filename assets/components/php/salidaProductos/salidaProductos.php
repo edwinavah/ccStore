@@ -87,11 +87,12 @@
                         <td scope="col" class="text-center align-middle background-table">Marca</td>
                         <td scope="col" class="text-center align-middle background-table">Modelo</td>
                         <td scope="col" class="text-center align-middle background-table">Cantidad</td>
+                        <td scope="col" class="text-center align-middle background-table">Fecha</td>
                     </tr>
                 </thead>
 
                 <?php
-                $sql2 = "SELECT id_productos, codigo_barras, marca, modelo, stock FROM salida";
+                $sql2 = "SELECT id_productos, codigo_barras, marca, modelo, stock, fechaRegistro FROM salida";
                 $resultado2 = mysqli_query($conexion, $sql2);
 
                 while ($buscar = mysqli_fetch_row($resultado2)) {
@@ -99,7 +100,8 @@
                         $buscar[1] . "||" .
                         $buscar[2] . "||" .
                         $buscar[3] . "||" .
-                        $buscar[4];
+                        $buscar[4] . "||" .
+                        $buscar[5];
                 ?>
 
                     <tr>
@@ -107,6 +109,7 @@
                         <td class="align-middle"><?php echo $buscar[2] ?></td>
                         <td class="align-middle"><?php echo $buscar[3] ?></td>
                         <td class="align-middle"><?php echo $buscar[4] ?></td>
+                        <td class="align-middle"><?php echo $buscar[5] ?></td>
                     </tr>
 
                 <?php
@@ -121,7 +124,7 @@
 
     <div class="row">
         <div class="col-12">
-            <button type="button" class="btn btn-sm btn-success cantidadbtn" data-toggle="modal" data-target="#cantidad"> FINALIZAR </button>
+            <button onclick="location.href='assets/components/php/salidaProductos/reporte.php'" type="button" class="btn btn-sm btn-success cantidadbtn"> FINALIZAR </button>
         </div>
     </div>
 

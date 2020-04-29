@@ -9,11 +9,13 @@
     $especificaciones = $_POST['especificaciones'];
     $stock = $_POST['stock'];
 
+    $fechaActual = $_POST['fechaRegistro'];    
+
     if($stock==""){
 
     } else {
         $conexion->query("UPDATE productos SET stock='".$stock."' WHERE id_productos='".$id_productos."' ");
         
-        $conexion->query("INSERT INTO salida (codigo_barras,marca,modelo,stock) values ('$codigo_barras','$marca','$modelo','$stock')");
+        $conexion->query("INSERT INTO salida (codigo_barras,marca,modelo,stock,fechaRegistro) values ('$codigo_barras','$marca','$modelo','$stock','$fechaActual')");
     }
 ?>

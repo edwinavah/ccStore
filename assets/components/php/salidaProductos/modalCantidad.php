@@ -17,8 +17,18 @@
                         <input type="hidden" name="marca" id="marca">
                         <input type="hidden" name="modelo" id="modelo">
                         <div class="col">
-                                    <label for="">Marque la cantidad deseada</label>
-                                    <input type="number" name="stock" class="form-control" id="stock">
+                                    <label for="">Marque la cantidad que desee retirar</label>
+                                    <input type="number" name="stock" class="form-control" id="stock" required>
+                                </div>
+
+                                <?php
+                                        date_default_timezone_set('America/Mexico_City');
+                                        $fechaActual = date("Y-m-d H:i:s");
+                                ?>
+
+                                <div class="col d-none">
+                                     <label>Fecha de registro:</label>
+                                     <input type="datetime" name="fechaRegistro" id="fechaRegistro" class="form-control" value="<?php echo $fechaActual ?>" readonly>
                                 </div>
                         <br>
                             <div id="respuesta" style="background: #17a2b8; text-align: center; color: whitesmoke; font-weight: 700;"></div>
