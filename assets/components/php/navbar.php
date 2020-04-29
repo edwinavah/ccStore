@@ -2,7 +2,7 @@
     require_once "conexion.php";
     $conexion = conexion();
     session_start();
-    $nombre = $_SESSION['user'];
+    $usuario = $_SESSION['user'];
     $img = $_SESSION['profile'];
 ?>
 
@@ -74,12 +74,12 @@
 
         
 
-        <a href="#">
+        <a href="perfil.php">
             <div class="row">
                 <div class="col-3">
                     <img src="assets/components/php/adminUsuarios/<?php echo $img ?>" alt="" style="width: 23px; height: 23px; border-radius: 50%;">
                 </div>
-                <span>Hola, <?php echo $nombre ?></span>
+                <span>Hola, <?php echo $usuario ?></span>
             </div>
         </a>
 
