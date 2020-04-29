@@ -9,16 +9,16 @@
             <table class="table table-sm table-hover table-condensed table-bordered table-striped mt-3">
                 <thead>
                     <tr>
-                        <td scope="col" class="text-center align-middle background-table">Código</td>
-                        <td scope="col" class="text-center align-middle background-table">Marca</td>
-                        <td scope="col" class="text-center align-middle background-table">Modelo</td>
-                        <td scope="col" class="text-center align-middle background-table">Especificaciones</td>
-                        <td scope="col" class="text-center align-middle background-table">Stock</td>
+                        <td scope="col" class="text-center align-middle background-table">Usuario</td>
+                        <td scope="col" class="text-center align-middle background-table">Modificiación</td>
+                        <td scope="col" class="text-center align-middle background-table">Producto</td>
+                        <td scope="col" class="text-center align-middle background-table">Nota</td>
+                        <td scope="col" class="text-center align-middle background-table" style="min-width: 170px; width: 170px">Fecha/Hora</td>
                     </tr>
                 </thead>
 
                 <?php
-                $sql = "SELECT id_productos, codigo_barras, marca, modelo, especificaciones, stock FROM productos WHERE stock < 5";
+                $sql = "SELECT id_adminRegistros, usuario, modificacion, producto, nota, DATE_FORMAT(fecha, '%d/%m/%Y ' ' %h:%m:%s') FROM adminRegistros";
                 $resultado = mysqli_query($conexion, $sql);
 
                 while ($buscar = mysqli_fetch_row($resultado)) {
@@ -42,17 +42,6 @@
                     }
                 ?>
             </table>
-        </div>
-    </div>
-</div>
-
-<div class="row">
-    <div class="col-12">
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-            <strong>¡Actualiza los productos!</strong> Los productos están por agotarse, no olvides actualizar el stock.<br>
-            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-            </button>
         </div>
     </div>
 </div>

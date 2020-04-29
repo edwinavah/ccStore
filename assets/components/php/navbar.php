@@ -47,7 +47,7 @@
             </div>
         </a>
         
-        <a href="#">
+        <a href="administracion.php">
             <div class="row">
                 <div class="col-3">
                     <i class="fas fa-cogs"></i>
