@@ -18,7 +18,7 @@
 
         <!-- FAVICON Y TITULO EN EL NAVEGADOR  -->
         <link rel="shortcut icon" href="assets/images/favicon.svg">
-        <title>ccStore | Mi Perfil</title>
+        <title>ccStore | Cambiar contraseña</title>
     </head>
     
     <body>

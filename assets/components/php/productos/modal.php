@@ -209,7 +209,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-dark" data-dismiss="modal" onclick="location.reload();">Cerrar</button>
-                            <button type="submit" id="guardarNew" class="btn btn-success">Guardar</button>
+                            <button type="submit" id="guardarNew" class="btn btn-primary">Guardar</button>
                         </div>
                     </form>
                 </div>

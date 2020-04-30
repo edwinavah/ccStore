@@ -133,7 +133,7 @@
                 <div class="table-responsive-xl mt-2">
                     <table class="table table-sm table-hover table-condensed table-bordered table-striped">
                         <thead>
-                            <tr class="text-center bg-info text-white">
+                            <tr class="text-center bg-success text-white">
                                 <td class="align-middle" scope="col">Usuario</td>
                                 <td class="align-middle" scope="col">Acción</td>
                                 <td class="align-middle" scope="col">Producto</td>
@@ -306,7 +306,7 @@
                 <div class="table-responsive-xl mt-2">
                     <table class="table table-sm table-hover table-condensed table-bordered table-striped">
                         <thead>
-                            <tr class="text-center bg-info text-white">
+                            <tr class="text-center bg-success text-white">
                                 <td class="align-middle" scope="col">Usuario</td>
                                 <td class="align-middle" scope="col">Acción</td>
                                 <td class="align-middle" scope="col">Producto</td>

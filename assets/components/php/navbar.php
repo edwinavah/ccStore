@@ -50,7 +50,7 @@
                 <div class="col-3">
                     <i class="fas fa-exclamation-triangle"></i>
                 </div>
-                <span> Productos por agotar</span>
+                <span> Productos por agotar </span>
             </div>
         </a>
         
