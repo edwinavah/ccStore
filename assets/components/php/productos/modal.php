@@ -84,10 +84,22 @@
                                         echo 
                                         '<div class="col d-none">
                                             <label for="" class="mt-2">Cantidad en stock</label>
+                                            <input type="number" name="stock_anterior" class="form-control" id="stock_anterior" required readonly>
+                                        </div>';
+
+                                        echo 
+                                        '<div class="col d-none">
+                                            <label for="" class="mt-2">Cantidad en stock</label>
                                             <input type="number" name="stock" class="form-control" id="stock" required readonly>
                                         </div>';
                                     } else {
                                         // CAMPOS EDITABLES PARA ADMINISTRADOR
+                                        echo 
+                                        '<div class="col d-none">
+                                            <label for="" class="mt-2">Cantidad en stock</label>
+                                            <input type="number" name="stock_anterior" class="form-control" id="stock_anterior" required readonly>
+                                        </div>';
+                                        
                                         echo 
                                         '<div class="col">
                                             <label for="" class="mt-2">Cantidad en stock</label>
@@ -109,7 +121,7 @@
                             </div>
                             <label for="" class="mt-2">Especificaciones</label>
                             <textarea class="form-alpha form-control" id="especificaciones" name="especificaciones" rows="4" placeholder="Escribe algúna especificación del producto" required></textarea>
-                                
+                            
                             <br>
                             <div id="respuesta1" style="text-align: center;"></div>
 
@@ -137,6 +149,7 @@
             $('#codigo_barras').val(datos[1]);
             $('#marca').val(datos[2]);
             $('#modelo').val(datos[3]);
+            $('#stock_anterior').val(datos[5]);
             $('#stock').val(datos[5]);
             $('#especificaciones').val(datos[4]);
 

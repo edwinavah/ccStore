@@ -39,7 +39,7 @@ CREATE TABLE usuarios (
 CREATE TABLE adminRegistros (
     id_adminRegistros INT NOT NULL AUTO_INCREMENT,
     usuario VARCHAR(100) NOT NULL,
-    modificacion VARCHAR(100) NOT NULL,
+    accion VARCHAR(100) NOT NULL,
     producto VARCHAR(100) NOT NULL,
     nota VARCHAR(100) NOT NULL,
     fecha DATETIME NOT NULL,
