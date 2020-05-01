@@ -8,9 +8,9 @@ class PDF extends FPDF
 function Header()
 {
     // Logo
-    //$this->Image(' images/index.jpg',10,8,33);
+    $this->Image('ccStore_Azul.jpg',10,8,33);
     // Arial bold 15
-    $this->SetFont('Arial','B',14);
+    $this->SetFont('Arial','B',12);
     // Movernos a la derecha
     $this->Cell(60);
     // Título
@@ -18,11 +18,12 @@ function Header()
     // Salto de línea
     $this->Ln(20);
 
-    $this->Cell(38,10,'Codigo_Barras', 1,0,'C',0);
-    $this->Cell(35,10,'Marca', 1,0,'C',0);
-    $this->Cell(35,10,'Modelo', 1,0,'C',0);
-    $this->Cell(25,10,'Cantidad', 1,0,'C',0);
-    $this->Cell(45,10,'Fecha', 1,1,'C',0);
+    $this->Cell(34,10,'Codigo_Barras', 1,0,'C',0);
+    $this->Cell(31,10,'Marca', 1,0,'C',0);
+    $this->Cell(31,10,'Modelo', 1,0,'C',0);
+    $this->Cell(21,10,'Cantidad', 1,0,'C',0);
+    $this->Cell(41,10,'Fecha', 1,0,'C',0);
+    $this->Cell(30,10,'Usuario', 1,1,'C',0);
   
 }
 
@@ -41,22 +42,29 @@ function Footer()
     require_once "../conexion.php";
     $conexion = conexion();
 
-    $sentencia = "SELECT * FROM salida";
+    $fechaDesde = $_POST['desde'];
+    $fechaDesde = date("$fechaDesde 00:00:00");
+
+    $fechaHasta = $_POST['hasta'];
+    $fechaHasta = date("$fechaHasta 23:59:59");
+
+    $sentencia = ("SELECT * FROM salida WHERE fechaRegistro BETWEEN '$fechaDesde' AND '$fechaHasta'");
     $query = mysqli_query($conexion,$sentencia);
     
-$pdf = new PDF();
-$pdf->AliasNbPages();
-$pdf->AddPage();
-$pdf->SetFont('Arial','',12);
-
+    $pdf = new PDF();
+    $pdf->AliasNbPages();
+    $pdf->AddPage();
+    $pdf->SetFont('Arial','',10);
 
     while($row = $query -> fetch_assoc()){
-        $pdf->Cell(38,10, $row['codigo_barras'], 1,0,'C',0);
-        $pdf->Cell(35,10, $row['marca'], 1,0,'C',0);
-        $pdf->Cell(35,10, $row['modelo'], 1,0,'C',0);
-        $pdf->Cell(25,10, $row['stock'], 1,0,'C',0);
-        $pdf->Cell(45,10, $row['fechaRegistro'], 1,1,'C',0);
+        $pdf->Cell(34,10, $row['codigo_barras'], 1,0,'C',0);
+        $pdf->Cell(31,10, $row['marca'], 1,0,'C',0);
+        $pdf->Cell(31,10, $row['modelo'], 1,0,'C',0);
+        $pdf->Cell(21,10, $row['stock'], 1,0,'C',0);
+        $pdf->Cell(41,10, $row['fechaRegistro'], 1,0,'C',0);
+        $pdf->Cell(30,10, $row['usuario'], 1,1,'C',0);
     }
 
+//$pdf->Cell(30,10, $fechaHasta, 0,1,'C',0);
 $pdf->Output();
 ?>

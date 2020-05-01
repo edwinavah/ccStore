@@ -1,3 +1,6 @@
+<?php
+    $usuario = $_SESSION['user'];
+?>
 <body>
     <!-- MODAL CANTIDAD DE PRODUCTOS -->
     <div class="modal fade" id="cantidad" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -18,7 +21,7 @@
                         <input type="hidden" name="modelo" id="modelo">
                         <input type="hidden" name="stock" id="stock">
                         <div class="col">
-                        
+
                                     <label for="">Marque la cantidad que desee retirar</label>
                                     <input type="number" name="stockDescontado" class="form-control" id="stockDescontado" required>
                                 </div>
@@ -26,12 +29,18 @@
                                 <?php
                                         date_default_timezone_set('America/Mexico_City');
                                         $fechaActual = date("Y-m-d H:i:s");
+                                        //$hora = date("H:i:s");
                                 ?>
 
                                 <div class="col d-none">
                                      <label>Fecha de registro:</label>
                                      <input type="datetime" name="fechaRegistro" id="fechaRegistro" class="form-control" value="<?php echo $fechaActual ?>" readonly>
                                 </div>
+                                <div class="col d-none">
+                                     <label>Usuario</label>
+                                     <input type="text" name="usuario" id="usuario" class="form-control" value="<?php echo $usuario ?>">
+                                </div>
+                                
                         <br>
                             <div id="respuesta" style="background: #17a2b8; text-align: center; color: whitesmoke; font-weight: 700;"></div>
                         <div class="modal-footer">
