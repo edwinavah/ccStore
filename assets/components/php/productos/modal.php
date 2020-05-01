@@ -84,26 +84,26 @@
                                         echo 
                                         '<div class="col d-none">
                                             <label for="" class="mt-2">Cantidad en stock</label>
-                                            <input type="number" name="stock_anterior" class="form-control" id="stock_anterior" required readonly>
+                                            <input type="number" name="stock_anterior" class="form-control" id="stock_anterior" min="1" pattern="^[0-9]+" required readonly>
                                         </div>';
 
                                         echo 
                                         '<div class="col d-none">
                                             <label for="" class="mt-2">Cantidad en stock</label>
-                                            <input type="number" name="stock" class="form-control" id="stock" required readonly>
+                                            <input type="number" name="stock" class="form-control" id="stock" min="1" pattern="^[0-9]+" required readonly>
                                         </div>';
                                     } else {
                                         // CAMPOS EDITABLES PARA ADMINISTRADOR
                                         echo 
                                         '<div class="col d-none">
                                             <label for="" class="mt-2">Cantidad en stock</label>
-                                            <input type="number" name="stock_anterior" class="form-control" id="stock_anterior" required readonly>
+                                            <input type="number" name="stock_anterior" class="form-control" id="stock_anterior" min="1" pattern="^[0-9]+" required readonly>
                                         </div>';
                                         
                                         echo 
                                         '<div class="col">
                                             <label for="" class="mt-2">Cantidad en stock</label>
-                                            <input type="number" name="stock" class="form-control" id="stock" required>
+                                            <input type="number" name="stock" class="form-control" id="stock" min="1" pattern="^[0-9]+" required>
                                         </div>';
                                     }
                                 ?>
@@ -187,7 +187,7 @@
                                 </div>
                                 <div class="col">
                                     <label for="" class="mt-2">Cantidad en stock</label>
-                                    <input type="number" name="stock" class="form-control" id="stock" required>
+                                    <input type="number" name="stock" class="form-control" id="stock" min="1" pattern="^[0-9]+" required>
                                 </div>
                             </div>
                             <div class="form-row">

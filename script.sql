@@ -45,3 +45,14 @@ CREATE TABLE adminRegistros (
     fecha DATETIME NOT NULL,
     PRIMARY KEY (id_adminRegistros)
 );
+
+CREATE TABLE salida (
+    id_productos INT NOT NULL AUTO_INCREMENT,
+    codigo_barras VARCHAR(100),
+    marca VARCHAR(100) NOT NULL,
+    modelo VARCHAR(100) NOT NULL,
+    stock INT NOT NULL,
+    fechaRegistro TIMESTAMP NOT NULL,
+    usuario VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id_productos)
+);

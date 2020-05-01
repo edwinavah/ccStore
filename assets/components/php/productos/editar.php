@@ -17,7 +17,7 @@
 
     $producto = $marca." - ".$modelo;
     $accion = "Modificado";
-    if($marca=="" || $modelo=="" || $especificaciones=="" || $stock_anterior=="" || $stock==""){
+    if($marca=="" || $modelo=="" || $especificaciones=="" || $stock_anterior=="" || $stock=="" || $stock_anterior <= 0 || $stock <= 0){
 
     } else if($stock_anterior!=$stock) {
         $nota = "Se actualizo el stock de ".$stock_anterior." a ".$stock;
