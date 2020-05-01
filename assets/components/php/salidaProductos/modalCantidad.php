@@ -14,7 +14,7 @@
                 </div>
                 <div class="modal-body">
                     
-                    <form id="update" method="POST" autocomplete="off">
+                    <form id="update" method="POST" autocomplete="off" onsubmit="return false">
                         <input type="hidden" name="id_productos" id="update_id">
                         <input type="hidden" name="codigo_barras" id="codigo_barras">
                         <input type="hidden" name="marca" id="marca">
@@ -45,7 +45,7 @@
                             <div id="respuesta" style="background: #17a2b8; text-align: center; color: whitesmoke; font-weight: 700;"></div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancelar</button>
-                            <button type="button" id="guardar" class="btn btn-success" data-dismiss="modal" onclick="location.reload();">Aceptar</button>
+                            <button type="submit" id="guardar" class="btn btn-success" data-dismiss="modal" onclick="location.reload();">Aceptar</button>
                         </div>
                     </form>
                 </div>

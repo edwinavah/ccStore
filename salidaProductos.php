@@ -74,12 +74,16 @@
                             </div>
 
                             <div class="row">
+
                                 <div class="col-12">
                                     <div id="salidaProductos">
                                         <!-- TABLA -->
                                     </div>
+                                    <div class="" id="salida">
+                                    </div>
                                 </div>
                             </div>
+
                         </div>
                     </main>
                 </div>
@@ -93,5 +97,13 @@
     $(document).ready(function(){
         $('#navbar').load('assets/components/php/navbar.php');
         $('#salidaProductos').load('assets/components/php/salidaProductos/salidaProductos.php');
+
+        $(document).ready(function(){
+            setInterval(
+                function(){
+                    $('#salida').load('assets/components/php/salidaProductos/salida.php');
+                }, 500
+            );
+        });
     });
 </script>
