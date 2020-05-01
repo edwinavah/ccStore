@@ -18,7 +18,7 @@
     $accion = "Agregado";
     $nota = "Se agrego el producto con el stock de ".$stock;
 
-    if($marca=="" || $modelo=="" || $especificaciones=="" || $stock==""){
+    if($marca=="" || $modelo=="" || $especificaciones=="" || $stock=="" || $stock <= 0){
         
     } else {
         $conexion->query("INSERT INTO productos (codigo_barras,marca,modelo,especificaciones,stock) values ('$codigo_barras','$marca','$modelo','$especificaciones','$stock')");
