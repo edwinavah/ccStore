@@ -4,7 +4,7 @@
 ?>
 <body>
     <!-- MODAL ELIMINAR -->
-    <div class="modal fade" id="eliminarProducto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="eliminarProducto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" onclick="location.reload();">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -16,7 +16,10 @@
                 <div class="modal-body">
                     <label for="">¿Seguro que quieres eliminar un registro?</label>
                     <form id="delete" method="POST">
-                        <input type="hidden" name="id_productos" id="delete_id">
+                        <input type="text" name="delete_id" class="form-control mt-2" id="delete_id" required readonly>
+                        <input type="text" name="delete_marca" class="form-control mt-2" id="delete_marca" required readonly>
+                        <input type="text" name="delete_modelo" class="form-control mt-2" id="delete_modelo" required readonly>
+                        <input type="number" name="delete_stock" class="form-control mt-2" id="delete_stock" required readonly>
                         <br>
                             <div id="respuesta" style="background: #17a2b8; text-align: center; color: whitesmoke; font-weight: 700;"></div>
                         <div class="modal-footer">
@@ -38,6 +41,9 @@
                 return $(this).text();
             });
             $('#delete_id').val(datos[0]);
+            $('#delete_marca').val(datos[2]);
+            $('#delete_modelo').val(datos[3]);
+            $('#delete_stock').val(datos[5]);
             
             $('#eliminar').on('click',function(){
                 $.ajax({
@@ -45,7 +51,7 @@
                     type: 'POST',
                     data: $('#delete').serialize(),
                     success: function(res){
-                    $('#respuesta').html(res);
+                        $('#respuesta').html(res);
                     }
                  });
             });
@@ -64,7 +70,7 @@
                 </div>
                 <div class="modal-body">
                     <form id="update" method="POST" autocomplete="off">
-                        <input type="hidden" class="d-none" name="id_productos" id="update_id">
+                        <input type="text" class="form-control d-none" name="id_productos" id="update_id" required readonly>
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col">
@@ -78,10 +84,22 @@
                                         echo 
                                         '<div class="col d-none">
                                             <label for="" class="mt-2">Cantidad en stock</label>
+                                            <input type="number" name="stock_anterior" class="form-control" id="stock_anterior" required readonly>
+                                        </div>';
+
+                                        echo 
+                                        '<div class="col d-none">
+                                            <label for="" class="mt-2">Cantidad en stock</label>
                                             <input type="number" name="stock" class="form-control" id="stock" required readonly>
                                         </div>';
                                     } else {
                                         // CAMPOS EDITABLES PARA ADMINISTRADOR
+                                        echo 
+                                        '<div class="col d-none">
+                                            <label for="" class="mt-2">Cantidad en stock</label>
+                                            <input type="number" name="stock_anterior" class="form-control" id="stock_anterior" required readonly>
+                                        </div>';
+                                        
                                         echo 
                                         '<div class="col">
                                             <label for="" class="mt-2">Cantidad en stock</label>
@@ -103,7 +121,7 @@
                             </div>
                             <label for="" class="mt-2">Especificaciones</label>
                             <textarea class="form-alpha form-control" id="especificaciones" name="especificaciones" rows="4" placeholder="Escribe algúna especificación del producto" required></textarea>
-                                
+                            
                             <br>
                             <div id="respuesta1" style="text-align: center;"></div>
 
@@ -131,6 +149,7 @@
             $('#codigo_barras').val(datos[1]);
             $('#marca').val(datos[2]);
             $('#modelo').val(datos[3]);
+            $('#stock_anterior').val(datos[5]);
             $('#stock').val(datos[5]);
             $('#especificaciones').val(datos[4]);
 
@@ -147,7 +166,7 @@
         });
     </script>
 
-    <!-- MODAL AGREGAR PRODUCTO -->
+    <!-- MODAL INSERTAR PRODUCTO -->
     <div class="modal fade" id="insertar" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -159,7 +178,7 @@
                 </div>
                 <div class="modal-body">
                     <form id="insert" method="POST" autocomplete="off">
-                        <input type="hidden" name="id_productos" id="new_id">
+                        <input type="text" class="form-control d-none" name="id_productos" id="new_id">
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col">
@@ -190,7 +209,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-dark" data-dismiss="modal" onclick="location.reload();">Cerrar</button>
-                            <button type="submit" id="guardarNew" class="btn btn-success">Guardar</button>
+                            <button type="submit" id="guardarNew" class="btn btn-primary">Guardar</button>
                         </div>
                     </form>
                 </div>

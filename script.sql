@@ -13,10 +13,17 @@ CREATE TABLE productos (
     PRIMARY KEY (id_productos)
 );
 
-INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES (null, "Crayola", "Super Tips 100", "Marcadores Lavables", 100);
-INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES (null, "Crayola", "Super Tips 50", "Marcadores Lavables", 30);
-INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES (null, "Samsung", "4K 55'", "Pantalla Samsung", 2);
-INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES (null, "Samsung", "SoundBar", "Bocina SoundBar", 4);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES ("71662951009", "Crayola", "Super Tips 100", "Marcadores Lavables 100pz", 0);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES ("71662551209", "Crayola", "Super Tips 120", "Marcadores Lavables 120pz", 0);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES ("71662505042", "Crayola", "Super Tips 50", "Marcadores Lavables 50pz", 0);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES ("39800028808", "Energizer", "AAA4", "Baterias AAA Recargables 4pz", 31);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES ("mm711kkol11194200630", "Cooler Master", "MM711", "Mouse Gaming 1pz", 0);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES ("mm711kkol11194200630", "Cooler Master", "MM711", "Mouse Gaming 1pz", 0);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES ("662834501599", "Zeiss", "100 Lens Wipes", "Toallas limpiadoras 100pz", 2);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES ("662834502343", "Zeiss", "Lens Cleaner", "Spray limpiador 1pz", 1);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES ("662834502343", "Zeiss", "Lens Cleaner", "Spray limpiador 1pz", 1);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES (null, "Cermark", "Metal Laser Marking Spray", "1pz", 40);
+INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES (null, "LBT", "Laserbond 100", "1pz", 3);
 
 CREATE TABLE usuarios (
     id_usuarios INT NOT NULL AUTO_INCREMENT,
@@ -32,8 +39,9 @@ CREATE TABLE usuarios (
 CREATE TABLE adminRegistros (
     id_adminRegistros INT NOT NULL AUTO_INCREMENT,
     usuario VARCHAR(100) NOT NULL,
-    modificacion VARCHAR(100) NOT NULL,
-    producto VARCHAR(15) NOT NULL,
-    fecha DATE,
+    accion VARCHAR(100) NOT NULL,
+    producto VARCHAR(100) NOT NULL,
+    nota VARCHAR(100) NOT NULL,
+    fecha DATETIME NOT NULL,
     PRIMARY KEY (id_adminRegistros)
 );

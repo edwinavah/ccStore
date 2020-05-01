@@ -71,7 +71,7 @@
                                     <div class="input-group">
                                         <input type="text" name="caja_busqueda" id="caja_busqueda" class="form-control" placeholder="Buscar producto">
                                         <div class="input-group-append">
-                                            <button class="btn btn-success"><i class="fas fa-search"></i></button>
+                                            <button class="btn btn-dark"><i class="fas fa-search"></i></button>
                                         </div>
                                     </div>
                                 </div>

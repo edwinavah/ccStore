@@ -14,11 +14,10 @@
         <script src="assets/libraries/js/jquery-3.4.1.min.js"></script>
         <script src="assets/libraries/js/bootstrap.min.js"></script>
         <script src="assets/libraries/js/alertify.js"></script>
-        <script src="assets/components/js/productos.js"></script>
 
         <!-- FAVICON Y TITULO EN EL NAVEGADOR  -->
         <link rel="shortcut icon" href="assets/images/favicon.svg">
-        <title>ccStore | Cambiar contraseña</title>
+        <title>ccStore | Administración</title>
     </head>
     
     <body>
@@ -49,7 +48,7 @@
                     exit;
             }
         ?>
-        <!-- PERFIL -->
+        <!-- PRODUCTOS -->
         <main>
             <!-- AGREGANDO NAVBAR IZQUIERDA -->
             <div class="container-fluid">
@@ -58,11 +57,13 @@
                         <!-- CONTENIDO NAVBAR -->
                     </div>
                     
-                    <!-- CONTENIDO PERFIL -->
+                    <!-- CONTENIDO PRODUCTOS -->
                     <main class="main col">
                        <div class="container-fluid">
-                            <div id="perfil">
-                                <!-- TABLA -->
+                            <div class="row">
+                                <div class="col-12">
+                                    <div id="administracion"></div>
+                                </div>
                             </div>
                         </div>
                     </main>
@@ -76,6 +77,6 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#navbar').load('assets/components/php/navbar.php');
-        $('#perfil').load('assets/components/php/perfil/perfil.php');
+        $('#administracion').load('assets/components/php/administracion/administracion.php');
     });
 </script>

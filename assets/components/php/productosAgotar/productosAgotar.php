@@ -18,7 +18,7 @@
                 </thead>
 
                 <?php
-                $sql = "SELECT id_productos, codigo_barras, marca, modelo, especificaciones, stock FROM productos WHERE stock < 3";
+                $sql = "SELECT id_productos, codigo_barras, marca, modelo, especificaciones, stock FROM productos WHERE stock < 5";
                 $resultado = mysqli_query($conexion, $sql);
 
                 while ($buscar = mysqli_fetch_row($resultado)) {

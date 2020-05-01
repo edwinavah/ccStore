@@ -1,11 +1,23 @@
 <?php 
-             require_once "../conexion.php";
-             $conexion = conexion();
+    require_once "../conexion.php";
+    $conexion = conexion();
+    session_start();
+    $usuario = $_SESSION['user'];
 
-                $id_productos = $_POST['id_productos'];
-            
-                $conexion->query("DELETE FROM productos WHERE id_productos='".$id_productos."' ");
-                //echo("Se produjo un error, intentelo de nuevo");
-            
-            
+    ini_set('date.timezone', 'America/Chihuahua');
+    $hoy = date("Y-m-d H:i:s"); 
+
+    $id_productos = $_POST['delete_id'];
+    $marca = $_POST['delete_marca'];
+    $modelo = $_POST['delete_modelo'];
+    $stock = $_POST['delete_stock'];
+
+    $producto = $marca." - ".$modelo;
+    $accion = "Eliminado";
+    $nota = "Se elimino el producto con el stock de ".$stock;
+    
+    $conexion->query("DELETE FROM productos WHERE id_productos='".$id_productos."' ");
+    $conexion->query("INSERT INTO adminRegistros (usuario, accion, producto, nota, fecha) values ('$usuario','$accion','$producto','$nota','$hoy')");
+    //echo("Se produjo un error, intentelo de nuevo");
+    
 ?>
