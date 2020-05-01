@@ -11,14 +11,16 @@
                 </div>
                 <div class="modal-body">
                     
-                    <form id="update" method="POST">
+                    <form id="update" method="POST" autocomplete="off">
                         <input type="hidden" name="id_productos" id="update_id">
                         <input type="hidden" name="codigo_barras" id="codigo_barras">
                         <input type="hidden" name="marca" id="marca">
                         <input type="hidden" name="modelo" id="modelo">
+                        <input type="hidden" name="stock" id="stock">
                         <div class="col">
+                        
                                     <label for="">Marque la cantidad que desee retirar</label>
-                                    <input type="number" name="stock" class="form-control" id="stock" required>
+                                    <input type="number" name="stockDescontado" class="form-control" id="stockDescontado" required>
                                 </div>
 
                                 <?php
@@ -53,14 +55,14 @@
             $('#codigo_barras').val(datos[1]);
             $('#marca').val(datos[2]);
             $('#modelo').val(datos[3]);
+            $('#stock').val(datos[5]);
 
             $('#guardar').on('click',function(){
                 $.ajax({
                     url: 'assets/components/php/salidaProductos/cantidad.php',
                     type: 'POST',
                     data: $('#update').serialize(),
-                    
                 });
-            });
+                });
         });
     </script>
