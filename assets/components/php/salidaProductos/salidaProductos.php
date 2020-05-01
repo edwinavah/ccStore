@@ -3,7 +3,6 @@
     require_once "../conexion.php";
     $conexion = conexion();
     session_start();
-    include('modalCantidad.php');
 ?>
 
 <div class="row">
@@ -11,11 +10,11 @@
         <div class="table-responsive-xl">
                 <?php
                     $salida = "";
-                    $sql="SELECT * FROM productos WHERE stock > 0 NOT LIKE '' ORDER BY id_productos";
+                    $sql="SELECT * FROM productos WHERE stock > 0 NOT LIKE '' ORDER BY id_productos LIMIT 0";
 
                     if (isset($_POST['consulta'])) {
                         $q = $conexion->real_escape_string($_POST['consulta']);
-                        $sql = "SELECT * FROM productos WHERE stock > 0 AND marca  LIKE '%$q%' OR modelo LIKE '%$q%' OR codigo_barras LIKE '%$q%' OR especificaciones LIKE '%$q%' ";
+                        $sql = "SELECT * FROM productos WHERE stock > 0 AND modelo LIKE '%$q%' OR codigo_barras LIKE '%$q%'";
                     }
 
                     $resultado = $conexion->query($sql);
@@ -48,7 +47,7 @@
                                                 <td class="align-middle">'.$buscar[4].'</td>
                                                 <td class="align-middle">'.$buscar[5].'</td>
                                                 <td class="text-center align-middle" style="min-width: 125px; width: 125px">
-                                                    <button type="button" class="btn btn-sm btn-info cantidadbtn" data-toggle="modal" data-target="#cantidad"><i class="far fa-edit"></i> + </button>
+                                                    <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#cantidad" onclick="agregaform(\''.$datos.'\')"><i class="far fa-edit"></i> + </button>
                                                 </td>
                                             </tr>';
                                 }
@@ -56,8 +55,8 @@
                                 }else{
                                     $salida.='<div class="row mt-3">
                                                 <div class="col-12 text-center">
-                                                    <div class="alert alert-danger alert-dismissible fade show" role="alert">
-                                                        <strong>¡No se encontró ningún elemento!</strong><br>
+                                                    <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                                        <strong>¡Busca un producto en la barra superior!</strong><br>
                                                         <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>

@@ -1,4 +1,7 @@
 <?php
+    require_once "../conexion.php";
+    $conexion = conexion();
+    session_start();
     $usuario = $_SESSION['user'];
 ?>
 <body>
@@ -13,36 +16,33 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    
                     <form id="update" method="POST" autocomplete="off" onsubmit="return false">
-                        <input type="hidden" name="id_productos" id="update_id">
-                        <input type="hidden" name="codigo_barras" id="codigo_barras">
-                        <input type="hidden" name="marca" id="marca">
-                        <input type="hidden" name="modelo" id="modelo">
-                        <input type="hidden" name="stock" id="stock">
-                        <div class="col">
+                        <input type="text" class="form-control d-none" name="id_productos" id="update_id" readonly>
+                        <input type="text" class="form-control d-none mt-2" name="codigo_barras" id="codigo_barras" readonly>
+                        <input type="text" class="form-control d-none mt-2" name="marca" id="marca" readonly>
+                        <input type="text" class="form-control d-none mt-2" name="modelo" id="modelo" readonly>
+                        <input type="text" class="form-control d-none mt-2" name="stock" id="stock" readonly>
 
-                                    <label for="">Marque la cantidad que desee retirar</label>
-                                    <input type="number" name="stockDescontado" class="form-control" id="stockDescontado" required>
-                                </div>
+                        <label for="">Marque la cantidad que desee retirar</label>
+                        <input type="number" name="stockDescontado" class="form-control" id="stockDescontado" required>
 
-                                <?php
-                                        date_default_timezone_set('America/Mexico_City');
-                                        $fechaActual = date("Y-m-d H:i:s");
-                                        //$hora = date("H:i:s");
-                                ?>
-
-                                <div class="col d-none">
-                                     <label>Fecha de registro:</label>
-                                     <input type="datetime" name="fechaRegistro" id="fechaRegistro" class="form-control" value="<?php echo $fechaActual ?>" readonly>
-                                </div>
-                                <div class="col d-none">
-                                     <label>Usuario</label>
-                                     <input type="text" name="usuario" id="usuario" class="form-control" value="<?php echo $usuario ?>">
-                                </div>
+                        <?php
+                            date_default_timezone_set('America/Mexico_City');
+                            $fechaActual = date("Y-m-d H:i:s");
+                            //$hora = date("H:i:s");
+                        ?>
+                        <div class="col d-none">
+                            <label>Fecha de registro:</label>
+                            <input type="datetime" name="fechaRegistro" id="fechaRegistro" class="form-control" value="<?php echo $fechaActual ?>" readonly>
+                        </div>
+                        <div class="col d-none">
+                            <label>Usuario</label>
+                            <input type="text" name="usuario" id="usuario" class="form-control" value="<?php echo $usuario ?>">
+                        </div>
                                 
                         <br>
-                            <div id="respuesta" style="background: #17a2b8; text-align: center; color: whitesmoke; font-weight: 700;"></div>
+                        <div id="respuesta" style="background: #17a2b8; text-align: center; color: whitesmoke; font-weight: 700;"></div>
+
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancelar</button>
                             <button type="submit" id="guardar" class="btn btn-success" data-dismiss="modal" onclick="location.reload();">Aceptar</button>
@@ -52,26 +52,24 @@
             </div>
         </div>
     </div>
-    <script>
-        $('.cantidadbtn').on('click',function(){
-            //coinsida con los mismos datos de tr
-            $tr = $(this).closest('tr');
-            var datos= $tr.children("td").map(function(){
-                return $(this).text();
-            });
+</body>
 
-            $('#update_id').val(datos[0]);
-            $('#codigo_barras').val(datos[1]);
-            $('#marca').val(datos[2]);
-            $('#modelo').val(datos[3]);
-            $('#stock').val(datos[5]);
+<script type="text/javascript">
+    function agregaform(datos) {
+        d=datos.split('||');
 
-            $('#guardar').on('click',function(){
-                $.ajax({
-                    url: 'assets/components/php/salidaProductos/cantidad.php',
-                    type: 'POST',
-                    data: $('#update').serialize(),
-                });
-                });
+        $('#update_id').val(d[0]);
+        $('#codigo_barras').val(d[1]);
+        $('#marca').val(d[2]);
+        $('#modelo').val(d[3]);
+        $('#stock').val(d[5]);
+    }
+
+    $('#guardar').on('click',function(){
+        $.ajax({
+            url: 'assets/components/php/salidaProductos/cantidad.php',
+            type: 'POST',
+            data: $('#update').serialize(),
         });
-    </script>
+    });
+</script>

@@ -4,7 +4,7 @@ ALTER DATABASE ccStoreInventarios charset=utf8;
 USE ccStoreInventarios;
 
 CREATE TABLE productos (
-    id_productos INT NOT NULL AUTO_INCREMENT,
+    id_productos BIGINT NOT NULL AUTO_INCREMENT,
     codigo_barras VARCHAR(100),
     marca VARCHAR(100) NOT NULL,
     modelo VARCHAR(100) NOT NULL,
@@ -26,7 +26,7 @@ INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VA
 INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES (null, "LBT", "Laserbond 100", "1pz", 3);
 
 CREATE TABLE usuarios (
-    id_usuarios INT NOT NULL AUTO_INCREMENT,
+    id_usuarios BIGINT NOT NULL AUTO_INCREMENT,
     nombre VARCHAR(100) NOT NULL,
     usuario VARCHAR(20) NOT NULL,
     contrasena VARCHAR(100) NOT NULL,
@@ -37,7 +37,7 @@ CREATE TABLE usuarios (
 );
 
 CREATE TABLE adminRegistros (
-    id_adminRegistros INT NOT NULL AUTO_INCREMENT,
+    id_adminRegistros BIGINT NOT NULL AUTO_INCREMENT,
     usuario VARCHAR(100) NOT NULL,
     accion VARCHAR(100) NOT NULL,
     producto VARCHAR(100) NOT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE adminRegistros (
 );
 
 CREATE TABLE salida (
-    id_productos INT NOT NULL AUTO_INCREMENT,
+    id_productos BIGINT NOT NULL AUTO_INCREMENT,
     codigo_barras VARCHAR(100),
     marca VARCHAR(100) NOT NULL,
     modelo VARCHAR(100) NOT NULL,

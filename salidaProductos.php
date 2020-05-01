@@ -65,7 +65,7 @@
                             <div class="row mt-4">
                                 <div class="col-12 col-lg-12 mb-3">
                                     <div class="input-group">
-                                        <input type="text" name="caja_busqueda" id="caja_busqueda" class="form-control" placeholder="Buscar producto">
+                                        <input type="text" name="caja_busqueda" id="caja_busqueda" class="form-control" placeholder="Buscar por codigo de barras o modelo">
                                         <div class="input-group-append">
                                             <button class="btn btn-dark"><i class="fas fa-search"></i></button>
                                         </div>
@@ -77,9 +77,13 @@
 
                                 <div class="col-12">
                                     <div id="salidaProductos">
-                                        <!-- TABLA -->
+                                        <!-- TABLA DE PRODUCTOS -->
                                     </div>
-                                    <div class="" id="salida">
+                                    <div id="salida">
+                                        <!-- TABLA SALIDA PRODUCTOS -->
+                                    </div>
+                                    <div id="modalCantidad">
+                                        
                                     </div>
                                 </div>
                             </div>
@@ -96,7 +100,15 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#navbar').load('assets/components/php/navbar.php');
-        $('#salidaProductos').load('assets/components/php/salidaProductos/salidaProductos.php');
+        $('#modalCantidad').load('assets/components/php/salidaProductos/modalCantidad.php');
+
+        $(document).ready(function(){
+            setInterval(
+                function(){
+                    $('#salidaProductos').load('assets/components/php/salidaProductos/salidaProductos.php');
+                }, 60000
+            );
+        });
 
         $(document).ready(function(){
             setInterval(

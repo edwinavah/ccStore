@@ -304,6 +304,8 @@
     </div>
 </div>
 
+<hr>
+
 <div class="row mt-3">
     <div class="col-12">
         <form action="assets/components/php/administracion/reporte.php" method="POST" target="_blank">
