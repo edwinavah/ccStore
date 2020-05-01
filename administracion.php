@@ -48,7 +48,7 @@
                     exit;
             }
         ?>
-        <!-- PRODUCTOS -->
+        <!-- ADMINISTRACION -->
         <main>
             <!-- AGREGANDO NAVBAR IZQUIERDA -->
             <div class="container-fluid">
@@ -57,7 +57,7 @@
                         <!-- CONTENIDO NAVBAR -->
                     </div>
                     
-                    <!-- CONTENIDO PRODUCTOS -->
+                    <!-- CONTENIDO DE ADMINISTRACION -->
                     <main class="main col">
                        <div class="container-fluid">
                             <div class="row">

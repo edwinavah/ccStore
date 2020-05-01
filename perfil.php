@@ -62,7 +62,7 @@
                     <main class="main col">
                        <div class="container-fluid">
                             <div id="perfil">
-                                <!-- TABLA -->
+                                <!-- CAMBIAR CONTRASENA -->
                             </div>
                         </div>
                     </main>

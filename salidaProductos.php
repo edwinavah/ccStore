@@ -14,7 +14,7 @@
         <script src="assets/libraries/js/jquery-3.4.1.min.js"></script>
         <script src="assets/libraries/js/bootstrap.min.js"></script>
         <script src="assets/libraries/js/alertify.js"></script>
-        <script src="assets/components/js/productos.js"></script>
+        <script src="assets/components/js/salidaProductos.js"></script>
 
         <!-- FAVICON Y TITULO EN EL NAVEGADOR  -->
         <link rel="shortcut icon" href="assets/images/favicon.svg">

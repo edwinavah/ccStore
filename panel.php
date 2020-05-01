@@ -17,7 +17,7 @@
 
         <!-- FAVICON Y TITULO EN EL NAVEGADOR  -->
         <link rel="shortcut icon" href="assets/images/favicon.svg">
-        <title>ccStore | Inicio</title>
+        <title>ccStore | Dashboard</title>
     </head>
     
     <body>
