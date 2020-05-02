@@ -24,7 +24,7 @@
                         <input type="text" class="form-control d-none mt-2" name="stock" id="stock" readonly>
 
                         <label for="">Marque la cantidad que desee retirar</label>
-                        <input type="number" name="stockDescontado" class="form-control" id="stockDescontado" required>
+                        <input type="number" name="stockDescontado" class="form-control" id="stockDescontado" min="1" pattern="^[0-9]+" required>
 
                         <?php
                             date_default_timezone_set('America/Mexico_City');

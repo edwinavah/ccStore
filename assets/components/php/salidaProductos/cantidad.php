@@ -13,15 +13,8 @@
     $usuario = $_POST['usuario'];
 
 
-    if($stockDescontado == ""){
-        ?>
-        <script>alert("Campos Vacios")</script>
-        <?php
-    }
-    else if($stockDescontado > $stockActual){
-        ?>
-        <script>alert("Campos Vacios")</script>
-        <?php
+    if($stockDescontado == "" || $stockDescontado > $stockActual || $stockDescontado <= 0){
+
     }else {
         $stockActual -= $stockDescontado;
         $conexion->query("UPDATE productos SET stock='".$stockActual."' WHERE id_productos='".$id_productos."' ");

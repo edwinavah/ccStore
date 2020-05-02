@@ -10,6 +10,9 @@ function Header()
     // Logo
     $this->Image('ccStore_Azul.jpg',10,8,33);
     // Arial bold 15
+    $this->SetFillColor(31, 97, 141);
+    //$this->SetTextColor(253, 254, 254);
+
     $this->SetFont('Arial','B',12);
     // Movernos a la derecha
     $this->Cell(60);
@@ -18,12 +21,13 @@ function Header()
     // Salto de línea
     $this->Ln(20);
 
-    $this->Cell(34,10,'Codigo_Barras', 1,0,'C',0);
-    $this->Cell(31,10,'Marca', 1,0,'C',0);
-    $this->Cell(31,10,'Modelo', 1,0,'C',0);
-    $this->Cell(21,10,'Cantidad', 1,0,'C',0);
-    $this->Cell(41,10,'Fecha', 1,0,'C',0);
-    $this->Cell(30,10,'Usuario', 1,1,'C',0);
+    
+    $this->Cell(34,10,'Codigo_Barras', 1,0,'C',1);
+    $this->Cell(31,10,'Marca', 1,0,'C',1);
+    $this->Cell(31,10,'Modelo', 1,0,'C',1);
+    $this->Cell(21,10,'Cantidad', 1,0,'C',1);
+    $this->Cell(41,10,'Fecha', 1,0,'C',1);
+    $this->Cell(30,10,'Usuario', 1,1,'C',1);
   
 }
 
