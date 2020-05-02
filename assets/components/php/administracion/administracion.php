@@ -22,7 +22,7 @@
 
 <div class="row">
     <!-- TABLA DE REGISTROS DE PRODUCTOS MODIFICADOS -->
-    <div class="col-sm-12 col-lg-6 mt-3">
+    <div class="col-sm-12 col-xl-6 mt-3">
         <div class="info rounded">
             <button type="button" class="btn btn-warning mt-1" data-toggle="modal" data-target="#productosModificados">
                 Ver todos los productos modificados <span class="badge badge-light"><?php echo $count_modificado_user->num_rows; ?></span>
@@ -66,7 +66,7 @@
         </div>
     </div>
     <!-- TABLA DE REGISTROS DE PRODUCTOS AGREGADOS -->
-    <div class="col-sm-12 col-lg-6 mt-3">
+    <div class="col-sm-12 col-xl-6 mt-3">
         <div class="info rounded">
             <button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#productosEliminados">
                 Ver todos los productos eliminados <span class="badge badge-light"><?php echo $count_eliminado_user->num_rows; ?></span>
@@ -112,7 +112,7 @@
 </div>
 
 <div class="row mt-3">
-    <div class="col-sm-12 col-lg-12">
+    <div class="col-sm-12 col-xl-12">
         <div class="info rounded">
             <button type="button" class="btn btn-success mt-1" data-toggle="modal" data-target="#productosAgregados">
                 Ver todos los productos agregados <span class="badge badge-light"><?php echo $count_agregado_user->num_rows; ?></span>
@@ -167,7 +167,7 @@
 
 <div class="row">
     <!-- TABLA DE REGISTROS DE PRODUCTOS MODIFICADOS -->
-    <div class="col-sm-12 col-lg-6 mt-3">
+    <div class="col-sm-12 col-xl-6 mt-3">
         <div class="info rounded">
             <button type="button" class="btn btn-warning mt-1" data-toggle="modal" data-target="#productosModificados">
                 Ver todos los productos modificados <span class="badge badge-light"><?php echo $count_modificado->num_rows; ?></span>
@@ -211,7 +211,7 @@
         </div>
     </div>
     <!-- TABLA DE REGISTROS DE PRODUCTOS AGREGADOS -->
-    <div class="col-sm-12 col-lg-6 mt-3">
+    <div class="col-sm-12 col-xl-6 mt-3">
         <div class="info rounded">
             <button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#productosEliminados">
                 Ver todos los productos eliminados <span class="badge badge-light"><?php echo $count_eliminado->num_rows; ?></span>
@@ -257,7 +257,7 @@
 </div>
 
 <div class="row mt-3">
-    <div class="col-sm-12 col-lg-12">
+    <div class="col-sm-12 col-xl-12">
         <div class="info rounded">
             <button type="button" class="btn btn-success mt-1" data-toggle="modal" data-target="#productosAgregados">
                 Ver todos los productos agregados <span class="badge badge-light"><?php echo $count_agregado->num_rows; ?></span>
