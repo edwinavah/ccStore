@@ -53,6 +53,15 @@
                 <span> Productos por agotar </span>
             </div>
         </a>
+
+        <a href="guias.php">
+            <div class="row">
+                <div class="col-3">
+                    <i class="fas fa-shipping-fast"></i>
+                </div>
+                <span>  Número de guías</span>
+            </div>
+        </a>
         
         <a href="administracion.php">
             <div class="row">

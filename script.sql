@@ -56,3 +56,27 @@ CREATE TABLE salida (
     usuario VARCHAR(100) NOT NULL,
     PRIMARY KEY (id_productos)
 );
+
+CREATE TABLE guias_dhl (
+    id_guias_dhl BIGINT NOT NULL AUTO_INCREMENT,
+    guia VARCHAR(100),
+    fechaRegistro DATE NOT NULL,
+    usuario VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id_guias_dhl)
+);
+
+CREATE TABLE guias_fedex (
+    id_guias_fedex BIGINT NOT NULL AUTO_INCREMENT,
+    guia VARCHAR(100),
+    fechaRegistro DATE NOT NULL,
+    usuario VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id_guias_fedex)
+);
+
+CREATE TABLE guias_estafeta (
+    id_guias_estafeta BIGINT NOT NULL AUTO_INCREMENT,
+    guia VARCHAR(100),
+    fechaRegistro DATE NOT NULL,
+    usuario VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id_guias_estafeta)
+);
