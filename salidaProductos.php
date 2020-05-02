@@ -83,7 +83,12 @@
                                         <!-- TABLA SALIDA PRODUCTOS -->
                                     </div>
                                     <div id="modalCantidad">
-                                        
+                                    </div>
+                                    <div id="reporteFechas">
+                                        <!-- PARTE DEL REPORTE -->
+                                    </div>
+                                    <div id="eliminarFecha">
+                                        <!-- PARTE DEL REPORTE -->
                                     </div>
                                 </div>
                             </div>
@@ -101,6 +106,8 @@
     $(document).ready(function(){
         $('#navbar').load('assets/components/php/navbar.php');
         $('#modalCantidad').load('assets/components/php/salidaProductos/modalCantidad.php');
+        $('#reporteFechas').load('assets/components/php/salidaProductos/reporteFechas.php');
+        $('#eliminarFecha').load('assets/components/php/salidaProductos/eliminarFecha.php');
 
         $(document).ready(function(){
             setInterval(
