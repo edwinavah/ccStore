@@ -62,9 +62,19 @@
                        <div class="container-fluid">
                             <div class="row">
                                 <div class="col-12">
+                                    <!-- AGREGANDO ELEMENTOS DEL PANEL -->
                                     <div id="panel"></div>
                                 </div>
                             </div>
+
+                            <!-- AGREGANDO FOOTER -->
+                            <footer class="container-fluid my-2 mt-4 border-top">
+                                <div class="row mt-2 text-center">
+                                    <div class="col-12">
+                                        <small class="d-block text-muted mt-3">© Copyright 2020 ccStore & G-Tech Software - Todos los derechos reservados.</small>
+                                    </div>
+                                </div>
+                            </footer>
                         </div>
                     </main>
                 </div>
@@ -77,6 +87,12 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#navbar').load('assets/components/php/navbar.php');
-        $('#panel').load('assets/components/php/panel/panel.php');
+        $(document).ready(function(){
+            setInterval(
+                function(){
+                    $('#panel').load('assets/components/php/panel/panel.php');
+                }, 500
+            );
+        });
     });
 </script>

@@ -62,9 +62,33 @@
                        <div class="container-fluid">
                             <div class="row">
                                 <div class="col-12">
+                                    <!-- AGREGANDO TABLAS -->
                                     <div id="administracion"></div>
+                                    <!-- AGREGANDO EL MODAL -->
+                                    <div id="modal"></div>
+                    
+                                    <?php
+                                        if($_SESSION['tipo'] != "Administrador"){
+                                            // SESION INICIADA COMO USUARIO
+                                        } else {
+                                    ?>
+                                    <!-- AGREGANDO CAMPOS PARA GENERAR REPORTE SI ES ADMINISTRADOR -->
+                                    <hr>
+                                    <div id="generarReporte"></div>
+                                    <?php
+                                        }
+                                    ?>
                                 </div>
                             </div>
+
+                            <!-- AGREGANDO FOOTER -->
+                            <footer class="container-fluid my-2 mt-4 border-top">
+                                <div class="row mt-2 text-center">
+                                    <div class="col-12">
+                                        <small class="d-block text-muted mt-3">© Copyright 2020 ccStore & G-Tech Software - Todos los derechos reservados.</small>
+                                    </div>
+                                </div>
+                            </footer>
                         </div>
                     </main>
                 </div>
@@ -77,6 +101,15 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#navbar').load('assets/components/php/navbar.php');
-        $('#administracion').load('assets/components/php/administracion/administracion.php');
+        $('#modal').load('assets/components/php/administracion/modal.php');
+        $('#generarReporte').load('assets/components/php/administracion/generarReporte.php');
+
+        $(document).ready(function(){
+            setInterval(
+                function(){
+                    $('#administracion').load('assets/components/php/administracion/administracion.php');
+                }, 500
+            );
+        });
     });
 </script>

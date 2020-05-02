@@ -1,11 +1,8 @@
-<hr>
 <div class="row mt-3">
     <div class="col-12">
-        <form action="assets/components/php/salidaProductos/eliminarDatos.php" method="POST" target="_blank">
+        <form action="assets/components/php/salidaProductos/eliminarDatosReporte.php" method="POST" target="_blank">
             <div class="form-group">
                 <div class="form-row">
-
-
                     <div class="col">
                         <div class="input-group pull-left">
                             <span class="input-group-addon mt-2 mr-2" id="basic-addon1">Desde:</span>
@@ -34,11 +31,12 @@
             </div>
         </form>
     </div>
+</div>
 
-    <Script>
-        $(document).ready(function(){
-            $('#btnEli').click(function(){
-                $('#alerta').show('fade');
-            })
-        });
-    </Script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#btnEli').click(function(){
+            $('#alerta').show('fade');
+        })
+    });
+</script>

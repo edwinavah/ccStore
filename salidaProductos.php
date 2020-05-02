@@ -30,8 +30,7 @@
             session_start(); 
             if (isset($_SESSION['loggedin'])) {  
                 //INICIO SESION 
-            }
-            else {
+            } else {
                 //NO INICIO SESION
                 header("Location: index.php");
                 exit;
@@ -74,26 +73,52 @@
                             </div>
 
                             <div class="row">
-
                                 <div class="col-12">
-                                    <div id="salidaProductos">
-                                        <!-- TABLA DE PRODUCTOS -->
-                                    </div>
-                                    <div id="salida">
-                                        <!-- TABLA SALIDA PRODUCTOS -->
-                                    </div>
-                                    <div id="modalCantidad">
-                                    </div>
-                                    <div id="reporteFechas">
-                                        <!-- PARTE DEL REPORTE -->
-                                    </div>
-                                    <div id="eliminarFecha">
-                                        <!-- PARTE DEL REPORTE -->
-                                    </div>
+                                    <!-- TABLA DE PRODUCTOS -->
+                                    <div id="salidaProductos"></div>
+
+                                    <!-- TABLA SALIDA PRODUCTOS -->
+                                    <div id="salidaRegistro"></div>
+                                    
+                                    <!-- MODAL PARA SELECCION DE CANTIDAD -->
+                                    <div id="modal"></div>
+
+                                    <?php
+                                        if($_SESSION['tipo'] != "Administrador"){
+                                            // SESION INICIADA COMO USUARIO
+                                        } else {
+                                    ?>
+                                    <!-- AGREGANDO CAMPOS PARA GENERAR REPORTE SI ES ADMINISTRADOR -->
+                                    <hr>
+                                    <div id="generarReporte"></div>
+
+                                        <?php
+                                            if($_SESSION['user'] != "admin@admin"){
+                                                // SI NO ES EL ADMINISTRADOR ADMIN
+                                            } else {
+
+                                        ?>
+                                    
+                                    <!-- AGREGANDO CAMPOS PARA BORRAR REPORTE SI ES ADMIN --> 
+                                    <hr>
+                                    <div id="eliminarReporte"></div>
+
+                                    <?php
+                                            }
+                                        }
+                                    ?>
                                 </div>
                             </div>
-
                         </div>
+
+                        <!-- AGREGANDO FOOTER -->
+                        <footer class="container-fluid my-2 mt-4 border-top">
+                            <div class="row mt-2 text-center">
+                                <div class="col-12">
+                                    <small class="d-block text-muted mt-3">© Copyright 2020 ccStore & G-Tech Software - Todos los derechos reservados.</small>
+                                </div>
+                            </div>
+                        </footer>
                     </main>
                 </div>
             </div>
@@ -105,9 +130,9 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#navbar').load('assets/components/php/navbar.php');
-        $('#modalCantidad').load('assets/components/php/salidaProductos/modalCantidad.php');
-        $('#reporteFechas').load('assets/components/php/salidaProductos/reporteFechas.php');
-        $('#eliminarFecha').load('assets/components/php/salidaProductos/eliminarFecha.php');
+        $('#modal').load('assets/components/php/salidaProductos/modal.php');
+        $('#generarReporte').load('assets/components/php/salidaProductos/generarReporte.php');
+        $('#eliminarReporte').load('assets/components/php/salidaProductos/eliminarReporte.php');
 
         $(document).ready(function(){
             setInterval(
@@ -120,7 +145,7 @@
         $(document).ready(function(){
             setInterval(
                 function(){
-                    $('#salida').load('assets/components/php/salidaProductos/salida.php');
+                    $('#salidaRegistro').load('assets/components/php/salidaProductos/salidaRegistro.php');
                 }, 500
             );
         });

@@ -20,10 +20,10 @@
                 </thead>
 
                 <?php
-                $sql2 = "SELECT id_productos, codigo_barras, marca, modelo, stock, DATE_FORMAT(fechaRegistro, '%d/%m/%Y ' ' %h:%i:%s'), usuario FROM salida ORDER BY fechaRegistro DESC LIMIT 15";
-                $resultado2 = mysqli_query($conexion, $sql2);
+                $sql = "SELECT id_productos, codigo_barras, marca, modelo, stock, DATE_FORMAT(fechaRegistro, '%d/%m/%Y ' ' %h:%i:%s'), usuario FROM salida ORDER BY fechaRegistro DESC LIMIT 15";
+                $resultado = mysqli_query($conexion, $sql);
 
-                while ($buscar = mysqli_fetch_row($resultado2)) {
+                while ($buscar = mysqli_fetch_row($resultado)) {
                     $datos = $buscar[0] . "||" .
                         $buscar[1] . "||" .
                         $buscar[2] . "||" .

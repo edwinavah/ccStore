@@ -1,4 +1,3 @@
-<hr>
 <div class="row mt-3">
     <div class="col-12">
         <form action="assets/components/php/salidaProductos/reporte.php" method="POST" target="_blank">
@@ -23,3 +22,4 @@
             </div>
         </form>
     </div>
+</div>

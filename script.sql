@@ -3,6 +3,17 @@ ALTER DATABASE ccStoreInventarios charset=utf8;
 
 USE ccStoreInventarios;
 
+CREATE TABLE usuarios (
+    id_usuarios BIGINT NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    usuario VARCHAR(20) NOT NULL,
+    contrasena VARCHAR(100) NOT NULL,
+    fechaRegistro VARCHAR(10) NOT NULL,
+    tipoUsuario VARCHAR(15) NOT NULL,
+    archivo VARCHAR(500),
+    PRIMARY KEY (id_usuarios)
+);
+
 CREATE TABLE productos (
     id_productos BIGINT NOT NULL AUTO_INCREMENT,
     codigo_barras VARCHAR(100),
@@ -24,17 +35,6 @@ INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VA
 INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES ("662834502343", "Zeiss", "Lens Cleaner", "Spray limpiador 1pz", 1);
 INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES (null, "Cermark", "Metal Laser Marking Spray", "1pz", 40);
 INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES (null, "LBT", "Laserbond 100", "1pz", 3);
-
-CREATE TABLE usuarios (
-    id_usuarios BIGINT NOT NULL AUTO_INCREMENT,
-    nombre VARCHAR(100) NOT NULL,
-    usuario VARCHAR(20) NOT NULL,
-    contrasena VARCHAR(100) NOT NULL,
-    fechaRegistro VARCHAR(10) NOT NULL,
-    tipoUsuario VARCHAR(15) NOT NULL,
-    archivo VARCHAR(500),
-    PRIMARY KEY (id_usuarios)
-);
 
 CREATE TABLE adminRegistros (
     id_adminRegistros BIGINT NOT NULL AUTO_INCREMENT,
