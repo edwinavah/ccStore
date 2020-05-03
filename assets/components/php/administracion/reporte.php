@@ -48,7 +48,7 @@ public function Footer()
     $pdf->SetFont('Arial','B',13);
     $pdf->SetY(30);//posicion en Y
     $pdf->Ln(10);
-    $pdf->Cell(0,5,'Reporte Salida de Productos', 0,0,'C');
+    $pdf->Cell(0,5,'Administracion de Usuarios', 0,0,'C');
     $pdf->Ln(10);//salto de linea y su tamaño
 
     //** Encabezado de la tabla **
