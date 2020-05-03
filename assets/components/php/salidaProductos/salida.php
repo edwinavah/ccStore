@@ -14,7 +14,7 @@
                         <td scope="col" class="text-center align-middle background-table">Marca</td>
                         <td scope="col" class="text-center align-middle background-table">Modelo</td>
                         <td scope="col" class="text-center align-middle background-table">Cantidad</td>
-                        <td scope="col" class="text-center align-middle background-table">Fecha</td>
+                        <td scope="col" class="text-center align-middle background-table">Fecha - Hora</td>
                         <td scope="col" class="text-center align-middle background-table">Usuario</td>
                     </tr>
                 </thead>
