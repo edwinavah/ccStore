@@ -62,8 +62,31 @@
                        <div class="container-fluid">
                             <div class="row">
                                 <div class="col-12">
+                                    <!-- TABLA DE GUIAS DHL, FEDEX Y ESTAFETA -->
                                     <div id="guias"></div>
+                                    <!-- MODAL PARA AGREGAR GUIA -->
                                     <div id="modal"></div>
+
+                                    <?php
+                                        if($_SESSION['tipo'] != "Administrador"){
+                                            // SESION INICIADA COMO USUARIO
+                                        } else {
+                                    ?>
+                                    <!-- AGREGANDO CAMPOS PARA GENERAR REPORTE SI ES ADMINISTRADOR -->
+                                    <hr>
+                                    <div id="generarReporte"></div>
+
+                                        <?php
+                                            if($_SESSION['user'] != "admin@admin"){
+                                                // SI NO ES EL ADMINISTRADOR ADMIN
+                                            } else {
+                                        ?>
+                                    <hr>
+                                    <div id="eliminarReporte"></div>
+                                    <?php
+                                            }
+                                        }
+                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -88,6 +111,8 @@
     $(document).ready(function(){
         $('#navbar').load('assets/components/php/navbar.php');
         $('#modal').load('assets/components/php/guias/modal.php');
+        $('#generarReporte').load('assets/components/php/guias/generarReporte.php');
+        $('#eliminarReporte').load('assets/components/php/guias/eliminarReporte.php');
 
         $(document).ready(function(){
             setInterval(
