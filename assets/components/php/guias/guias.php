@@ -3,6 +3,9 @@
     $conexion = conexion();
     session_start();
     $usuario = $_SESSION['user'];
+
+    ini_set('date.timezone', 'America/Chihuahua');
+    $hoy = date("Y-m-d");
 ?>
 
 <style>
@@ -41,7 +44,7 @@
 
                     <?php
                     $sql = "SELECT id_guias_dhl, guia, DATE_FORMAT(fechaRegistro, '%d/%m/%Y'), usuario
-                    FROM guias_dhl ORDER BY fechaRegistro DESC LIMIT 25";
+                    FROM guias_dhl WHERE fechaRegistro = '$hoy' ORDER BY fechaRegistro DESC";
                     $resultado = mysqli_query($conexion, $sql);
 
                     while ($buscar = mysqli_fetch_row($resultado)) {
@@ -91,7 +94,7 @@
 
                     <?php
                     $sql = "SELECT id_guias_fedex, guia, DATE_FORMAT(fechaRegistro, '%d/%m/%Y'), usuario
-                    FROM guias_fedex ORDER BY fechaRegistro DESC LIMIT 25";
+                    FROM guias_fedex WHERE fechaRegistro = '$hoy' ORDER BY fechaRegistro DESC";
                     $resultado = mysqli_query($conexion, $sql);
 
                     while ($buscar = mysqli_fetch_row($resultado)) {
@@ -141,7 +144,7 @@
 
                     <?php
                     $sql = "SELECT id_guias_estafeta, guia, DATE_FORMAT(fechaRegistro, '%d/%m/%Y'), usuario
-                    FROM guias_estafeta ORDER BY fechaRegistro DESC LIMIT 25";
+                    FROM guias_estafeta WHERE fechaRegistro = '$hoy' ORDER BY fechaRegistro DESC";
                     $resultado = mysqli_query($conexion, $sql);
 
                     while ($buscar = mysqli_fetch_row($resultado)) {

@@ -71,13 +71,13 @@ public function Footer()
     $pdf->SetDrawColor(255, 255, 255);
     $pdf->SetLineWidth(1);
     
-    $fechaDesde = $_POST['desde'];
-    $fechaDesde = date("$fechaDesde 00:00:00");
+    $SDATE = $_POST['desde'];
+    $SDATE = date("$SDATE 00:00:00");
 
-    $fechaHasta = $_POST['hasta'];
-    $fechaHasta = date("$fechaHasta 23:59:59");
+    $EDATE = $_POST['hasta'];
+    $EDATE = date("$EDATE 23:59:59");
 
-    $sentencia = ("SELECT * FROM adminRegistros WHERE fecha BETWEEN '$fechaDesde' AND '$fechaHasta'");
+    $sentencia = ("SELECT * FROM adminRegistros WHERE fecha BETWEEN '$SDATE' AND '$EDATE'");
     $query = mysqli_query($conexion,$sentencia);
     
     while($row = $query -> fetch_assoc()){

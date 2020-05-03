@@ -1,6 +1,6 @@
 <div class="row mt-3">
     <div class="col-12">
-        <form action="assets/components/php/salidaProductos/eliminarDatosReporte.php" method="POST">
+        <form action="assets/components/php/administracion/eliminarDatosReporte.php" method="POST">
             <div class="form-group">
                 <div class="form-row">
                     <div class="col">
