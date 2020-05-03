@@ -7,7 +7,7 @@
 
 <div class="row">
     <div class="col-sm-12">
-        <div class="table-responsive-xl">
+        <div class="table-responsive-xl" style="font-size: 15px;">
                 <?php
                     $salida = "";
                     $sql="SELECT * FROM productos WHERE stock > 0 NOT LIKE '' ORDER BY id_productos LIMIT 0";

@@ -9,10 +9,10 @@
 <!-- USUARIO PHP -->
 <div class="row">
     <div class="col-sm-12">
-        <div class="table-responsive-xl">
+        <div class="table-responsive-xl" style="font-size: 15px;">
                 <?php
                     $salida = "";
-                    $sql="SELECT * FROM productos WHERE marca NOT LIKE '' ORDER BY id_productos";
+                    $sql="SELECT * FROM productos WHERE marca NOT LIKE '' ORDER BY id_productos LIMIT 25";
 
                     if (isset($_POST['consulta'])) {
                         $q = $conexion->real_escape_string($_POST['consulta']);
@@ -81,10 +81,10 @@
 <!-- ADMINISTRADOR PHP -->
 <div class="row">
     <div class="col-sm-12">
-        <div class="table-responsive-xl">
+        <div class="table-responsive-xl" style="font-size: 15px;">
                 <?php
                     $salida = "";
-                    $sql="SELECT * FROM productos WHERE marca NOT LIKE '' ORDER BY id_productos";
+                    $sql="SELECT * FROM productos WHERE marca NOT LIKE '' ORDER BY id_productos LIMIT 25";
 
                     if (isset($_POST['consulta'])) {
                         $q = $conexion->real_escape_string($_POST['consulta']);
