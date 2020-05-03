@@ -20,10 +20,10 @@
                         <input type="text" class="form-control d-none" name="id_productos" id="update_id" readonly>
                         <input type="text" class="form-control d-none mt-2" name="codigo_barras" id="codigo_barras" readonly>
                         <input type="text" class="form-control d-none mt-2" name="marca" id="marca" readonly>
-                        <input type="text" class="form-control d-none mt-2" name="modelo" id="modelo" readonly>
+                        <input type="text" class="form-control mt-2" name="modelo" id="modelo" readonly>
                         <input type="text" class="form-control d-none mt-2" name="stock" id="stock" readonly>
 
-                        <label for="">Marque la cantidad que desee retirar</label>
+                        <label for="" class="mt-2">Ingrese la cantidad que desea retirar:</label>
                         <input type="number" name="stockDescontado" class="form-control" id="stockDescontado" min="1" pattern="^[0-9]+" required>
 
                         <?php

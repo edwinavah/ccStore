@@ -1,4 +1,7 @@
 <?php
+    require_once "../conexion.php";
+    $conexion = conexion();
+    session_start();
     $usuario = $_SESSION['user'];
 ?>
 

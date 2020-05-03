@@ -3,6 +3,17 @@ ALTER DATABASE ccStoreInventarios charset=utf8;
 
 USE ccStoreInventarios;
 
+CREATE TABLE usuarios (
+    id_usuarios BIGINT NOT NULL AUTO_INCREMENT,
+    nombre VARCHAR(100) NOT NULL,
+    usuario VARCHAR(20) NOT NULL,
+    contrasena VARCHAR(100) NOT NULL,
+    fechaRegistro VARCHAR(10) NOT NULL,
+    tipoUsuario VARCHAR(15) NOT NULL,
+    archivo VARCHAR(500),
+    PRIMARY KEY (id_usuarios)
+);
+
 CREATE TABLE productos (
     id_productos BIGINT NOT NULL AUTO_INCREMENT,
     codigo_barras VARCHAR(100),
@@ -25,17 +36,6 @@ INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VA
 INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES (null, "Cermark", "Metal Laser Marking Spray", "1pz", 40);
 INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES (null, "LBT", "Laserbond 100", "1pz", 3);
 
-CREATE TABLE usuarios (
-    id_usuarios BIGINT NOT NULL AUTO_INCREMENT,
-    nombre VARCHAR(100) NOT NULL,
-    usuario VARCHAR(20) NOT NULL,
-    contrasena VARCHAR(100) NOT NULL,
-    fechaRegistro VARCHAR(10) NOT NULL,
-    tipoUsuario VARCHAR(15) NOT NULL,
-    archivo VARCHAR(500),
-    PRIMARY KEY (id_usuarios)
-);
-
 CREATE TABLE adminRegistros (
     id_adminRegistros BIGINT NOT NULL AUTO_INCREMENT,
     usuario VARCHAR(100) NOT NULL,
@@ -55,4 +55,28 @@ CREATE TABLE salida (
     fechaRegistro TIMESTAMP NOT NULL,
     usuario VARCHAR(100) NOT NULL,
     PRIMARY KEY (id_productos)
+);
+
+CREATE TABLE guias_dhl (
+    id_guias_dhl BIGINT NOT NULL AUTO_INCREMENT,
+    guia VARCHAR(100),
+    fechaRegistro DATE NOT NULL,
+    usuario VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id_guias_dhl)
+);
+
+CREATE TABLE guias_fedex (
+    id_guias_fedex BIGINT NOT NULL AUTO_INCREMENT,
+    guia VARCHAR(100),
+    fechaRegistro DATE NOT NULL,
+    usuario VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id_guias_fedex)
+);
+
+CREATE TABLE guias_estafeta (
+    id_guias_estafeta BIGINT NOT NULL AUTO_INCREMENT,
+    guia VARCHAR(100),
+    fechaRegistro DATE NOT NULL,
+    usuario VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id_guias_estafeta)
 );

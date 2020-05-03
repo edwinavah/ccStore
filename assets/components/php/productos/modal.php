@@ -14,12 +14,12 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <label for="">¿Seguro que quieres eliminar un registro?</label>
+                    <label for="">¿Seguro que quieres eliminar este producto?</label>
                     <form id="delete" method="POST">
-                        <input type="text" name="delete_id" class="form-control mt-2" id="delete_id" required readonly>
-                        <input type="text" name="delete_marca" class="form-control mt-2" id="delete_marca" required readonly>
+                        <input type="number" name="delete_id" class="form-control mt-2 d-none" id="delete_id" required readonly>
+                        <input type="text" name="delete_marca" class="form-control mt-2 d-none" id="delete_marca" required readonly>
                         <input type="text" name="delete_modelo" class="form-control mt-2" id="delete_modelo" required readonly>
-                        <input type="number" name="delete_stock" class="form-control mt-2" id="delete_stock" required readonly>
+                        <input type="number" name="delete_stock" class="form-control mt-2 d-none" id="delete_stock" required readonly>
                         <br>
                             <div id="respuesta" style="background: #17a2b8; text-align: center; color: whitesmoke; font-weight: 700;"></div>
                         <div class="modal-footer">
@@ -84,26 +84,26 @@
                                         echo 
                                         '<div class="col d-none">
                                             <label for="" class="mt-2">Cantidad en stock</label>
-                                            <input type="number" name="stock_anterior" class="form-control" id="stock_anterior" min="1" pattern="^[0-9]+" required readonly>
+                                            <input type="number" name="stock_anterior" class="form-control" id="stock_anterior" min="0" pattern="^[0-9]+" required readonly>
                                         </div>';
 
                                         echo 
                                         '<div class="col d-none">
                                             <label for="" class="mt-2">Cantidad en stock</label>
-                                            <input type="number" name="stock" class="form-control" id="stock" min="1" pattern="^[0-9]+" required readonly>
+                                            <input type="number" name="stock" class="form-control" id="stock" min="0" pattern="^[0-9]+" required readonly>
                                         </div>';
                                     } else {
                                         // CAMPOS EDITABLES PARA ADMINISTRADOR
                                         echo 
                                         '<div class="col d-none">
                                             <label for="" class="mt-2">Cantidad en stock</label>
-                                            <input type="number" name="stock_anterior" class="form-control" id="stock_anterior" min="1" pattern="^[0-9]+" required readonly>
+                                            <input type="number" name="stock_anterior" class="form-control" id="stock_anterior" min="0" pattern="^[0-9]+" required readonly>
                                         </div>';
                                         
                                         echo 
                                         '<div class="col">
                                             <label for="" class="mt-2">Cantidad en stock</label>
-                                            <input type="number" name="stock" class="form-control" id="stock" min="1" pattern="^[0-9]+" required>
+                                            <input type="number" name="stock" class="form-control" id="stock" min="0" pattern="^[0-9]+" required>
                                         </div>';
                                     }
                                 ?>

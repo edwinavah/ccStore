@@ -2,7 +2,6 @@
     require_once "../conexion.php";
     $conexion = conexion();
     session_start();
-    include("modal.php");
     $usuario = $_SESSION['user'];
 ?>
 
@@ -23,7 +22,7 @@
 
 <div class="row">
     <!-- TABLA DE REGISTROS DE PRODUCTOS MODIFICADOS -->
-    <div class="col-sm-12 col-lg-6 mt-3">
+    <div class="col-sm-12 col-xl-6 mt-3">
         <div class="info rounded">
             <button type="button" class="btn btn-warning mt-1" data-toggle="modal" data-target="#productosModificados">
                 Ver todos los productos modificados <span class="badge badge-light"><?php echo $count_modificado_user->num_rows; ?></span>
@@ -67,7 +66,7 @@
         </div>
     </div>
     <!-- TABLA DE REGISTROS DE PRODUCTOS AGREGADOS -->
-    <div class="col-sm-12 col-lg-6 mt-3">
+    <div class="col-sm-12 col-xl-6 mt-3">
         <div class="info rounded">
             <button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#productosEliminados">
                 Ver todos los productos eliminados <span class="badge badge-light"><?php echo $count_eliminado_user->num_rows; ?></span>
@@ -113,7 +112,7 @@
 </div>
 
 <div class="row mt-3">
-    <div class="col-sm-12 col-lg-12">
+    <div class="col-sm-12 col-xl-12">
         <div class="info rounded">
             <button type="button" class="btn btn-success mt-1" data-toggle="modal" data-target="#productosAgregados">
                 Ver todos los productos agregados <span class="badge badge-light"><?php echo $count_agregado_user->num_rows; ?></span>
@@ -168,7 +167,7 @@
 
 <div class="row">
     <!-- TABLA DE REGISTROS DE PRODUCTOS MODIFICADOS -->
-    <div class="col-sm-12 col-lg-6 mt-3">
+    <div class="col-sm-12 col-xl-6 mt-3">
         <div class="info rounded">
             <button type="button" class="btn btn-warning mt-1" data-toggle="modal" data-target="#productosModificados">
                 Ver todos los productos modificados <span class="badge badge-light"><?php echo $count_modificado->num_rows; ?></span>
@@ -212,7 +211,7 @@
         </div>
     </div>
     <!-- TABLA DE REGISTROS DE PRODUCTOS AGREGADOS -->
-    <div class="col-sm-12 col-lg-6 mt-3">
+    <div class="col-sm-12 col-xl-6 mt-3">
         <div class="info rounded">
             <button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#productosEliminados">
                 Ver todos los productos eliminados <span class="badge badge-light"><?php echo $count_eliminado->num_rows; ?></span>
@@ -258,7 +257,7 @@
 </div>
 
 <div class="row mt-3">
-    <div class="col-sm-12 col-lg-12">
+    <div class="col-sm-12 col-xl-12">
         <div class="info rounded">
             <button type="button" class="btn btn-success mt-1" data-toggle="modal" data-target="#productosAgregados">
                 Ver todos los productos agregados <span class="badge badge-light"><?php echo $count_agregado->num_rows; ?></span>
@@ -301,34 +300,6 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
-
-<hr>
-
-<div class="row mt-3">
-    <div class="col-12">
-        <form action="assets/components/php/administracion/reporte.php" method="POST" target="_blank">
-            <div class="form-group">
-                <div class="form-row">
-                    <div class="col">
-                        <div class="input-group pull-left">
-                            <span class="input-group-addon mt-2 mr-2" id="basic-addon1">Desde:</span>
-                            <input type="date" name="desde" class="form-control" id="desde" required>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="input-group pull-left">
-                            <span class="input-group-addon mt-2 mr-2" id="basic-addon1">Hasta:</span>
-                            <input type="date" name="hasta" class="form-control" id="hasta" required>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <button type="submit" class="btn btn-danger text-white">Exportar PDF <i class="fas fa-file-pdf"></i></button>
-                    </div>
-                </div>
-            </div>
-        </form>
     </div>
 </div>
 

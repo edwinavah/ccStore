@@ -14,11 +14,10 @@
         <script src="assets/libraries/js/jquery-3.4.1.min.js"></script>
         <script src="assets/libraries/js/bootstrap.min.js"></script>
         <script src="assets/libraries/js/alertify.js"></script>
-        <script src="assets/components/js/salidaProductos.js"></script>
 
         <!-- FAVICON Y TITULO EN EL NAVEGADOR  -->
         <link rel="shortcut icon" href="assets/images/favicon.svg">
-        <title>ccStore | Salida de Productos</title>
+        <title>ccStore | Números de guías</title>
     </head>
     
     <body>
@@ -30,7 +29,8 @@
             session_start(); 
             if (isset($_SESSION['loggedin'])) {  
                 //INICIO SESION 
-            } else {
+            }
+            else {
                 //NO INICIO SESION
                 header("Location: index.php");
                 exit;
@@ -48,7 +48,7 @@
                     exit;
             }
         ?>
-        <!-- PRODUCTOS -->
+        <!-- PRODUCTOS POR AGOTAR -->
         <main>
             <!-- AGREGANDO NAVBAR IZQUIERDA -->
             <div class="container-fluid">
@@ -57,56 +57,13 @@
                         <!-- CONTENIDO NAVBAR -->
                     </div>
                     
-                    <!-- CONTENIDO SALIDA PRODUCTOS -->
+                    <!-- CONTENIDO PRODUCTOS POR AGOTAR -->
                     <main class="main col">
                        <div class="container-fluid">
-                           <!-- COMPONENTES AGREGAR Y BUSCAR -->
-                            <div class="row mt-4">
-                                <div class="col-12 col-lg-12 mb-3">
-                                    <div class="input-group">
-                                        <input type="text" name="caja_busqueda" id="caja_busqueda" class="form-control" placeholder="Buscar por codigo de barras o modelo">
-                                        <div class="input-group-append">
-                                            <button class="btn btn-dark"><i class="fas fa-search"></i></button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
                             <div class="row">
                                 <div class="col-12">
-                                    <!-- TABLA DE PRODUCTOS -->
-                                    <div id="salidaProductos"></div>
-
-                                    <!-- TABLA SALIDA PRODUCTOS -->
-                                    <div id="salidaRegistro"></div>
-                                    
-                                    <!-- MODAL PARA SELECCION DE CANTIDAD -->
+                                    <div id="guias"></div>
                                     <div id="modal"></div>
-
-                                    <?php
-                                        if($_SESSION['tipo'] != "Administrador"){
-                                            // SESION INICIADA COMO USUARIO
-                                        } else {
-                                    ?>
-                                    <!-- AGREGANDO CAMPOS PARA GENERAR REPORTE SI ES ADMINISTRADOR -->
-                                    <hr>
-                                    <div id="generarReporte"></div>
-
-                                        <?php
-                                            if($_SESSION['user'] != "admin@admin"){
-                                                // SI NO ES EL ADMINISTRADOR ADMIN
-                                            } else {
-
-                                        ?>
-                                    
-                                    <!-- AGREGANDO CAMPOS PARA BORRAR REPORTE SI ES ADMIN --> 
-                                    <hr>
-                                    <div id="eliminarReporte"></div>
-
-                                    <?php
-                                            }
-                                        }
-                                    ?>
                                 </div>
                             </div>
                         </div>
@@ -130,22 +87,12 @@
 <script type="text/javascript">
     $(document).ready(function(){
         $('#navbar').load('assets/components/php/navbar.php');
-        $('#modal').load('assets/components/php/salidaProductos/modal.php');
-        $('#generarReporte').load('assets/components/php/salidaProductos/generarReporte.php');
-        $('#eliminarReporte').load('assets/components/php/salidaProductos/eliminarReporte.php');
+        $('#modal').load('assets/components/php/guias/modal.php');
 
         $(document).ready(function(){
             setInterval(
                 function(){
-                    $('#salidaProductos').load('assets/components/php/salidaProductos/salidaProductos.php');
-                }, 60000
-            );
-        });
-
-        $(document).ready(function(){
-            setInterval(
-                function(){
-                    $('#salidaRegistro').load('assets/components/php/salidaProductos/salidaRegistro.php');
+                    $('#guias').load('assets/components/php/guias/guias.php');
                 }, 500
             );
         });
