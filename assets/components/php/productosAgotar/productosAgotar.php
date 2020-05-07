@@ -5,7 +5,7 @@
 
 <div class="row mt-4">
     <div class="col-sm-12">
-        <div class="table-responsive-xl">
+        <div class="table-responsive-xl" style="font-size: 15px;">
             <table class="table table-sm table-hover table-condensed table-bordered table-striped mt-3">
                 <thead>
                     <tr>

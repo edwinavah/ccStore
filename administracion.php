@@ -75,7 +75,17 @@
                                     <!-- AGREGANDO CAMPOS PARA GENERAR REPORTE SI ES ADMINISTRADOR -->
                                     <hr>
                                     <div id="generarReporte"></div>
+                                    
+                                        <?php
+                                            if($_SESSION['user'] != "admin@admin"){
+                                                // SI NO ES EL ADMINISTRADOR ADMIN
+                                            } else {
+                                        ?>
+                                    <!-- AGREGANDO CAMPOS PARA BORRAR REPORTE SI ES ADMIN --> 
+                                    <hr>
+                                    <div id="eliminarReporte"></div>
                                     <?php
+                                            }
                                         }
                                     ?>
                                 </div>
@@ -103,6 +113,7 @@
         $('#navbar').load('assets/components/php/navbar.php');
         $('#modal').load('assets/components/php/administracion/modal.php');
         $('#generarReporte').load('assets/components/php/administracion/generarReporte.php');
+        $('#eliminarReporte').load('assets/components/php/administracion/eliminarReporte.php');
 
         $(document).ready(function(){
             setInterval(

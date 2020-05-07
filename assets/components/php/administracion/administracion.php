@@ -10,6 +10,7 @@
         background: #ffffff;
         box-shadow: 0px 0px 3px #848484;
         padding: 10px;
+        font-size: 15px;
     }
 </style>
 

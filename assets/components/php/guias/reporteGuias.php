@@ -1,5 +1,5 @@
 <?php
-require('../../pdf/fpdf.php');
+require('../../pdf/fpdf_horizontal.php');
 
 date_default_timezone_set('America/Mexico_City');
 $fechaHoy = date("d/m/Y");
@@ -8,6 +8,15 @@ require_once "../conexion.php";
     $conexion = conexion();
     $desde = $_POST['desde'];
     $hasta = $_POST['hasta'];
+    $empresa = $_POST['empresa'];
+
+    if($empresa == "guias_dhl"){
+        $nombre_empresa = "DHL";
+    } else if ($empresa == "guias_fedex"){
+        $nombre_empresa = "FedEx";
+    } else if ($empresa == "guias_estafeta"){
+        $nombre_empresa = "Estafeta";
+    }
 //$fpdf = new FPDF();
 
 class PDF extends FPDF
@@ -38,9 +47,9 @@ public function Footer()
     $pdf->AddPage();//agrega pagina
     $pdf->SetX(-58);
     $pdf->SetTextColor(88, 88, 88);
-    $pdf->Cell(20,20,'Fecha de creacion: '.$fechaHoy, 0,0,'C',0);
-    $pdf->SetX(-62);
-    $pdf->Cell(20,30,'Periodo: '.$desde.' / '.$hasta, 0,1,'C',0);
+    $pdf->Cell(20,10,'Fecha de creacion: '.$fechaHoy, 0,0,'C',0);
+    $pdf->SetX(-60);
+    $pdf->Cell(20,20,'Periodo: '.$desde.' / '.$hasta, 0,1,'C',0);
     //$pdf->Cell(20,20,'Reporte del: '.$desde, 0,1,'C',0);
     $pdf->SetMargins(10,30,20,20); //margen al contenido
     
@@ -49,21 +58,18 @@ public function Footer()
     $pdf->SetFont('Arial','B',13);
     $pdf->SetY(30);//posicion en Y
     $pdf->Ln(10);
-    $pdf->Cell(0,5,'Reporte salida de productos', 0,0,'C');
+    $pdf->Cell(190,5,'Reporte de guias '.$nombre_empresa, 0,0,'C');
     $pdf->Ln(10);//salto de linea y su tamaño
 
     //** Encabezado de la tabla **
     $pdf->SetFont('Arial','B',11);
     $pdf->SetX(20);//posicion en X
-    $pdf->Cell(40,9,'Codigo de Barras', 0,0,'C',0);
-    $pdf->Cell(60,9,'Marca', 0,0,'C',0);
-    $pdf->Cell(65,9,'Modelo', 0,0,'C',0);
-    $pdf->Cell(20,9,'Cantidad', 0,0,'C',0);
-    $pdf->Cell(41,9,'Fecha', 0,0,'C',0);
-    $pdf->Cell(30,9,'Usuario', 0,1,'C',0);
+    $pdf->Cell(110,10,'Numero de guia', 0,0,'C',0);
+    $pdf->Cell(30,10,'Fecha', 0,0,'C',0);
+    $pdf->Cell(30,10,'Usuario', 0,1,'C',0);
     $pdf->SetDrawColor(2, 119, 189);//pinta lo que se quiere (linea)
     $pdf->SetLineWidth(1);//grosor de la linea
-    $pdf->Line(20,50,275,50);//linea y posicion
+    $pdf->Line(21,50,188,50);//linea y posicion
 
     //****TABLA SALIDA***** 
     $pdf->Ln(2);//salto de linea tamaño
@@ -73,23 +79,20 @@ public function Footer()
     $pdf->SetLineWidth(1);
     
     $SDATE = $_POST['desde'];
-    $SDATE = date("$SDATE 00:00:00");
+    // $SDATE = date("$SDATE 00:00:00");
 
     $EDATE = $_POST['hasta'];
-    $EDATE = date("$EDATE 23:59:59");
+    // $EDATE = date("$EDATE 23:59:59");
 
-    $sentencia = ("SELECT * FROM salida WHERE fechaRegistro BETWEEN '$SDATE' AND '$EDATE'");
+    $sentencia = ("SELECT * FROM $empresa WHERE fechaRegistro BETWEEN '$SDATE' AND '$EDATE'");
     $query = mysqli_query($conexion,$sentencia);
     
     while($row = $query -> fetch_assoc()){
         $pdf->SetX(20);//posicion en X
         $pdf->SetFillColor(248, 249, 249 ); //relleno de la tabla y su color
 
-        $pdf->Cell(40,8, $row['codigo_barras'], 1,0,'C',1);
-        $pdf->Cell(60,8, $row['marca'], 1,0,'C',1);
-        $pdf->Cell(65,8, $row['modelo'], 1,0,'C',1);
-        $pdf->Cell(20,8, $row['stock'], 1,0,'C',1);
-        $pdf->Cell(41,8, $row['fechaRegistro'], 1,0,'C',1);
+        $pdf->Cell(110,8, $row['guia'], 1,0,'C',1);
+        $pdf->Cell(30,8, $row['fechaRegistro'], 1,0,'C',1);
         $pdf->Cell(30,8, $row['usuario'], 1,1,'C',1);
     }
     
