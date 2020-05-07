@@ -39,7 +39,7 @@ public function Footer()
     $pdf->SetTextColor(88, 88, 88);
     $pdf->Cell(20,20,'Fecha de creacion: '.$fechaHoy, 0,0,'C',0);
     $pdf->SetX(-62);
-    $pdf->Cell(20,30,'Pereodo: '.$desde.' / '.$hasta, 0,1,'C',0);
+    $pdf->Cell(20,30,'Periodo: '.$desde.' / '.$hasta, 0,1,'C',0);
     //$pdf->Cell(20,20,'Reporte del: '.$desde, 0,1,'C',0);
     $pdf->SetMargins(10,30,20,20); //margen al contenido
     
