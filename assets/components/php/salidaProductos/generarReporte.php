@@ -1,6 +1,6 @@
 <div class="row mt-3">
     <div class="col-12">
-        <form action="assets/components/php/salidaProductos/reporteSalida.php" method="POST" target="_blank">
+        <form action="assets/components/php/salidaProductos/excel.php" method="POST" target="_blank">
             <div class="form-group">
                 <div class="form-row">
                     <div class="col">
