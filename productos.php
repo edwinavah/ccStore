@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="assets/libraries/css/alertify.css">
         <link rel="stylesheet" href="assets/libraries/css/themes/default.css">
         <link rel="stylesheet" href="assets/components/css/estilos.css">
+        <link href="http://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 
         <script defer src="assets/libraries/js/all.js"></script>
         <script src="assets/libraries/js/jquery-3.4.1.min.js"></script>
