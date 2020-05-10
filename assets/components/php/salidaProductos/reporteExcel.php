@@ -4,7 +4,9 @@
     header("Content-Type:application/xls");
     header("Content-Disposition: attachment; filename=SalidaProductos.xls"); //nombre del documento
 
-    //require('../../Classes/PHPExcel.php');
+    date_default_timezone_set('America/Mexico_City');
+    $fechaHoy = date("d/m/Y");
+    
     require_once "../conexion.php";
     $conexion = conexion();
 
@@ -21,6 +23,7 @@
 ?>
     <table>
             <tr>
+            <h4>Reporte Salida de Productos - Fecha: <?php echo"$fechaHoy" ?></h4>
                 <th>Codigo de Barras</th>
                 <th>Marca</th>
                 <th>Modelo</th>
