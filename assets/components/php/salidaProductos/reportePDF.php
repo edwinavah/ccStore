@@ -78,7 +78,8 @@ public function Footer()
     $EDATE = $_POST['hasta'];
     $EDATE = date("$EDATE 23:59:59");
 
-    $sentencia = ("SELECT * FROM salida WHERE fechaRegistro BETWEEN '$SDATE' AND '$EDATE'");
+    $sentencia = ("SELECT productos.codigo_barras AS codigo_barras, productos.marca AS marca, productos.modelo AS modelo, stock_salida, fechaRegistro, usuario 
+    FROM salida INNER JOIN productos ON salida.id_productos = productos.id_productos WHERE fechaRegistro BETWEEN '$SDATE' AND '$EDATE'");
     $query = mysqli_query($conexion,$sentencia);
     
     while($row = $query -> fetch_assoc()){
@@ -88,7 +89,7 @@ public function Footer()
         $pdf->Cell(40,8, $row['codigo_barras'], 1,0,'C',1);
         $pdf->Cell(60,8, $row['marca'], 1,0,'C',1);
         $pdf->Cell(65,8, $row['modelo'], 1,0,'C',1);
-        $pdf->Cell(20,8, $row['stock'], 1,0,'C',1);
+        $pdf->Cell(20,8, $row['stock_salida'], 1,0,'C',1);
         $pdf->Cell(41,8, $row['fechaRegistro'], 1,0,'C',1);
         $pdf->Cell(30,8, $row['usuario'], 1,1,'C',1);
     }

@@ -47,15 +47,15 @@ CREATE TABLE adminRegistros (
 );
 
 CREATE TABLE salida (
-    id_productos BIGINT NOT NULL AUTO_INCREMENT,
-    codigo_barras VARCHAR(100),
-    marca VARCHAR(100) NOT NULL,
-    modelo VARCHAR(100) NOT NULL,
-    stock INT NOT NULL,
+    id_salida BIGINT NOT NULL AUTO_INCREMENT,
+    id_productos BIGINT NOT NULL,
+    stock_salida INT NOT NULL,
     fechaRegistro TIMESTAMP NOT NULL,
     usuario VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id_productos)
+    PRIMARY KEY (id_salida)
 );
+
+ALTER TABLE salida ADD FOREIGN KEY(id_productos) REFERENCES productos(id_productos);
 
 CREATE TABLE guias_dhl (
     id_guias_dhl BIGINT NOT NULL AUTO_INCREMENT,

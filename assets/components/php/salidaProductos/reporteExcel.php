@@ -14,7 +14,8 @@
     $EDATE = $_POST['hasta'];
     $EDATE = date("$EDATE 23:59:59");
 
-    $sentencia = ("SELECT * FROM salida WHERE fechaRegistro BETWEEN '$SDATE' AND '$EDATE'");
+    $sentencia = ("SELECT productos.codigo_barras AS codigo_barras, productos.marca AS marca, productos.modelo AS modelo, stock_salida, fechaRegistro, usuario 
+    FROM salida INNER JOIN productos ON salida.id_productos = productos.id_productos WHERE fechaRegistro BETWEEN '$SDATE' AND '$EDATE'");
     $query = mysqli_query($conexion,$sentencia);
 
 ?>
@@ -35,7 +36,7 @@
                 <td><?php echo $registros['codigo_barras']; ?></td>
                 <td><?php echo $registros['marca']; ?></td>
                 <td><?php echo $registros['modelo']; ?></td>
-                <td><?php echo $registros['stock']; ?></td>
+                <td><?php echo $registros['stock_salida']; ?></td>
                 <td><?php echo $registros['fechaRegistro']; ?></td>
                 <td><?php echo $registros['usuario']; ?></td>
             </tr>

@@ -2,22 +2,12 @@
     require_once "../conexion.php";
     $conexion = conexion();
 
-    $id_productos = $_POST['id_productos'];
-    $codigo_barras = $_POST['codigo_barras'];
-    $marca = $_POST['marca'];
-    $modelo = $_POST['modelo'];
-    $especificaciones = $_POST['especificaciones'];
+    $id_salida = $_POST['delete_id_salida'];
+    $id_productos = $_POST['delete_id_pruductos'];
+    $stockProductos = $_POST['delete_stockProductos'];
+    $stockDescontado = $_POST['delete_stockDescontado'];
 
-    $stockDescontado = $_POST['stockDescontado'];
-
-    $fechaActual = $_POST['fechaRegistro'];
-    $usuario = $_POST['usuario'];
-
-
-        
-
-        $stockDescontado += $stockActual;
-        $conexion->query("UPDATE productos SET stock =' stock + ".$stockDescontado."' WHERE id_productos='".$id_productos."' ");
-        
-        $conexion->query("DELETE FROM salida WHERE id_productos='".$id_productos."' ");
+    $stock = $stockProductos + $stockDescontado;
+    $conexion->query("UPDATE productos SET stock = '".$stock."' WHERE id_productos='".$id_productos."'");
+    $conexion->query("DELETE FROM salida WHERE id_salida='".$id_salida."'");
 ?>
