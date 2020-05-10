@@ -1,6 +1,7 @@
 <?php
     require_once "../conexion.php";
     $conexion = conexion();
+    //include('modalCancelar.php');
 ?>
 
 <!-- TABLA SALIDA DE PRODUCTOS -->
@@ -16,6 +17,7 @@
                         <td scope="col" class="text-center align-middle background-table">Cantidad</td>
                         <td scope="col" class="text-center align-middle background-table">Fecha - Hora</td>
                         <td scope="col" class="text-center align-middle background-table">Usuario</td>
+                        <td scope="col" class="text-center align-middle background-table">Accion</td>
                     </tr>
                 </thead>
 
@@ -40,6 +42,9 @@
                         <td class="align-middle"><?php echo $buscar[4] ?></td>
                         <td class="align-middle"><?php echo $buscar[5] ?></td>
                         <td class="align-middle"><?php echo $buscar[6] ?></td>
+                        <td class="text-center align-middle" style="min-width: 125px; width: 125px">
+                        <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#cancelar" onclick="agregaform1(\''.$datos.'\')"><i class="far fa-edit"></i> + </button>
+                        </td>
                     </tr>
 
                 <?php

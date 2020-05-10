@@ -82,6 +82,7 @@
                                     
                                     <!-- MODAL PARA SELECCION DE CANTIDAD -->
                                     <div id="modal"></div>
+                                    <div id="modalCancelar"></div>
 
                                     <?php
                                         if($_SESSION['tipo'] != "Administrador"){
@@ -131,7 +132,8 @@
     $(document).ready(function(){
         $('#navbar').load('assets/components/php/navbar.php');
         $('#modal').load('assets/components/php/salidaProductos/modal.php');
-        $('#generarReporte').load('assets/components/php/salidaProductos/generarReporte.php');
+        $('#modalCancelar').load('assets/components/php/salidaProductos/modalCancelar.php');
+        $('#generarReporte').load('assets/components/php/salidaProductos/reportes.php');
         $('#eliminarReporte').load('assets/components/php/salidaProductos/eliminarReporte.php');
 
         $(document).ready(function(){

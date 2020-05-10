@@ -1,6 +1,6 @@
 <div class="row mt-3">
     <div class="col-12">
-        <form action="assets/components/php/salidaProductos/excel.php" method="POST" target="_blank">
+        <form id="reportes" name="reportes" method="POST" target="_blank">
             <div class="form-group">
                 <div class="form-row">
                     <div class="col">
@@ -16,7 +16,15 @@
                         </div>
                     </div>
                     <div class="col">
-                        <button type="submit" class="btn btn-danger text-white">Exportar PDF <i class="fas fa-file-pdf"></i></button>
+
+                        <input class="btn btn-danger text-white" type="button" target="_blank" value="Exportar PDF" 
+                        onclick= "document.reportes.action = 'assets/components/php/salidaProductos/reportePDF.php'; 
+                        document.reportes.submit()" />
+
+                        <input class="btn btn-success text-white" type="button" value="Exportar EXCEL"
+                        onclick= "document.reportes.action = 'assets/components/php/salidaProductos/reporteExcel.php'; 
+                        document.reportes.submit()" />
+
                     </div>
                 </div>
             </div>
