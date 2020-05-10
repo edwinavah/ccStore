@@ -1,6 +1,7 @@
 body{
     background: url(../../images/background.jpg) no-repeat center center fixed;
     background-size: cover;
+    font-family: 'Roboto','Open Sans', 'sans-serif';
 }
 
 .main-section{
