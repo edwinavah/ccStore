@@ -169,3 +169,57 @@
         </div>
     </div>
 </div>
+
+<div class="row mt-3">
+    <div class="col-12">
+        <div class="info rounded">
+            <!-- LOGO Y BOTON PARA AGREGAR GUIAS -->
+            <div class="d-flex mt-2 mb-2">
+                <div class="mr-auto">
+                        <!-- LOGO PARA OTROS -->
+                </div>
+                <div>
+                    <button type="button" class="btn btn-sm btn-info" data-toggle="modal" data-target="#btnOtros">Escanear guías aquí</button>
+                </div>
+            </div>
+            <div class="table-responsive-xl mt-2">
+                <table class="table table-sm table-hover table-condensed table-bordered table-striped">
+                    <thead>
+                        <tr class="text-center bg-info text-white">
+                            <td class="align-middle d-none" scope="col">ID</td>
+                            <td class="align-middle" scope="col">Guía</td>
+                            <td class="align-middle" scope="col">Empresa</td>
+                            <td class="align-middle" scope="col">Fecha</td>
+                            <td class="align-middle" scope="col">Usuario</td>
+                        </tr>
+                    </thead>
+
+                    <?php
+                    $sql = "SELECT id_guias_otros, guia, empresa, DATE_FORMAT(fechaRegistro, '%d/%m/%Y'), usuario
+                    FROM guias_otros WHERE fechaRegistro = '$hoy' ORDER BY fechaRegistro DESC";
+                    $resultado = mysqli_query($conexion, $sql);
+
+                    while ($buscar = mysqli_fetch_row($resultado)) {
+                        $datos = $buscar[0] . "||" .
+                            $buscar[1] . "||" .
+                            $buscar[2] . "||" .
+                            $buscar[3] . "||" .
+                            $buscar[4];
+                    ?>
+                    
+                        <tr>
+                            <td class="align-middle d-none"><?php echo $buscar[0] ?></td>
+                            <td class="align-middle"><?php echo $buscar[1] ?></td>
+                            <td class="align-middle"><?php echo $buscar[2] ?></td>
+                            <td class="align-middle"><?php echo $buscar[3] ?></td>
+                            <td class="align-middle"><?php echo $buscar[4] ?></td>
+                        </tr>
+                    
+                    <?php
+                        }
+                    ?>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

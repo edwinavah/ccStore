@@ -16,6 +16,8 @@ require_once "../conexion.php";
         $nombre_empresa = "FedEx";
     } else if ($empresa == "guias_estafeta"){
         $nombre_empresa = "Estafeta";
+    } else if ($empresa == "guias_otros"){
+        $nombre_empresa = "Otros";
     }
 //$fpdf = new FPDF();
 
@@ -64,12 +66,24 @@ public function Footer()
     //** Encabezado de la tabla **
     $pdf->SetFont('Arial','B',11);
     $pdf->SetX(20);//posicion en X
-    $pdf->Cell(110,10,'Numero de guia', 0,0,'C',0);
-    $pdf->Cell(30,10,'Fecha', 0,0,'C',0);
-    $pdf->Cell(30,10,'Usuario', 0,1,'C',0);
-    $pdf->SetDrawColor(2, 119, 189);//pinta lo que se quiere (linea)
-    $pdf->SetLineWidth(1);//grosor de la linea
-    $pdf->Line(21,50,188,50);//linea y posicion
+
+    if($empresa == "guias_otros"){
+        $pdf->Cell(75,10,'Numero de guia', 0,0,'C',0);
+        $pdf->Cell(35,10,'Empresa', 0,0,'C',0);
+        $pdf->Cell(30,10,'Fecha', 0,0,'C',0);
+        $pdf->Cell(30,10,'Usuario', 0,1,'C',0);
+        $pdf->SetDrawColor(2, 119, 189);//pinta lo que se quiere (linea)
+        $pdf->SetLineWidth(1);//grosor de la linea
+        $pdf->Line(21,50,188,50);//linea y posicion
+    } else {
+        $pdf->Cell(110,10,'Numero de guia', 0,0,'C',0);
+        $pdf->Cell(30,10,'Fecha', 0,0,'C',0);
+        $pdf->Cell(30,10,'Usuario', 0,1,'C',0);
+        $pdf->SetDrawColor(2, 119, 189);//pinta lo que se quiere (linea)
+        $pdf->SetLineWidth(1);//grosor de la linea
+        $pdf->Line(21,50,188,50);//linea y posicion
+    }
+    
 
     //****TABLA SALIDA***** 
     $pdf->Ln(2);//salto de linea tamaño
@@ -87,13 +101,25 @@ public function Footer()
     $sentencia = ("SELECT * FROM $empresa WHERE fechaRegistro BETWEEN '$SDATE' AND '$EDATE'");
     $query = mysqli_query($conexion,$sentencia);
     
-    while($row = $query -> fetch_assoc()){
-        $pdf->SetX(20);//posicion en X
-        $pdf->SetFillColor(248, 249, 249 ); //relleno de la tabla y su color
-
-        $pdf->Cell(110,8, $row['guia'], 1,0,'C',1);
-        $pdf->Cell(30,8, $row['fechaRegistro'], 1,0,'C',1);
-        $pdf->Cell(30,8, $row['usuario'], 1,1,'C',1);
+    if($empresa == "guias_otros"){
+        while($row = $query -> fetch_assoc()){
+            $pdf->SetX(20);//posicion en X
+            $pdf->SetFillColor(248, 249, 249 ); //relleno de la tabla y su color
+    
+            $pdf->Cell(75,8, $row['guia'], 1,0,'C',1);
+            $pdf->Cell(35,8, $row['empresa'], 1,0,'C',1);
+            $pdf->Cell(30,8, $row['fechaRegistro'], 1,0,'C',1);
+            $pdf->Cell(30,8, $row['usuario'], 1,1,'C',1);
+        }
+    } else {
+        while($row = $query -> fetch_assoc()){
+            $pdf->SetX(20);//posicion en X
+            $pdf->SetFillColor(248, 249, 249 ); //relleno de la tabla y su color
+    
+            $pdf->Cell(110,8, $row['guia'], 1,0,'C',1);
+            $pdf->Cell(30,8, $row['fechaRegistro'], 1,0,'C',1);
+            $pdf->Cell(30,8, $row['usuario'], 1,1,'C',1);
+        }
     }
     
     $pdf->Output();

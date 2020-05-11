@@ -17,6 +17,8 @@
         $nombre_empresa = "FedEx";
     } else if ($empresa == "guias_estafeta"){
         $nombre_empresa = "Estafeta";
+    } else if ($empresa == "guias_otros"){
+        $nombre_empresa = "Otros";
     }
 
     $SDATE = $_POST['desde'];
@@ -31,22 +33,49 @@
 ?>
     
     <table>
-    <h4>Guia <?php echo"$nombre_empresa" ?> - Fecha: <?php echo"$fechaHoy" ?></h4>
+    <h4>Reporte de guias <?php echo"$nombre_empresa" ?> - Fecha: <?php echo"$fechaHoy" ?></h4>
+        <?php if($empresa == "guias_otros"){ ?>
+            <tr>
+                <th>Guia</th>
+                <th>Empresa</th>
+                <th>Fecha</th>
+                <th>Usuario</th>
+            </tr>
+        <?php } else { ?>
             <tr>
                 <th>Guia</th>
                 <th>Fecha</th>
                 <th>Usuario</th>
             </tr>
-        <?php
+        <?php } ?>
 
-        while($registros = mysqli_fetch_assoc($query)){
+
+        <?php 
+        if($empresa == "guias_otros"){ 
+            while($registros = mysqli_fetch_assoc($query)){
         ?>
-            <tr >
+            <tr>
+                <td><?php echo $registros['guia']; ?></td>
+                <td><?php echo $registros['empresa']; ?></td>
+                <td><?php echo $registros['fechaRegistro']; ?></td>
+                <td><?php echo $registros['usuario']; ?></td>
+            </tr>
+        <?php 
+            } 
+        ?>
+        <?php 
+        } else { 
+            while($registros = mysqli_fetch_assoc($query)){
+        ?>
+            <tr>
                 <td><?php echo $registros['guia']; ?></td>
                 <td><?php echo $registros['fechaRegistro']; ?></td>
                 <td><?php echo $registros['usuario']; ?></td>
             </tr>
-        <?php
-        }
+        <?php 
+            } 
         ?>
+    <?php 
+        }
+    ?>
   </table>

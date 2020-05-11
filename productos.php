@@ -66,7 +66,12 @@
                            <!-- COMPONENTES AGREGAR Y BUSCAR -->
                             <div class="row mt-4">
                                 <div class="col-12 col-lg-7 mb-3">
-                                    <button type="button" class="btn btn-primary insertarbtn" data-toggle="modal" data-target="#insertar">Agregar producto  <i class="fas fa-plus"></i></button>
+                                    <?php if($_SESSION['tipo'] != "Administrador"){ ?>
+                                        <!-- QUITANDO BOTON PARA UN USUARIO -->
+                                    <?php } else { ?>
+                                        <!-- AGREGANDO BOTON PARA ADMINISTRADOR -->
+                                        <button type="button" class="btn btn-primary insertarbtn" data-toggle="modal" data-target="#insertar">Agregar producto  <i class="fas fa-plus"></i></button>
+                                    <?php } ?>
                                 </div>
 
                                 <div class="col-12 col-lg-5 mb-3">

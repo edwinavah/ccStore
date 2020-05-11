@@ -21,6 +21,7 @@
                             <option value="guias_dhl">DHL</option>
                             <option value="guias_fedex">FedEx</option>
                             <option value="guias_estafeta">Estafeta</option>
+                            <option value="guias_otros">Otros</option>
                         </select>
                     </div>
                     <div class="col">

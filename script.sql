@@ -80,3 +80,12 @@ CREATE TABLE guias_estafeta (
     usuario VARCHAR(100) NOT NULL,
     PRIMARY KEY (id_guias_estafeta)
 );
+
+CREATE TABLE guias_otros (
+    id_guias_otros BIGINT NOT NULL AUTO_INCREMENT,
+    guia VARCHAR(100),
+    empresa VARCHAR(100),
+    fechaRegistro DATE NOT NULL,
+    usuario VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id_guias_otros)
+);
