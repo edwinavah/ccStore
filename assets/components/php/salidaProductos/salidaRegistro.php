@@ -30,7 +30,7 @@
 
                 <?php
                 $sql = "SELECT id_salida, productos.id_productos, productos.codigo_barras, productos.marca, productos.modelo, productos.stock, stock_salida, DATE_FORMAT(fechaRegistro, '%d/%m/%Y ' ' %h:%i:%s'), usuario 
-                FROM salida INNER JOIN productos ON salida.id_productos = productos.id_productos";
+                FROM salida INNER JOIN productos ON salida.id_productos = productos.id_productos ORDER BY fechaRegistro DESC LIMIT 16";
                 $resultado = mysqli_query($conexion, $sql);
 
                 while ($buscar = mysqli_fetch_row($resultado)) {

@@ -1,7 +1,7 @@
-CREATE DATABASE ccStoreInventarios;
-ALTER DATABASE ccStoreInventarios charset=utf8;
+CREATE DATABASE ccstoreinventarios;
+ALTER DATABASE ccstoreinventarios charset=utf8;
 
-USE ccStoreInventarios;
+USE ccstoreinventarios;
 
 CREATE TABLE usuarios (
     id_usuarios BIGINT NOT NULL AUTO_INCREMENT,
@@ -36,6 +36,17 @@ INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VA
 INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES (null, "Cermark", "Metal Laser Marking Spray", "1pz", 40);
 INSERT INTO productos (codigo_barras, marca, modelo, especificaciones, stock) VALUES (null, "LBT", "Laserbond 100", "1pz", 3);
 
+CREATE TABLE salida (
+    id_salida BIGINT NOT NULL AUTO_INCREMENT,
+    id_productos BIGINT NOT NULL,
+    stock_salida INT NOT NULL,
+    fechaRegistro DATETIME NOT NULL,
+    usuario VARCHAR(100) NOT NULL,
+    PRIMARY KEY (id_salida)
+);
+
+ALTER TABLE salida ADD FOREIGN KEY(id_productos) REFERENCES productos(id_productos);
+
 CREATE TABLE adminRegistros (
     id_adminRegistros BIGINT NOT NULL AUTO_INCREMENT,
     usuario VARCHAR(100) NOT NULL,
@@ -45,17 +56,6 @@ CREATE TABLE adminRegistros (
     fecha DATETIME NOT NULL,
     PRIMARY KEY (id_adminRegistros)
 );
-
-CREATE TABLE salida (
-    id_salida BIGINT NOT NULL AUTO_INCREMENT,
-    id_productos BIGINT NOT NULL,
-    stock_salida INT NOT NULL,
-    fechaRegistro TIMESTAMP NOT NULL,
-    usuario VARCHAR(100) NOT NULL,
-    PRIMARY KEY (id_salida)
-);
-
-ALTER TABLE salida ADD FOREIGN KEY(id_productos) REFERENCES productos(id_productos);
 
 CREATE TABLE guias_dhl (
     id_guias_dhl BIGINT NOT NULL AUTO_INCREMENT,

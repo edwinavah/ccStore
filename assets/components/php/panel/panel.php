@@ -13,7 +13,7 @@
     $count_todos_usuarios = $conexion->query("SELECT * FROM usuarios");
     $count_modificado = $conexion->query("SELECT * FROM adminRegistros WHERE accion = 'Modificado' AND fecha BETWEEN '$iniciaDia' AND '$hoy'");
     $count_eliminado = $conexion->query("SELECT * FROM adminRegistros WHERE accion = 'Eliminado' AND fecha BETWEEN '$iniciaDia' AND '$hoy'");
-    $count_salidas = $conexion->query("SELECT * FROM salida WHERE fechaRegistro BETWEEN '$iniciaDia' AND '$hoy'");
+    $count_salida = $conexion->query("SELECT * FROM salida WHERE fechaRegistro BETWEEN '$iniciaDia' AND '$hoy'");
     $count_DHL = $conexion->query("SELECT * FROM guias_dhl WHERE fechaRegistro = '$hoy_2'");
     $count_FedEx = $conexion->query("SELECT * FROM guias_fedEx WHERE fechaRegistro = '$hoy_2'");
     $count_Estafeta = $conexion->query("SELECT * FROM guias_estafeta WHERE fechaRegistro = '$hoy_2'");
@@ -101,7 +101,7 @@
                     <i class="fas fa-shopping-cart icon"></i>
                 </div>
                 <div class="col-10 text-right p-4">
-                    <h1><?php echo $count_salidas->num_rows; ?></h1>
+                    <h1><?php echo $count_salida->num_rows; ?></h1>
                     <small>Salidas de hoy, <?php echo date("d-m-Y H:i:s"); ?></small>
                 </div>
             </div>
