@@ -27,7 +27,7 @@
                         <input type="number" name="stockDescontado" class="form-control" id="stockDescontado" min="1" pattern="^[0-9]+" required>
 
                         <?php
-                            date_default_timezone_set('America/Mexico_City');
+                            date_default_timezone_set('America/Chihuahua');
                             $fechaActual = date("Y-m-d H:i:s");
                             //$hora = date("H:i:s");
                         ?>
