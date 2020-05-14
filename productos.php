@@ -89,6 +89,9 @@
                                     <div id="productos">
                                         <!-- TABLA -->
                                     </div>
+                                    <div id="modal">
+                                        <!-- MODAL -->
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -113,5 +116,6 @@
     $(document).ready(function(){
         $('#navbar').load('assets/components/php/navbar.php');
         $('#productos').load('assets/components/php/productos/productos.php');
+        $('#modal').load('assets/components/php/productos/modal.php');
     });
 </script>

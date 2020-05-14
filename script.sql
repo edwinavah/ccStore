@@ -52,6 +52,7 @@ CREATE TABLE adminRegistros (
     usuario VARCHAR(100) NOT NULL,
     accion VARCHAR(100) NOT NULL,
     producto VARCHAR(100) NOT NULL,
+    movimiento VARCHAR(100) NOT NULL,
     nota VARCHAR(100) NOT NULL,
     fecha DATETIME NOT NULL,
     PRIMARY KEY (id_adminRegistros)

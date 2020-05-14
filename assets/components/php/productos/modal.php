@@ -4,7 +4,8 @@
 ?>
 <body>
     <!-- MODAL ELIMINAR -->
-    <div class="modal fade" id="eliminarProducto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" onclick="location.reload();">
+    <!-- onclick="location.reload();" SE ELIMINO DEL PRIMER DIV -->
+    <div class="modal fade" id="eliminarProducto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -14,17 +15,20 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <label for="">¿Seguro que quieres eliminar este producto?</label>
-                    <form id="delete" method="POST">
-                        <input type="number" name="delete_id" class="form-control mt-2 d-none" id="delete_id" required readonly>
-                        <input type="text" name="delete_marca" class="form-control mt-2 d-none" id="delete_marca" required readonly>
-                        <input type="text" name="delete_modelo" class="form-control mt-2" id="delete_modelo" required readonly>
-                        <input type="number" name="delete_stock" class="form-control mt-2 d-none" id="delete_stock" required readonly>
-                        <br>
-                            <div id="respuesta" style="background: #17a2b8; text-align: center; color: whitesmoke; font-weight: 700;"></div>
+                    <form id="eliminarForm" method="POST" autocomplete="off" onsubmit="return false">
+                        <label for="">¿Seguro que quieres eliminar este producto?</label>
+                        <input type="number" name="eliminar_id" class="form-control mt-2 d-none" id="eliminar_id" required readonly>
+                        <input type="text" name="eliminar_marca" class="form-control mt-2 d-none" id="eliminar_marca" required readonly>
+                        <input type="text" name="eliminar_modelo" class="form-control mt-2" id="eliminar_modelo" required readonly>
+                        <input type="number" name="eliminar_stock" class="form-control mt-2 d-none" id="eliminar_stock" required readonly>
+
+                        <label for="" class="mt-2">Nota</label>
+                        <textarea class="form-control" id="eliminar_nota" name="eliminar_nota" rows="2" placeholder="Por favor de especificar motivo de eliminación del producto." required></textarea>
+                        
+                        <!-- <br><div id="respuesta" style="background: #17a2b8; text-align: center; color: whitesmoke; font-weight: 700;"></div> -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancelar</button>
-                            <button type="button" id="eliminar" class="btn btn-danger" data-dismiss="modal" onclick="location.reload();">Eliminar</button>
+                            <button type="button" id="eliminar" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
                         </div>
                     </form>
                 </div>
@@ -32,28 +36,37 @@
         </div>
     </div>
 
-    <script>
-        $('.eliminarbtn').on('click', function() {
-            //coinsida con los mismos datos de tr
-            //con closest
-            $tr = $(this).closest('tr');
-            var datos = $tr.children("td").map(function() {
-                return $(this).text();
-            });
-            $('#delete_id').val(datos[0]);
-            $('#delete_marca').val(datos[2]);
-            $('#delete_modelo').val(datos[3]);
-            $('#delete_stock').val(datos[5]);
-            
+    <script type="text/javascript">
+        function eliminaProducto(datos) {
+            d=datos.split('||');
+
+            $('#eliminar_id').val(d[0]);
+            $('#eliminar_marca').val(d[2]);
+            $('#eliminar_modelo').val(d[3]);
+            $('#eliminar_stock').val(d[5]);
+        }
+
+        $(document).ready(function () {
             $('#eliminar').on('click',function(){
-                $.ajax({
-                    url: 'assets/components/php/productos/eliminar.php',
-                    type: 'POST',
-                    data: $('#delete').serialize(),
-                    success: function(res){
-                        $('#respuesta').html(res);
-                    }
-                 });
+                eliminar_nota = $('#eliminar_nota').val();
+                if(eliminar_nota === ""){
+                    alertify.alert("Inténtalo de nuevo","Es obligatorio llenar el campo nota, por favor de especificar motivo de eliminación del producto.");
+                } else {
+                    $.ajax({
+                        url: 'assets/components/php/productos/eliminar.php',
+                        type: 'POST',
+                        data: $('#eliminarForm').serialize(),
+                        success: function(r){
+                            if(r!=1){
+                                $('#productos').load('assets/components/php/productos/productos.php');
+                                alertify.success("Se actualizo la contraseña correctamente");
+                            } else {
+                                alertify.error("Error con la conexión al servidor");
+                            }
+                        }
+                    });
+                    $('#eliminar_nota').val('');
+                }
             });
         });
     </script>
@@ -120,7 +133,7 @@
                                 </div>
                             </div>
                             <label for="" class="mt-2">Especificaciones</label>
-                            <textarea class="form-alpha form-control" id="especificaciones" name="especificaciones" rows="4" placeholder="Escribe algúna especificación del producto" required></textarea>
+                            <textarea class="form-control" id="especificaciones" name="especificaciones" rows="4" placeholder="Escribe algúna especificación del producto" required></textarea>
                             
                             <br>
                             <div id="respuesta1" style="text-align: center;"></div>

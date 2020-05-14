@@ -22,13 +22,14 @@
                                 <td class="align-middle" scope="col">Usuario</td>
                                 <td class="align-middle" scope="col">Acción</td>
                                 <td class="align-middle" scope="col">Producto</td>
+                                <td class="align-middle" scope="col">Movimiento</td>
                                 <td class="align-middle" scope="col">Nota</td>
                                 <td class="align-middle" scope="col" style="min-width: 170px; width: 170px">Fecha - Hora</td>
                             </tr>
                         </thead>
 
                         <?php
-                        $sql = "SELECT id_adminRegistros, usuario, accion, producto, nota, DATE_FORMAT(fecha, '%d/%m/%Y ' ' %h:%i:%s') FROM adminRegistros WHERE accion = 'Modificado' ORDER BY fecha DESC";
+                        $sql = "SELECT id_adminRegistros, usuario, accion, producto, movimiento, nota, DATE_FORMAT(fecha, '%d/%m/%Y ' ' %h:%i:%s') FROM adminRegistros WHERE accion = 'Modificado' ORDER BY fecha DESC";
                         $resultado = mysqli_query($conexion, $sql);
 
                         while ($buscar = mysqli_fetch_row($resultado)) {
@@ -37,7 +38,8 @@
                                 $buscar[2] . "||" .
                                 $buscar[3] . "||" .
                                 $buscar[4] . "||" .
-                                $buscar[5];
+                                $buscar[5] . "||" .
+                                $buscar[6];
                         ?>
                         
                             <tr>
@@ -46,6 +48,7 @@
                                 <td class="align-middle"><?php echo $buscar[3] ?></td>
                                 <td class="align-middle"><?php echo $buscar[4] ?></td>
                                 <td class="align-middle"><?php echo $buscar[5] ?></td>
+                                <td class="align-middle"><?php echo $buscar[6] ?></td>
                             </tr>
                         
                         <?php
@@ -78,13 +81,14 @@
                                 <td class="align-middle" scope="col">Usuario</td>
                                 <td class="align-middle" scope="col">Acción</td>
                                 <td class="align-middle" scope="col">Producto</td>
+                                <td class="align-middle" scope="col">Movimiento</td>
                                 <td class="align-middle" scope="col">Nota</td>
                                 <td class="align-middle" scope="col" style="min-width: 170px; width: 170px">Fecha - Hora</td>
                             </tr>
                         </thead>
 
                         <?php
-                        $sql = "SELECT id_adminRegistros, usuario, accion, producto, nota, DATE_FORMAT(fecha, '%d/%m/%Y ' ' %h:%i:%s') FROM adminRegistros WHERE accion = 'Eliminado' ORDER BY fecha DESC";
+                        $sql = "SELECT id_adminRegistros, usuario, accion, producto, movimiento, nota, DATE_FORMAT(fecha, '%d/%m/%Y ' ' %h:%i:%s') FROM adminRegistros WHERE accion = 'Eliminado' ORDER BY fecha DESC";
                         $resultado = mysqli_query($conexion, $sql);
 
                         while ($buscar = mysqli_fetch_row($resultado)) {
@@ -93,7 +97,8 @@
                                 $buscar[2] . "||" .
                                 $buscar[3] . "||" .
                                 $buscar[4] . "||" .
-                                $buscar[5];
+                                $buscar[5] . "||" .
+                                $buscar[6];
                         ?>
                         
                             <tr>
@@ -102,6 +107,7 @@
                                 <td class="align-middle"><?php echo $buscar[3] ?></td>
                                 <td class="align-middle"><?php echo $buscar[4] ?></td>
                                 <td class="align-middle"><?php echo $buscar[5] ?></td>
+                                <td class="align-middle"><?php echo $buscar[6] ?></td>
                             </tr>
                         
                         <?php
@@ -134,13 +140,14 @@
                                 <td class="align-middle" scope="col">Usuario</td>
                                 <td class="align-middle" scope="col">Acción</td>
                                 <td class="align-middle" scope="col">Producto</td>
+                                <td class="align-middle" scope="col">Movimiento</td>
                                 <td class="align-middle" scope="col">Nota</td>
                                 <td class="align-middle" scope="col" style="min-width: 170px; width: 170px">Fecha - Hora</td>
                             </tr>
                         </thead>
 
                         <?php
-                        $sql = "SELECT id_adminRegistros, usuario, accion, producto, nota, DATE_FORMAT(fecha, '%d/%m/%Y ' ' %h:%i:%s') FROM adminRegistros WHERE accion = 'Agregado' ORDER BY fecha DESC";
+                        $sql = "SELECT id_adminRegistros, usuario, accion, producto, movimiento, nota, DATE_FORMAT(fecha, '%d/%m/%Y ' ' %h:%i:%s') FROM adminRegistros WHERE accion = 'Agregado' ORDER BY fecha DESC";
                         $resultado = mysqli_query($conexion, $sql);
 
                         while ($buscar = mysqli_fetch_row($resultado)) {
@@ -149,7 +156,8 @@
                                 $buscar[2] . "||" .
                                 $buscar[3] . "||" .
                                 $buscar[4] . "||" .
-                                $buscar[5];
+                                $buscar[5] . "||" .
+                                $buscar[6];
                         ?>
                         
                             <tr>
@@ -158,6 +166,7 @@
                                 <td class="align-middle"><?php echo $buscar[3] ?></td>
                                 <td class="align-middle"><?php echo $buscar[4] ?></td>
                                 <td class="align-middle"><?php echo $buscar[5] ?></td>
+                                <td class="align-middle"><?php echo $buscar[6] ?></td>
                             </tr>
                         
                         <?php
