@@ -94,6 +94,10 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <div id="generarReporte">
+                                <!-- BOTONES GENERAR REPORTE -->
+                            </div>
                         </div>
 
                         <!-- AGREGANDO FOOTER -->
@@ -117,5 +121,6 @@
         $('#navbar').load('assets/components/php/navbar.php');
         $('#productos').load('assets/components/php/productos/productos.php');
         $('#modal').load('assets/components/php/productos/modal.php');
+        $('#generarReporte').load('assets/components/php/productos/generarReporte.php');
     });
 </script>

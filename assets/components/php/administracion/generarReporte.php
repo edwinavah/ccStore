@@ -24,7 +24,6 @@
                         <input class="btn btn-success text-white" type="button" value="Exportar EXCEL"
                         onclick= "document.reporteAdmin.action = 'assets/components/php/administracion/reporteExcelAdmin.php'; 
                         document.reporteAdmin.submit()" />
-
                     </div>
                 </div>
             </div>
