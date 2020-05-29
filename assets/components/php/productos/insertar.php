@@ -16,13 +16,14 @@
 
     $producto = $marca." - ".$modelo;
     $accion = "Agregado";
-    $nota = "Se agrego el producto con el stock de ".$stock;
+    $movimiento = "Se agrego el producto con el stock de ".$stock;
+    $nota = $usuario." agrego un nuevo producto";
 
     if($marca=="" || $modelo=="" || $especificaciones=="" || $stock=="" || $stock <= 0){
         
     } else {
         $conexion->query("INSERT INTO productos (codigo_barras,marca,modelo,especificaciones,stock) values ('$codigo_barras','$marca','$modelo','$especificaciones','$stock')");
-        $conexion->query("INSERT INTO adminRegistros (usuario, accion, producto, nota, fecha) values ('$usuario','$accion','$producto','$nota','$hoy')");
+        $conexion->query("INSERT INTO adminRegistros (usuario, accion, producto, movimiento, nota, fecha) values ('$usuario','$accion','$producto','$movimiento','$nota','$hoy')");
         echo
         '<div class="alert alert-success alert-dismissible fade show" role="alert">
             <strong>Guardado. </strong> El proceso fue exitoso.

@@ -22,6 +22,6 @@
         
     } else {
         $conexion->query("DELETE FROM productos WHERE id_productos='".$id_productos."' ");
-        $conexion->query("INSERT INTO adminRegistros (usuario, accion, producto, movimiento, nota, fecha) values ('$usuario','$accion','$producto','$nota','$movimiento','$hoy')");
+        $conexion->query("INSERT INTO adminRegistros (usuario, accion, producto, movimiento, nota, fecha) values ('$usuario','$accion','$producto','$movimiento','$nota','$hoy')");
     }
 ?>

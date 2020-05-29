@@ -141,7 +141,7 @@
                                 <td class="align-middle" scope="col">Acción</td>
                                 <td class="align-middle" scope="col">Producto</td>
                                 <td class="align-middle" scope="col">Movimiento</td>
-                                <td class="align-middle" scope="col">Nota</td>
+                                <td class="align-middle d-none" scope="col">Nota</td>
                                 <td class="align-middle" scope="col" style="min-width: 170px; width: 170px">Fecha - Hora</td>
                             </tr>
                         </thead>
@@ -165,7 +165,7 @@
                                 <td class="align-middle"><?php echo $buscar[2] ?></td>
                                 <td class="align-middle"><?php echo $buscar[3] ?></td>
                                 <td class="align-middle"><?php echo $buscar[4] ?></td>
-                                <td class="align-middle"><?php echo $buscar[5] ?></td>
+                                <td class="align-middle d-none"><?php echo $buscar[5] ?></td>
                                 <td class="align-middle"><?php echo $buscar[6] ?></td>
                             </tr>
                         

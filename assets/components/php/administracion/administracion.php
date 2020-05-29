@@ -63,7 +63,7 @@
             </div>
         </div>
     </div>
-    <!-- TABLA DE REGISTROS DE PRODUCTOS AGREGADOS -->
+    <!-- TABLA DE REGISTROS DE PRODUCTOS ELIMINADOS -->
     <div class="col-sm-12 col-xl-6 mt-3">
         <div class="info rounded">
             <button type="button" class="btn btn-danger mt-1" data-toggle="modal" data-target="#productosEliminados">
@@ -109,6 +109,7 @@
     </div>
 </div>
 
+<!-- TABLA DE REGISTROS DE PRODUCTOS AGREGADOS -->
 <div class="row mt-3">
     <div class="col-sm-12 col-xl-12">
         <div class="info rounded">

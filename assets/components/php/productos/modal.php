@@ -1,7 +1,9 @@
 <?php
     require_once "../conexion.php";
     $conexion = conexion();
+    session_start();
 ?>
+
 <body>
     <!-- MODAL ELIMINAR -->
     <!-- onclick="location.reload();" SE ELIMINO DEL PRIMER DIV -->
@@ -134,10 +136,12 @@
                             </div>
                             <label for="" class="mt-2">Especificaciones</label>
                             <textarea class="form-control" id="especificaciones" name="especificaciones" rows="4" placeholder="Escribe algúna especificación del producto" required></textarea>
-                            
+                                                       
+                            <label for="" class="mt-2">Nota</label>
+                            <textarea class="form-control" id="editar_nota" name="editar_nota" rows="2" placeholder="Por favor de especificar motivo de edición del producto." required></textarea>
+                        
                             <br>
                             <div id="respuesta1" style="text-align: center;"></div>
-
 
                         </div>
                         <div class="modal-footer">
