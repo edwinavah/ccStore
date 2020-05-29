@@ -4,11 +4,11 @@
             <div class="form-group">
                 <div class="form-row">
                     <div class="col">
-                        <input class="btn btn-danger text-white" type="button" target="_blank" value="Exportar PDF" 
+                        <input class="btn btn-sm btn-danger text-white" type="button" target="_blank" value="Exportar PDF" 
                         onclick= "document.reporteProductos.action = 'assets/components/php/productos/reportePDF.php'; 
                         document.reporteProductos.submit()" />
 
-                        <input class="btn btn-success text-white" type="button" value="Exportar EXCEL"
+                        <input class="btn btn-sm btn-success text-white" type="button" value="Exportar EXCEL"
                         onclick= "document.reporteProductos.action = 'assets/components/php/productos/reporteExcel.php'; 
                         document.reporteProductos.submit()" />
                     </div>

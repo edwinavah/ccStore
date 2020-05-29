@@ -168,8 +168,21 @@
 
         $(document).ready(function () {
             $('#editar').on('click',function(){
+                editar_marca = $('#editar_marca').val();
+                editar_modelo = $('#editar_modelo').val();
+                editar_stock = $('#editar_stock').val();
+                editar_especificaciones = $('#editar_especificaciones').val();
                 editar_nota = $('#editar_nota').val();
-                if(editar_nota === ""){
+
+                if(editar_marca === ""){
+                    alertify.alert("Inténtalo de nuevo","Es obligatorio llenar la marca del producto.");
+                } else if (editar_modelo === "") {
+                    alertify.alert("Inténtalo de nuevo","Es obligatorio llenar el modelo del producto.");
+                } else if (editar_stock === "") {
+                    alertify.alert("Inténtalo de nuevo","Es obligatorio llenar el stock actual del producto.");
+                } else if (editar_especificaciones === "") {
+                    alertify.alert("Inténtalo de nuevo","Es obligatorio llenar las especificaciones del producto.");
+                } else if (editar_nota === "") {
                     alertify.alert("Inténtalo de nuevo","Es obligatorio llenar el campo nota, por favor de especificar motivo de edición del producto.");
                 } else {
                     $.ajax({
