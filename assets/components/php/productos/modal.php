@@ -139,9 +139,6 @@
                             <label for="" class="mt-2">Nota</label>
                             <textarea class="form-control" id="editar_nota" name="editar_nota" rows="2" placeholder="Por favor de especificar motivo de edición del producto." required></textarea>
                         
-                            <br>
-                            <div id="respuesta1" style="text-align: center;"></div>
-
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cerrar</button>
@@ -215,7 +212,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="insert" method="POST" autocomplete="off">
+                    <form id="insert" method="POST" autocomplete="on">
                         <input type="text" class="form-control d-none" name="id_productos" id="new_id">
                         <div class="form-group">
                             <div class="form-row">
@@ -242,7 +239,7 @@
                             <textarea class="form-alpha form-control" id="especificaciones" name="especificaciones" rows="4" placeholder="Escribe algúna especificación del producto" required></textarea>
                             
                             <br>
-                            <div id="respuesta2" style="text-align: center;"></div>
+                            <div id="respuesta" style="text-align: center;"></div>
 
                         </div>
                         <div class="modal-footer">
@@ -262,7 +259,7 @@
             type: 'POST',
             data: $('#insert').serialize(),
             success: function(res){
-                $('#respuesta2').html(res);
+                $('#respuesta').html(res);
             }
         });
     });
