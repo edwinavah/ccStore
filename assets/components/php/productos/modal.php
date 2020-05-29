@@ -27,7 +27,6 @@
                         <label for="" class="mt-2">Nota</label>
                         <textarea class="form-control" id="eliminar_nota" name="eliminar_nota" rows="2" placeholder="Por favor de especificar motivo de eliminación del producto." required></textarea>
                         
-                        <!-- <br><div id="respuesta" style="background: #17a2b8; text-align: center; color: whitesmoke; font-weight: 700;"></div> -->
                         <div class="modal-footer">
                             <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cancelar</button>
                             <button type="button" id="eliminar" class="btn btn-danger" data-dismiss="modal">Eliminar</button>
@@ -61,7 +60,7 @@
                         success: function(r){
                             if(r!=1){
                                 $('#productos').load('assets/components/php/productos/productos.php');
-                                alertify.success("Se actualizo la contraseña correctamente");
+                                alertify.success("Se elimino el producto correctamente");
                             } else {
                                 alertify.error("Error con la conexión al servidor");
                             }
@@ -84,13 +83,13 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form id="update" method="POST" autocomplete="off">
-                        <input type="text" class="form-control d-none" name="id_productos" id="update_id" required readonly>
+                    <form id="editarForm" method="POST" autocomplete="off" onsubmit="return false">
+                        <input type="text" class="form-control d-none" name="editar_id" id="editar_id" required readonly>
                         <div class="form-group">
                             <div class="form-row">
                                 <div class="col">
                                     <label for="" class="mt-2">Código de barras</label>
-                                    <input type="number" name="codigo_barras" class="form-control" id="codigo_barras">
+                                    <input type="number" name="editar_codigo_barras" class="form-control" id="editar_codigo_barras">
                                 </div>
 
                                 <?php
@@ -99,26 +98,26 @@
                                         echo 
                                         '<div class="col d-none">
                                             <label for="" class="mt-2">Cantidad en stock</label>
-                                            <input type="number" name="stock_anterior" class="form-control" id="stock_anterior" min="0" pattern="^[0-9]+" required readonly>
+                                            <input type="number" name="editar_stock_anterior" class="form-control" id="editar_stock_anterior" min="0" pattern="^[0-9]+" required readonly>
                                         </div>';
 
                                         echo 
                                         '<div class="col d-none">
                                             <label for="" class="mt-2">Cantidad en stock</label>
-                                            <input type="number" name="stock" class="form-control" id="stock" min="0" pattern="^[0-9]+" required readonly>
+                                            <input type="number" name="editar_stock" class="form-control" id="editar_stock" min="0" pattern="^[0-9]+" required readonly>
                                         </div>';
                                     } else {
                                         // CAMPOS EDITABLES PARA ADMINISTRADOR
                                         echo 
                                         '<div class="col d-none">
                                             <label for="" class="mt-2">Cantidad en stock</label>
-                                            <input type="number" name="stock_anterior" class="form-control" id="stock_anterior" min="0" pattern="^[0-9]+" required readonly>
+                                            <input type="number" name="editar_stock_anterior" class="form-control" id="editar_stock_anterior" min="0" pattern="^[0-9]+" required readonly>
                                         </div>';
                                         
                                         echo 
                                         '<div class="col">
                                             <label for="" class="mt-2">Cantidad en stock</label>
-                                            <input type="number" name="stock" class="form-control" id="stock" min="0" pattern="^[0-9]+" required>
+                                            <input type="number" name="editar_stock" class="form-control" id="editar_stock" min="0" pattern="^[0-9]+" required>
                                         </div>';
                                     }
                                 ?>
@@ -127,15 +126,15 @@
                             <div class="form-row">
                                 <div class="col">
                                     <label for="" class="mt-2">Marca</label>
-                                    <input type="text" name="marca" class="form-control" id="marca" required>
+                                    <input type="text" name="editar_marca" class="form-control" id="editar_marca" required>
                                 </div>
                                 <div class="col">
                                     <label for="" class="mt-2">Modelo</label>
-                                    <input type="text" name="modelo" class="form-control" id="modelo" required>
+                                    <input type="text" name="editar_modelo" class="form-control" id="editar_modelo" required>
                                 </div>
                             </div>
                             <label for="" class="mt-2">Especificaciones</label>
-                            <textarea class="form-control" id="especificaciones" name="especificaciones" rows="4" placeholder="Escribe algúna especificación del producto" required></textarea>
+                            <textarea class="form-control" id="editar_especificaciones" name="editar_especificaciones" rows="4" placeholder="Escribe algúna especificación del producto" required></textarea>
                                                        
                             <label for="" class="mt-2">Nota</label>
                             <textarea class="form-control" id="editar_nota" name="editar_nota" rows="2" placeholder="Por favor de especificar motivo de edición del producto." required></textarea>
@@ -145,8 +144,8 @@
 
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-outline-dark" data-dismiss="modal" onclick="location.reload();">Cerrar</button>
-                            <button type="submit" id="guardar" class="btn btn-warning">Guardar cambios</button>
+                            <button type="button" class="btn btn-outline-dark" data-dismiss="modal">Cerrar</button>
+                            <button type="button" id="editar" class="btn btn-warning">Guardar cambios</button>
                         </div>
                     </form>
                 </div>
@@ -155,30 +154,39 @@
     </div>
 
     <script>
-        $('.editarbtn').on('click',function(){
-            //coinsida con los mismos datos de tr
-            $tr = $(this).closest('tr');
-            var datos= $tr.children("td").map(function(){
-                return $(this).text();
-            });
+        function editarProducto(datos) {
+            d=datos.split('||');
 
-            $('#update_id').val(datos[0]);
-            $('#codigo_barras').val(datos[1]);
-            $('#marca').val(datos[2]);
-            $('#modelo').val(datos[3]);
-            $('#stock_anterior').val(datos[5]);
-            $('#stock').val(datos[5]);
-            $('#especificaciones').val(datos[4]);
+            $('#editar_id').val(d[0]);
+            $('#editar_codigo_barras').val(d[1]);
+            $('#editar_marca').val(d[2]);
+            $('#editar_modelo').val(d[3]);
+            $('#editar_stock_anterior').val(d[5]);
+            $('#editar_stock').val(d[5]);
+            $('#editar_especificaciones').val(d[4]);
+        }
 
-            $('#guardar').on('click',function(){
-                $.ajax({
-                    url: 'assets/components/php/productos/editar.php',
-                    type: 'POST',
-                    data: $('#update').serialize(),
-                    success: function(res){
-                        $('#respuesta1').html(res);
-                    }
-                });
+        $(document).ready(function () {
+            $('#editar').on('click',function(){
+                editar_nota = $('#editar_nota').val();
+                if(editar_nota === ""){
+                    alertify.alert("Inténtalo de nuevo","Es obligatorio llenar el campo nota, por favor de especificar motivo de edición del producto.");
+                } else {
+                    $.ajax({
+                        url: 'assets/components/php/productos/editar.php',
+                        type: 'POST',
+                        data: $('#editarForm').serialize(),
+                        success: function(r){
+                            if(r!=1){
+                                $('#productos').load('assets/components/php/productos/productos.php');
+                                alertify.success("Se actualizo el producto correctamente");
+                            } else {
+                                alertify.error("Error con la conexión al servidor");
+                            }
+                        }
+                    });
+                    $('#editar_nota').val('');
+                }
             });
         });
     </script>

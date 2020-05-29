@@ -48,7 +48,7 @@
                                                 <td class="align-middle">'.$buscar[4].'</td>
                                                 <td class="align-middle">'.$buscar[5].'</td>
                                                 <td class="text-center align-middle" style="min-width: 125px; width: 125px">
-                                                    <button type="button" class="btn btn-sm btn-warning editarbtn" data-toggle="modal" data-target="#modificar"><i class="far fa-edit"></i> Editar</button>
+                                                    <button type="button" class="btn btn-sm btn-warning editarbtn" data-toggle="modal" data-target="#modificar" onclick="editarProducto(\''.$datos.'\')"><i class="far fa-edit"></i> Editar</button>
                                                 </td>
                                             </tr>';
                                 }
@@ -120,7 +120,7 @@
                                                 <td class="align-middle">'.$buscar[4].'</td>
                                                 <td class="align-middle">'.$buscar[5].'</td>
                                                 <td class="text-center align-middle" style="min-width: 125px; width: 125px">
-                                                    <button type="button" class="btn btn-sm btn-warning editarbtn" data-toggle="modal" data-target="#modificar"><i class="far fa-edit"></i> Editar</button>
+                                                    <button type="button" class="btn btn-sm btn-warning editarbtn" data-toggle="modal" data-target="#modificar" onclick="editarProducto(\''.$datos.'\')"><i class="far fa-edit"></i> Editar</button>
                                                     <button type="button" class="btn btn-sm btn-danger" data-toggle="modal" data-target="#eliminarProducto" onclick="eliminaProducto(\''.$datos.'\')"><i class="fas fa-trash"></i></button>
                                                 </td>
                                             </tr>';

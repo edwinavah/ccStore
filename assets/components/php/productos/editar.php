@@ -7,13 +7,13 @@
     ini_set('date.timezone', 'America/Chihuahua');
     $hoy = date("Y-m-d H:i:s");
 
-    $id_productos = $_POST['id_productos'];
-    $codigo_barras = $_POST['codigo_barras'];
-    $marca = $_POST['marca'];
-    $modelo = $_POST['modelo'];
-    $especificaciones = $_POST['especificaciones'];
-    $stock = $_POST['stock'];
-    $stock_anterior = $_POST['stock_anterior'];
+    $id_productos = $_POST['editar_id'];
+    $codigo_barras = $_POST['editar_codigo_barras'];
+    $marca = $_POST['editar_marca'];
+    $modelo = $_POST['editar_modelo'];
+    $especificaciones = $_POST['editar_especificaciones'];
+    $stock = $_POST['editar_stock'];
+    $stock_anterior = $_POST['editar_stock_anterior'];
     $nota = $_POST['editar_nota'];
 
     $producto = $marca." - ".$modelo;
