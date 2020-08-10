@@ -3,7 +3,7 @@ version: '3.5'
 services:
   mysql:
     image: mysql:5.6
-    container_name: docker-ordenes-mysql
+    container_name: docker-ccstore-mysql
     environment:
       - "MYSQL_DATABASE=ordenes"
       - "MYSQL_USER=RGDPrintShop"
@@ -17,7 +17,7 @@ services:
 
   web:
     image: phpmysql
-    container_name: docker-ordenes-php
+    container_name: docker-ccstore-php
     ports:
       - "80:80"
     volumes:
@@ -27,4 +27,4 @@ services:
       
 volumes:
    mysqldata:
-     name: "mysqldata-ordenes"
+     name: "mysqldata-ccstore"
