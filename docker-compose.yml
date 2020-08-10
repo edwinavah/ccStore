@@ -21,7 +21,7 @@ services:
     ports:
       - "80:81"
     volumes:
-      - ./:/var/www/html
+      - ./:/var/www/html/ccStore
     links:
       - mysql
       
