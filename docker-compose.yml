@@ -1,0 +1,30 @@
+version: '3.5'
+
+services:
+  mysql:
+    image: mysql:5.6
+    container_name: docker-ordenes-mysql
+    environment:
+      - "MYSQL_DATABASE=ordenes"
+      - "MYSQL_USER=RGDPrintShop"
+      - "MYSQL_PASSWORD=GV*DD*4AeCQy7-F"
+      - "MYSQL_ROOT_PASSWORD=GV*DD*4AeCQy7-F"
+    volumes:
+      - mysqldata:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    restart: always
+
+  web:
+    image: phpmysql
+    container_name: docker-ordenes-php
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html
+    links:
+      - mysql
+      
+volumes:
+   mysqldata:
+     name: "mysqldata-ordenes"
