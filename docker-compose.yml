@@ -3,10 +3,10 @@ version: '3.5'
 services:
   mysql:
     image: mysql:5.6
-    container_name: docker-ccstore-mysql
+    container_name: ccStore_mysql
     environment:
-      - "MYSQL_DATABASE=ccstoreinventarios"
-      - "MYSQL_USER=ccStore"
+      - "MYSQL_DATABASE=ccStore"
+      - "MYSQL_USER=iProxy"
       - "MYSQL_PASSWORD=GV*DD*4AeCQy7-F"
       - "MYSQL_ROOT_PASSWORD=GV*DD*4AeCQy7-F"
     volumes:
@@ -16,8 +16,8 @@ services:
     restart: always
 
   web:
-    image: phpmysql
-    container_name: docker-ccstore-php
+    image: ccStore
+    container_name: ccStore_web
     ports:
       - "80:80"
     volumes:
@@ -27,4 +27,4 @@ services:
       
 volumes:
    mysqldata:
-     name: "mysqldata-ccstore"
+     name: "data_mysql"
